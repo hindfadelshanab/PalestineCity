@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+
+    >
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_200sdp"
+        android:layout_marginBottom="@dimen/_16sdp"
+        tools:context=".MapsActivity" />
+
+    <Button
+        android:id="@+id/btnCityPhoto"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_20ssp"
+        android:textStyle="bold"
+        android:text="صور" />
+
+    <Button
+        android:id="@+id/btnCityFamily"
+        android:layout_width="match_parent"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_20ssp"
+        android:textStyle="bold"
+        android:text="اشهر العائلات" />
+
+
+    <Button
+        android:id="@+id/btnCityLandmark"
+
+        android:layout_width="match_parent"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_20ssp"
+        android:textStyle="bold"
+        android:text="المعالم" />
+
+    <Button
+        android:id="@+id/btnCityShuhadaa"
+
+        android:layout_width="match_parent"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_20ssp"
+        android:textStyle="bold"
+        android:text="الشهداء" />
+
+    <Button
+        android:id="@+id/btnCityShabea"
+
+        android:layout_width="match_parent"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_20ssp"
+        android:textStyle="bold"
+        android:text="شو قالت ستي" />
+</LinearLayout>

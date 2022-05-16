@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/_8sdp"
+    android:id="@+id/cardCity"
+    app:cardElevation="@dimen/_8sdp"
+    android:backgroundTint="#E4E4E4"
+    app:cardCornerRadius="@dimen/_12sdp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/txt_familyName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/_20ssp"
+        android:padding="@dimen/_8sdp"
+        android:textColor="@color/black"
+        android:paddingEnd="@dimen/_16sdp"
+        android:textStyle="bold"
+        tools:text="Abushanab"
+
+        />
+
+</androidx.cardview.widget.CardView>

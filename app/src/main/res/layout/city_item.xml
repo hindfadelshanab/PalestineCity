@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/_8sdp"
+    android:id="@+id/cardCity"
+    app:cardElevation="@dimen/_8sdp"
+    app:cardBackgroundColor="@color/primary"
+    app:cardCornerRadius="@dimen/_12sdp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/txt_cityName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="@dimen/_22ssp"
+        android:padding="@dimen/_16sdp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        tools:text="GAZA"
+
+        />
+
+</androidx.cardview.widget.CardView>

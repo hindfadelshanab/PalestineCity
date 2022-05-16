@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "447645813019",
+    "project_id": "citypalestine-ae1ea",
+    "storage_bucket": "citypalestine-ae1ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:447645813019:android:0f7ff05e6ed2737f8febbe",
+        "android_client_info": {
+          "package_name": "developer.citypalestine8936ps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "447645813019-u8em9gr726nrfbbu0f6rmhbdbr2t2gnp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkxhyAVjGf-3WSAOnCssg3l4Ca6thdSUc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "447645813019-u8em9gr726nrfbbu0f6rmhbdbr2t2gnp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

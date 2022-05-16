@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CityActivity.PopularProverbsActivity">
+
+
+
+    <TextView
+        android:id="@+id/txtt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="شو قالت ستي"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textSize="@dimen/_24ssp"
+        android:layout_marginTop="@dimen/_24ssp"
+        />
+
+    <TextView
+        android:id="@+id/txttt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txtt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="أمثال شعبية :"
+        android:textSize="@dimen/_20ssp"
+        android:gravity="start"
+        android:textStyle="bold"
+        android:textColor="@color/primary_text"
+        android:textAlignment="textStart"
+
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+
+        />
+
+    <ScrollView
+        android:id="@+id/scroll1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        app:layout_constraintTop_toBottomOf="@id/txttt"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="4"
+        android:text="   اربط اصبعك مليح لا بدمي ولا بقيح\n لو عكا بتخاف من هدير البحر ما سكنت حِداه \n  طول الأيام بتوري العجايب \n مش كل غيمه بتشتي  \n مش كل من ركب الفرس صار خيال"
+
+        android:textColor="#656363"
+        android:textSize="@dimen/_16ssp"
+        android:paddingEnd="@dimen/_8sdp"
+
+        />
+    </ScrollView>
+
+
+
+    <TextView
+        android:id="@+id/txtsong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/scroll1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="اغاني شعبية :"
+        android:textSize="@dimen/_20ssp"
+        android:gravity="start"
+        android:textAlignment="textStart"
+        android:textStyle="bold"
+        android:textColor="@color/primary_text"
+        android:layout_marginTop="@dimen/_16ssp"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+
+        />
+
+    <ScrollView
+        android:id="@+id/scroll2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        app:layout_constraintTop_toBottomOf="@id/txtsong"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="6"
+            android:textAlignment="textStart"
+            android:padding="@dimen/_8sdp"
+            android:layout_gravity="start"
+            android:text="   سبل عيونو وماد ايدوا يحنول
+غزال زغير بالمنديل يلفولوح \n \n  يا امي يا امي عبيلي المخاداتي
+وطلعت من الدار وما ودعت خياتي  \n \n بالهنا يا ام الهنا يا هنية
+التوت عيني على الشلبية"
+
+            android:textColor="#656363"
+            android:textSize="@dimen/_16ssp"
+            android:paddingEnd="@dimen/_8sdp"
+
+            />
+    </ScrollView>
+
+
+
+
+    <TextView
+        android:id="@+id/txtstory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/scroll2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="أمثال شعبية :"
+        android:textSize="@dimen/_20ssp"
+        android:gravity="start"
+        android:textAlignment="textStart"
+        android:textStyle="bold"
+        android:textColor="@color/primary_text"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+
+        />
+
+    <ScrollView
+        android:id="@+id/scrollstory"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        app:layout_constraintTop_toBottomOf="@id/txtstory"
+        android:layout_marginTop="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scrollbars="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="الزير سالم \n زين الطول \n  نص انصيص \n هنادي وجنادي  \n حكايات جحا  \n محمد الشاطر  \n مرزوقة "
+
+            android:textColor="#656363"
+            android:textSize="@dimen/_16ssp"
+            android:paddingEnd="@dimen/_8sdp"
+
+            />
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
