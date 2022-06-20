@@ -1,16 +1,21 @@
 package developer.citypalestine8936ps.adapters;
 
 import android.graphics.Bitmap;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import developer.citypalestine8936ps.ChatActivity;
 import developer.citypalestine8936ps.databinding.ItemContienerReceivedMessageBinding;
 import developer.citypalestine8936ps.databinding.ItemContinerSendMessageBinding;
 import developer.citypalestine8936ps.models.ChatMessage;
@@ -19,7 +24,6 @@ public class ChatAdapter  extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     final List<ChatMessage> chatMessageList;
     private  Bitmap receiverProfileImage;
     private final String senderId ;
-
     public static final int VIEW_TYPE_SENT = 1;
     public static final int VIEW_TYPE_RECEIVED = 2;
 
@@ -82,8 +86,25 @@ public class ChatAdapter  extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         }
 
         void setData(ChatMessage chatMessage){
-            binding.textMessage.setText(chatMessage.message);
+         //   binding.textMessage.setText(chatMessage.message);
+
+
+            if (chatMessage.message !=null) {
+                binding.textMessage.setText(chatMessage.message);
+            }else {
+                binding.textMessage.setVisibility(View.INVISIBLE);
+            }
             binding.textDateTime.setText(chatMessage.dateTime);
+            Log.e("adapterr" , chatMessage.messageImage +"immmmm");
+            if (chatMessage.messageImage !=null){
+
+                if (!chatMessage.messageImage.equals("")) {
+                    binding.messageImage.setVisibility(View.VISIBLE);
+                    Picasso.get().load(chatMessage.messageImage).into(binding.messageImage);
+                }
+
+            }
+
         }
     }
 
@@ -94,10 +115,26 @@ public class ChatAdapter  extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
             binding = itemContienerReceivedMessageBinding;
         }
         void setData(ChatMessage chatMessage,Bitmap receiverProfileImage){
-            binding.textMessage.setText(chatMessage.message);
+
+            if (chatMessage.message !=null) {
+                binding.textMessage.setText(chatMessage.message);
+            }else {
+                binding.textMessage.setVisibility(View.INVISIBLE);
+            }
             binding.textDateTime.setText(chatMessage.dateTime);
             if (receiverProfileImage !=null) {
                 binding.imageProfile.setImageBitmap(receiverProfileImage);
+            }
+
+            Log.e("adapterr" , chatMessage.messageImage +"immmmm");
+
+            if (chatMessage.messageImage !=null) {
+
+                if (!chatMessage.messageImage.equals("")) {
+                    binding.messageImage.setVisibility(View.VISIBLE);
+                    Picasso.get().load(chatMessage.messageImage).into(binding.messageImage);
+
+                }
             }
         }
 

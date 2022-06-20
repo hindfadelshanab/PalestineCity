@@ -29,7 +29,7 @@ import com.google.firebase.firestore.EventListener
 import developer.citypalestine8936ps.databinding.FragmentChatBinding
 
 
-class ChatFragment :Fragment() , ConversationListener {
+class ChatFragment : Fragment(), ConversationListener {
     private lateinit var binding: FragmentChatBinding
     private lateinit var preferenceManager: PreferenceManager
     private var conversions: MutableList<ChatMessage>? = null
@@ -49,7 +49,6 @@ class ChatFragment :Fragment() , ConversationListener {
         loadUserDetails()
         token
         setListener()
-        conversions!!.clear()
 
         listenConversion()
         // Inflate the layout for this fragment
@@ -57,8 +56,7 @@ class ChatFragment :Fragment() , ConversationListener {
     }
 
 
-
-//    override fun onCreate(savedInstanceState: Bundle?) {
+    //    override fun onCreate(savedInstanceState: Bundle?) {
 //        super.onCreate(savedInstanceState)
 //
 //       // setContentView(binding.getRoot())
@@ -111,7 +109,7 @@ class ChatFragment :Fragment() , ConversationListener {
     }
 
     private val eventListener =
-         EventListener{ value: QuerySnapshot?, error: FirebaseFirestoreException? ->
+        EventListener { value: QuerySnapshot?, error: FirebaseFirestoreException? ->
             if (error != null) {
                 return@EventListener
             }
@@ -145,7 +143,7 @@ class ChatFragment :Fragment() , ConversationListener {
                             documentChange.document.getString(Constants.KEY_LAST_MESSAGE)
                         chatMessage.dateObject =
                             documentChange.document.getDate(Constants.KEY_TIMESTAMP)
-           //             conversions!!.clear()
+                        //             conversions!!.clear()
                         conversions!!.add(chatMessage)
                     } else if (documentChange.type == DocumentChange.Type.MODIFIED) {
                         var i = 0
@@ -203,7 +201,7 @@ class ChatFragment :Fragment() , ConversationListener {
             preferenceManager.getString(Constants.KEY_USER_ID)
         )
         documentReference.update(Constants.KEY_FCM_TOKEN, token).addOnSuccessListener(
-            OnSuccessListener { unsend: Void? -> showToast("Token update Successfully") })
+            OnSuccessListener { unsend: Void? ->  })
             .addOnFailureListener(OnFailureListener { e: Exception? -> showToast("Unable to update token") })
     }
 
@@ -218,7 +216,7 @@ class ChatFragment :Fragment() , ConversationListener {
         documentReference.update(updates).addOnSuccessListener { unsend: Void? ->
             preferenceManager.clear()
             startActivity(Intent(activity, SignInActivity::class.java))
-           // finish()
+            // finish()
         }.addOnFailureListener { e: Exception? -> showToast("unable to sign out") }
     }
 
@@ -227,9 +225,6 @@ class ChatFragment :Fragment() , ConversationListener {
         i.putExtra(Constants.KEY_USER, user)
         startActivity(i)
     }
-
-
-
 
 
 }

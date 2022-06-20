@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_gravity="end"
+    android:orientation="vertical"
+    android:layout_marginEnd="@dimen/_8sdp"
+    android:layout_marginTop="@dimen/_4sdp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/txt_book_name"
+        android:layout_width="@dimen/_130sdp"
+        android:layout_height="wrap_content"
+
+        tools:text="الكتاب الاول"
+        android:textSize="@dimen/_14ssp"
+
+        />
+    <ImageView
+        android:id="@+id/image_book_photo"
+
+        android:layout_width="@dimen/_130sdp"
+        android:layout_height="@dimen/_130sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:scaleType="fitXY"
+        tools:src="@drawable/ic_launcher_background"
+
+        />
+
+
+
+</LinearLayout>

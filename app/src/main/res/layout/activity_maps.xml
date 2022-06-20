@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -18,58 +24,325 @@
         android:layout_marginBottom="@dimen/_16sdp"
         tools:context=".MapsActivity" />
 
-    <Button
-        android:id="@+id/btnCityPhoto"
+
+
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardElevation="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_gravity="end"
+        android:layout_marginStart="@dimen/_24sdp"
+        android:layout_marginEnd="@dimen/_24sdp"
+        app:cardCornerRadius="@dimen/_8sdp"
+        xmlns:tools="http://schemas.android.com/tools">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/btnCityPhoto"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="@dimen/_20ssp"
+                android:layout_marginEnd="@dimen/_32sdp"
+                android:fontFamily="@font/breeserif_regular"
+                android:padding="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="صور"                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:background="@color/primary"
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="match_parent"
+                />
+        </LinearLayout>
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardElevation="@dimen/_8sdp"
         android:layout_marginTop="@dimen/_16sdp"
-        android:layout_marginStart="@dimen/_12sdp"
-        android:layout_marginEnd="@dimen/_12sdp"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/_20ssp"
-        android:textStyle="bold"
-        android:text="صور" />
+        android:layout_gravity="end"
+        android:layout_marginStart="@dimen/_24sdp"
+        android:layout_marginEnd="@dimen/_24sdp"
+        app:cardCornerRadius="@dimen/_8sdp"
+        xmlns:tools="http://schemas.android.com/tools">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/btnCityFamily"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="@dimen/_20ssp"
+                android:layout_marginEnd="@dimen/_32sdp"
+                android:fontFamily="@font/breeserif_regular"
+                android:padding="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="اشهر العائلات"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:background="@color/primary"
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="match_parent"
+                />
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/btnCityFamily"
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_marginStart="@dimen/_12sdp"
-        android:layout_marginEnd="@dimen/_12sdp"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/_20ssp"
-        android:textStyle="bold"
-        android:text="اشهر العائلات" />
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardElevation="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_gravity="end"
+        android:layout_marginStart="@dimen/_24sdp"
+        android:layout_marginEnd="@dimen/_24sdp"
+        app:cardCornerRadius="@dimen/_8sdp"
+        xmlns:tools="http://schemas.android.com/tools">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/btnCityLandmark"                android:layout_width="@dimen/_200sdp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="@dimen/_20ssp"
+                android:layout_marginEnd="@dimen/_32sdp"
+                android:fontFamily="@font/breeserif_regular"
+                android:padding="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="@string/landmark"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:background="@color/primary"
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="match_parent"
+                />
+        </LinearLayout>
 
 
-    <Button
-        android:id="@+id/btnCityLandmark"
+    </androidx.cardview.widget.CardView>
 
+
+
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_marginStart="@dimen/_12sdp"
-        android:layout_marginEnd="@dimen/_12sdp"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/_20ssp"
-        android:textStyle="bold"
-        android:text="المعالم" />
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardElevation="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_gravity="end"
+        android:layout_marginStart="@dimen/_24sdp"
+        android:layout_marginEnd="@dimen/_24sdp"
+        app:cardCornerRadius="@dimen/_8sdp"
+        xmlns:tools="http://schemas.android.com/tools">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/btnCityShuhadaa"              android:layout_width="@dimen/_200sdp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="@dimen/_20ssp"
+                android:layout_marginEnd="@dimen/_32sdp"
+                android:fontFamily="@font/breeserif_regular"
+                android:padding="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="@string/shuhadaa"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:background="@color/primary"
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="match_parent"
+                />
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/btnCityShuhadaa"
 
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_marginStart="@dimen/_12sdp"
-        android:layout_marginEnd="@dimen/_12sdp"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/_20ssp"
-        android:textStyle="bold"
-        android:text="الشهداء" />
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardElevation="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_gravity="end"
+        android:layout_marginStart="@dimen/_24sdp"
+        android:layout_marginEnd="@dimen/_24sdp"
+        app:cardCornerRadius="@dimen/_8sdp"
+        xmlns:tools="http://schemas.android.com/tools">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/btnCityShabea"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="@dimen/_20ssp"
+                android:layout_width="wrap_content"
+                android:layout_marginEnd="@dimen/_32sdp"
+                android:fontFamily="@font/breeserif_regular"
+                android:padding="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="@string/sity"                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:background="@color/primary"
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="match_parent"
+                />
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/btnCityShabea"
 
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_marginStart="@dimen/_12sdp"
-        android:layout_marginEnd="@dimen/_12sdp"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/_20ssp"
-        android:textStyle="bold"
-        android:text="شو قالت ستي" />
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardElevation="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_gravity="end"
+        android:layout_marginStart="@dimen/_24sdp"
+        android:layout_marginEnd="@dimen/_24sdp"
+        app:cardCornerRadius="@dimen/_8sdp"
+        xmlns:tools="http://schemas.android.com/tools">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/btnCityPost"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="@dimen/_20ssp"
+                android:layout_width="wrap_content"
+                android:layout_marginEnd="@dimen/_32sdp"
+                android:fontFamily="@font/breeserif_regular"
+                android:padding="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="@string/post"             />
+            <androidx.appcompat.widget.AppCompatButton
+                android:background="@color/primary"
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="match_parent"
+                />
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+    <!--  -->
+<!--    <Button-->
+<!--        android:id="@+id/btnCityPhoto"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_marginTop="@dimen/_16sdp"-->
+<!--        android:layout_marginStart="@dimen/_12sdp"-->
+<!--        android:layout_marginEnd="@dimen/_12sdp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textSize="@dimen/_20ssp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:text="صور" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btnCityFamily"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_marginStart="@dimen/_12sdp"-->
+<!--        android:layout_marginEnd="@dimen/_12sdp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textSize="@dimen/_20ssp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:text="اشهر العائلات" />-->
+
+
+<!--    <Button-->
+<!--        android:id="@+id/btnCityLandmark"-->
+
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_marginStart="@dimen/_12sdp"-->
+<!--        android:layout_marginEnd="@dimen/_12sdp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textSize="@dimen/_20ssp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:text="@string/landmark" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btnCityShuhadaa"-->
+
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_marginStart="@dimen/_12sdp"-->
+<!--        android:layout_marginEnd="@dimen/_12sdp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textSize="@dimen/_20ssp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:text="@string/shuhadaa" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btnCityShabea"-->
+
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_marginStart="@dimen/_12sdp"-->
+<!--        android:layout_marginEnd="@dimen/_12sdp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textSize="@dimen/_20ssp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:text="@string/sity" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btnCityPost"-->
+
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_marginStart="@dimen/_12sdp"-->
+<!--        android:layout_marginEnd="@dimen/_12sdp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textSize="@dimen/_20ssp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:text="@string/post" />-->
 </LinearLayout>
+</ScrollView>

@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="8dp"
+
+
+
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_8sdp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/layout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:gravity="end"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:orientation="horizontal">
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:gravity="center"-->
+            <!--                android:orientation="vertical">-->
+
+            <!--                <ImageView-->
+            <!--                    android:id="@+id/img_like"-->
+            <!--                    android:layout_width="@dimen/_25sdp"-->
+            <!--                    android:layout_height="@dimen/_20sdp"-->
+            <!--                    android:src="@drawable/ic_heart" />-->
+
+            <!--                <TextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:id="@+id/txt_numberOfLike"-->
+            <!--                    tools:text ="0"-->
+            <!--                    android:textSize="@dimen/_8ssp"-->
+            <!--                    />-->
+
+            <!--            </LinearLayout>-->
+            <TextView
+
+                android:id="@+id/txt_post_club_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="(نادي الاعلام)"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:textSize="@dimen/_12ssp"
+                />
+
+            <TextView
+                android:id="@+id/txt_post_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textAlignment="viewEnd"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold"
+                tools:text="هند"
+                />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image_post_user_photo"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginLeft="@dimen/_12sdp"
+                tools:src="@drawable/ic_launcher_background"
+
+
+                />
+
+
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/layout1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:orientation="horizontal">
+
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:gravity="center"-->
+            <!--                android:layout_marginStart="@dimen/_12sdp"-->
+            <!--                android:orientation="vertical">-->
+
+            <!--                <ImageView-->
+            <!--                    android:id="@+id/img_like"-->
+            <!--                    android:layout_width="@dimen/_25sdp"-->
+            <!--                    android:layout_height="@dimen/_20sdp"-->
+            <!--                    android:src="@drawable/ic_heart" />-->
+
+            <!--                <TextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:id="@+id/txt_numberOfLike"-->
+            <!--                    tools:text ="0"-->
+            <!--                    android:textSize="@dimen/_12ssp"-->
+            <!--                    />-->
+
+            <!--            </LinearLayout>-->
+
+            <TextView
+                android:id="@+id/txt_post_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_32sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_weight="2"
+                android:textAlignment="viewEnd"
+                tools:text="نص تعريف محتوى المنشور"
+                android:textColor="#292828"
+                android:textSize="@dimen/_14ssp"
+
+                />
+
+
+        </LinearLayout>
+
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/img_postImage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_200sdp"
+            app:layout_constraintTop_toBottomOf="@id/layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/_8sdp"
+            app:layout_constraintBottom_toTopOf="@id/layyy"
+            android:scaleType="fitXY"
+
+            android:layout_marginEnd="@dimen/_8sdp"
+
+            tools:src="@drawable/ic_launcher_background"
+            android:layout_marginBottom="4dp"
+            app:riv_corner_radius="16dp"
+            app:riv_mutate_background="true"
+
+            app:riv_oval="false"
+            />
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/img_postImage"
+            app:layout_constraintEnd_toEndOf="@id/img_postImage"
+            app:layout_constraintStart_toStartOf="@id/img_postImage"
+
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/img_postImage"
+            />
+
+        <LinearLayout
+            android:id="@+id/layyy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_12sdp"
+            app:layout_constraintTop_toBottomOf="@id/img_postImage"
+
+            >
+
+            <LinearLayout
+                android:id="@+id/layoyt_share"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginEnd="@dimen/_24sdp"
+
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txt_share"
+                    android:textColor="@color/primary"
+                    android:text ="مشاركة"
+                    android:textSize="@dimen/_12ssp"
+                    />
+                <ImageView
+                    android:id="@+id/img_share"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:src="@drawable/ic__643739_forward_next_right_share_turn_icon" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/linearComment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginEnd="@dimen/_24sdp"
+
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txt_numberOfComment"
+                    android:textColor="@color/primary"
+                    android:textSize="@dimen/_12ssp"
+                    />
+
+                <ImageView
+                    android:id="@+id/img_comment"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:padding="2dp"
+                    android:src="@drawable/ic__202260_bubble_chat_chatting_comment_message_icon" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:orientation="horizontal">
+
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txt_numberOfLike"
+                    android:textColor="@color/primary"
+                    android:text ="1 اعجاب"
+                    android:textSize="@dimen/_12ssp"
+                    />
+                <ImageView
+                    android:id="@+id/img_like"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:src="@drawable/ic_heart" />
+            </LinearLayout>
+
+
+
+
+
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>
+
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:orientation="vertical"-->
+<!--    android:background="@drawable/post_background"-->
+<!--    android:layout_margin="@dimen/_8sdp"-->
+<!--    android:layout_height="wrap_content">-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        >-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/txt_post_user_name"-->
+
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            tools:text="هند ابوشنب"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="@dimen/_18ssp"-->
+<!--            android:layout_marginTop="@dimen/_12sdp"-->
+<!--            android:layout_weight="3"-->
+<!--            android:textAlignment="viewEnd"-->
+
+<!--            />-->
+<!--        <com.makeramen.roundedimageview.RoundedImageView-->
+<!--            android:id="@+id/image_post_user_photo"-->
+<!--            android:layout_width="@dimen/_35sdp"-->
+<!--            android:layout_marginEnd="@dimen/_4sdp"-->
+<!--            android:layout_marginTop="@dimen/_4sdp"-->
+<!--            android:layout_height="@dimen/_35sdp"-->
+<!--            tools:src="@drawable/ic_launcher_background"-->
+<!--            android:background="@drawable/background_image"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            android:layout_marginStart="@dimen/_12sdp"-->
+
+<!--            app:riv_oval="true"-->
+<!--            />-->
+<!--    </LinearLayout>-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/txt_post_description"-->
+
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="@dimen/_12sdp"-->
+<!--        tools:text="القدس عاصمة فلسطين الابدية "-->
+<!--        android:layout_marginBottom="@dimen/_8sdp"-->
+<!--        android:fontFamily="@font/cairo_regular"-->
+<!--        android:textAlignment="viewEnd"-->
+<!--        android:textColor="@color/black"-->
+
+<!--        android:layout_marginEnd="@dimen/_46sdp"-->
+<!--        android:textSize="@dimen/_14ssp"-->
+
+
+<!--        />-->
+
+<!--    <com.makeramen.roundedimageview.RoundedImageView-->
+<!--        android:id="@+id/img_postImage"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="@dimen/_130sdp"-->
+
+<!--        android:scaleType="fitXY"-->
+<!--        android:layout_marginStart="@dimen/_12sdp"-->
+
+<!--        android:layout_marginEnd="@dimen/_12sdp"-->
+
+<!--        tools:src="@drawable/ic_launcher_background"-->
+<!--        android:layout_marginBottom="@dimen/_12sdp"-->
+<!--        app:riv_corner_radius="16dp"-->
+<!--        app:riv_mutate_background="true"-->
+<!--        app:riv_tile_mode="repeat"-->
+<!--        app:riv_oval="false"-->
+<!--        />-->
+<!--</LinearLayout>-->

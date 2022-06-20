@@ -7,10 +7,9 @@
     tools:context=".SplashActivity">
     
     <ImageView
-        android:layout_width="@dimen/_250sdp"
-        android:layout_height="@dimen/_250sdp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/palestine"
+        android:layout_width="@dimen/_300sdp"
+        android:layout_height="@dimen/_300sdp"
+        android:src="@drawable/logo_cityyt"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

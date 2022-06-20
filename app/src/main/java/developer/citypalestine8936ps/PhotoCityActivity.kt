@@ -30,6 +30,8 @@ class PhotoCityActivity : AppCompatActivity() {
        city  = intent.getSerializableExtra("cityObj") as City
 
         Log.e("hinddd" , city.id + "IIIIId")
+        getSupportActionBar()?.setTitle("Gallery");
+
         getAllPhoto()
 
     }

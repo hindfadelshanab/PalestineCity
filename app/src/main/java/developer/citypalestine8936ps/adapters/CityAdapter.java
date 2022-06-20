@@ -25,12 +25,6 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.CityViewHolder
     CityItemBinding binding;
     private List<City> cities;
     private Context context ;
-
-
-
-
-
-
     class CityViewHolder extends  RecyclerView.ViewHolder{
         CityViewHolder(CityItemBinding cityItemBinding){
             super(cityItemBinding.getRoot());
@@ -50,7 +44,6 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.CityViewHolder
         this.cities = cities;
         this.context=context;
     }
-
 
     @NonNull
     @Override

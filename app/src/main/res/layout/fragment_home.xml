@@ -6,22 +6,26 @@
     android:orientation="vertical"
     tools:context=".Fragment.HomeFragment">
 
-    <fragment
-        xmlns:map="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/map2"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_200sdp"
-     />
+
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cityRec"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/city_item"
+        tools:listitem="@layout/post_item"
+        android:visibility="gone"
+
 
 />
 
 
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_16sdp"
+
+        />
 </LinearLayout>

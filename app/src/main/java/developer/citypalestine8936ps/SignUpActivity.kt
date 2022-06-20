@@ -1,6 +1,6 @@
 package developer.citypalestine8936ps
 
-import android.R.attr.password
+import android.R
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -10,17 +10,23 @@ import android.util.Base64
 import android.util.Log
 import android.util.Patterns
 import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.tasks.OnCompleteListener
+import com.google.android.gms.tasks.OnFailureListener
+import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.QuerySnapshot
 import developer.citypalestine8936ps.databinding.ActivitySignUpBinding
+import developer.citypalestine8936ps.models.City
 import developer.citypalestine8936ps.utilites.Constants
 import developer.citypalestine8936ps.utilites.PreferenceManager
 import java.io.ByteArrayOutputStream
@@ -32,13 +38,81 @@ class SignUpActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignUpBinding
     private var encodedImage: String? = null
     private var preferenceManager: PreferenceManager? = null
-    val TAG ="SignUp"
+    val TAG = "SignUp"
+    var data: ArrayList<City> = ArrayList<City>()
+    lateinit var database: FirebaseFirestore
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
         preferenceManager = PreferenceManager(applicationContext)
+        database = FirebaseFirestore.getInstance()
+        getAllCity()
         setListener()
+    }
+
+    private fun getAllCity() {
+
+
+        var cityNames: ArrayList<String> = ArrayList()
+        database.collection(Constants.KEY_COLLECTION_CITY).get()
+            .addOnSuccessListener(OnSuccessListener<QuerySnapshot> { queryDocumentSnapshots ->
+                for (documentSnapshot in queryDocumentSnapshots) {
+                    val city: City = documentSnapshot.toObject(City::class.java)
+                    city.id = documentSnapshot.id
+
+                    data.add(city)
+                    cityNames.add(city.cityName)
+
+
+                }
+
+                val adapter: ArrayAdapter<City> = ArrayAdapter<City>(
+                    this,
+                    R.layout.simple_spinner_item, data
+                )
+                adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item)
+                binding.inputCity.setAdapter(adapter)
+
+
+                binding.inputCity.setOnItemSelectedListener(object : AdapterView.OnItemSelectedListener {
+                    override fun onItemSelected(
+                        parent: AdapterView<*>,
+                        view: View,
+                        position: Int,
+                        id: Long
+                    ) {
+                        val city: City = parent.selectedItem as City
+                        displayUserData(city)
+                    }
+
+                    override fun onNothingSelected(parent: AdapterView<*>?) {}
+                })
+
+//                //val areaSpinner = findViewById<View>(R.id.inputCity) as Spinner
+//                val areas = ArrayList<String>(cityNames)
+//                val areasAdapter =
+//                    ArrayAdapter(this, R.layout.simple_spinner_item, areas)
+//                areasAdapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item)
+//                binding.inputCity.adapter = areasAdapter
+            }).addOnFailureListener(OnFailureListener { e ->
+                Log.e("hind", e.message!!)
+            })
+
+
+    }
+    fun getSelectedUser(v: View?) {
+        val user: City = binding.inputCity.getSelectedItem() as City
+        displayUserData(user)
+    }
+
+    private fun displayUserData(city: City) {
+        val name: String = city.cityName
+        val age: Double = city.lng
+//        val mail: String = user.getMail()
+        val userData = "Name: $name\nAge: $age"
+        Toast.makeText(this, userData, Toast.LENGTH_LONG).show()
     }
 
     private fun setListener() {
@@ -67,7 +141,10 @@ class SignUpActivity : AppCompatActivity() {
         val mAuth = FirebaseAuth.getInstance()
 
 
-        mAuth.createUserWithEmailAndPassword(binding.inputEmail.text.toString(), binding.inputPassword.text.toString())
+        mAuth.createUserWithEmailAndPassword(
+            binding.inputEmail.text.toString(),
+            binding.inputPassword.text.toString()
+        )
             .addOnCompleteListener(this,
                 OnCompleteListener<AuthResult?> { task ->
                     if (task.isSuccessful) {
@@ -78,19 +155,25 @@ class SignUpActivity : AppCompatActivity() {
                         user[Constants.KEY_NAME] = binding.inputName.text.toString()
                         user[Constants.KEY_EMAIL] = binding.inputEmail.text.toString()
                         user[Constants.KEY_PASSWORD] = binding.inputPassword.text.toString()
-                        user[Constants.KEY_CITY] = binding.inputCity.text.toString()
+                        user[Constants.KEY_CITY] = binding.inputCity.selectedItem.toString()
                         user[Constants.KEY_IMAGE] = encodedImage!!
                         database.collection(Constants.KEY_COLLECTION_USERS)
                             .add(user)
                             .addOnSuccessListener { documentReference: DocumentReference ->
                                 loading(false)
                                 preferenceManager!!.putBoolean(Constants.KEY_IS_SIGNED_IN, true)
-                                preferenceManager!!.putString(Constants.KEY_USER_ID, documentReference.id)
-                                preferenceManager!!.putString(Constants.KEY_NAME, binding.inputName.text.toString())
+                                preferenceManager!!.putString(
+                                    Constants.KEY_USER_ID,
+                                    documentReference.id
+                                )
+                                preferenceManager!!.putString(
+                                    Constants.KEY_NAME,
+                                    binding.inputName.text.toString()
+                                )
                                 preferenceManager!!.putString(Constants.KEY_IMAGE, encodedImage)
 
-                                Log.e("hind","Sucees");
-                                Log.e("hind",documentReference.id);
+                                Log.e("hind", "Sucees");
+                                Log.e("hind", documentReference.id);
                                 val intent = Intent(applicationContext, MainActivity::class.java)
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
                                 startActivity(intent)
@@ -100,7 +183,7 @@ class SignUpActivity : AppCompatActivity() {
                                 showToast(e.message)
 
                             }
-                      //  updateUI(user)
+                        //  updateUI(user)
                     } else {
                         // If sign in fails, display a message to the user.
 
@@ -109,7 +192,7 @@ class SignUpActivity : AppCompatActivity() {
                             this, "Authentication failed.",
                             Toast.LENGTH_SHORT
                         ).show()
-                     //   updateUI(null)
+                        //   updateUI(null)
                     }
                 })
 
@@ -160,11 +243,12 @@ class SignUpActivity : AppCompatActivity() {
             binding.inputEmail.setError("Enter email")
 
             false
-        } else if (binding.inputCity.text.toString().trim().isEmpty()) {
-            showToast("Enter City")
-            binding.inputCity.setError("Enter City")
-
-            false
+//        } else if (binding.inputCity.text.toString().trim().isEmpty()) {
+//            showToast("Enter City")
+//            binding.inputCity.setError("Enter City")
+//
+//            false
+//        }
         } else if (!Patterns.EMAIL_ADDRESS.matcher(binding.inputEmail.text.toString()).matches()) {
             showToast("Enter valid email")
             binding.inputEmail.setError("Enter valid email")

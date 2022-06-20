@@ -29,6 +29,7 @@ class FamousFamiliesActivity : AppCompatActivity() {
       var  shuadaa: Boolean = false
       var  family: Boolean = false
       var  landmark: Boolean = false
+      var  tradition: Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFamousFamiliesBinding.inflate(layoutInflater)
@@ -38,6 +39,7 @@ class FamousFamiliesActivity : AppCompatActivity() {
         shuadaa  = intent.getBooleanExtra("shuadaa" , false)
         family  = intent.getBooleanExtra("family" , false)
         landmark  = intent.getBooleanExtra("landmark" , false)
+        tradition  = intent.getBooleanExtra("tradition" , false)
         if (shuadaa !=null && shuadaa){
             getAllShuahaa()
             binding.txt.setText( "${city.cityName} شهداء")
@@ -54,6 +56,7 @@ class FamousFamiliesActivity : AppCompatActivity() {
         Log.e("hinddd" , city.id + "IIIIId")
 
     }
+
 
     private fun getAllShuahaa() {
         database.collection(Constants.KEY_COLLECTION_CITY).document(city.id).get()

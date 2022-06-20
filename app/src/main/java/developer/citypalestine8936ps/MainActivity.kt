@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
 
         loadFragment(HomeFragment())
         //   bottomNav = nav_view
+        getSupportActionBar()?.setTitle("بلدنا");
 
         binding.bottomNav.setOnNavigationItemSelectedListener setOnNavigationItemReselectedListener@{it
 

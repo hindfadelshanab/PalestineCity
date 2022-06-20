@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginTop="@dimen/_8sdp"
     android:padding="@dimen/_4sdp">
 
@@ -12,29 +13,58 @@
         android:layout_height="@dimen/_25sdp"
         android:background="@drawable/background_image"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="@id/textMessage"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintBottom_toBottomOf="@id/card_view"
         app:layout_constraintStart_toStartOf="parent"
         app:riv_oval="true" />
 
-    <TextView
-        android:id="@+id/textMessage"
+    <LinearLayout
+        android:id="@+id/card_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_4sdp"
-        android:layout_marginLeft="@dimen/_4sdp"
-        android:background="@drawable/background_received_message"
-        android:paddingStart="@dimen/_12sdp"
-        android:paddingBottom="@dimen/_8sdp"
-        android:paddingTop="@dimen/_8sdp"
-        android:paddingEnd="@dimen/_12sdp"
-        app:layout_constraintWidth_max="wrap"
-        android:textColor="@color/white"
-        android:textSize="@dimen/_13sdp"
+        android:orientation="vertical"
         app:layout_constraintStart_toEndOf="@id/imageProfile"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.75"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:background="@drawable/background_received_message"
+        >
 
-        />
+            <TextView
+                android:id="@+id/textMessage"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_12sdp"
+                app:layout_constraintWidth_max="wrap"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sdp"
+
+                tools:text="Hiiii"
+                app:layout_constraintWidth_percent="0.75"
+
+                />
+
+        <ImageView
+            android:id="@+id/message_image"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:scaleType="fitXY"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:visibility="gone"
+            tools:src="@drawable/ic_launcher_background"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:layout_gravity="start"
+            />
+
+
+        </LinearLayout>
+
+
 
     <TextView
         android:id="@+id/textDateTime"
@@ -43,8 +73,8 @@
         android:layout_marginTop="@dimen/_4sdp"
         android:textColor="@color/secondary_text"
         android:textSize="@dimen/_8sdp"
-        app:layout_constraintStart_toStartOf="@id/textMessage"
-        app:layout_constraintTop_toBottomOf="@id/textMessage"
+        app:layout_constraintStart_toStartOf="@id/card_view"
+        app:layout_constraintTop_toBottomOf="@id/card_view"
 
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

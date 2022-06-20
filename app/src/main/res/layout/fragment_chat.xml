@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    android:background="@color/primary"
+    android:background="@color/white"
     >
 
     <com.makeramen.roundedimageview.RoundedImageView
@@ -14,6 +14,7 @@
         android:layout_height="@dimen/_30sdp"
         android:layout_marginStart="@dimen/_16sdp"
         android:layout_marginLeft="@dimen/_16sdp"
+
         android:layout_marginTop="@dimen/_12sdp"
         android:background="@drawable/background_icon"
         android:scaleType="centerCrop"
@@ -33,7 +34,7 @@
         android:background="@drawable/background_icon"
         android:padding="@dimen/_6sdp"
         android:src="@drawable/ic_logout"
-        android:tint="@color/white"
+        android:tint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,7 +49,7 @@
         android:maxLines="1"
         android:textAlignment="center"
 
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="@dimen/_14sdp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/imageProfile"
@@ -61,7 +62,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_12sdp"
         android:background="@drawable/background_content_bottom"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageProfile">

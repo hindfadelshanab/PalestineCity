@@ -13,6 +13,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import developer.citypalestine8936ps.CityActivity.FamousFamiliesActivity
 import developer.citypalestine8936ps.CityActivity.PopularProverbsActivity
+import developer.citypalestine8936ps.CityActivity.PostActivity
 import developer.citypalestine8936ps.databinding.ActivityMapsBinding
 import developer.citypalestine8936ps.models.City
 
@@ -63,9 +64,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             intent.putExtra("landmark" , true)
             startActivity(intent)
 
+        })
+        binding.btnCityPost.setOnClickListener(View.OnClickListener {
+            //   var  city:City = intent.getSerializableExtra("city") as City
+            var intent = Intent(this , PostActivity::class.java)
+            intent.putExtra("cityObj" , city)
+            startActivity(intent)
 
         })
-
         binding.btnCityShabea.setOnClickListener(View.OnClickListener {
             //   var  city:City = intent.getSerializableExtra("city") as City
             var intent = Intent(this , PopularProverbsActivity::class.java)
@@ -88,8 +94,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             val sydney = LatLng(city.lat, city.lng)
             mMap.addMarker(MarkerOptions().position(sydney).title(city.cityName))
             mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
-            mMap.moveCamera(CameraUpdateFactory.zoomTo(6f))
-
+            mMap.moveCamera(CameraUpdateFactory.zoomTo(8f))
         }
 
         // Add a marker in Sydney and move the camera

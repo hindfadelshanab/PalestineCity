@@ -17,5 +17,13 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="link1">"https://www.alhadath.ps/"</string>
+    <string name="link2">"https://www.noor-book.com/"</string>
+    <string name="link3">"https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B5%D9%81%D8%AD%D8%A9_%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9"</string>
+    <string name="post">المنشورات</string>
+    <string name="sity">شو قالت ستي</string>
+    <string name="shuhadaa">الشهداء</string>
+    <string name="landmark">المعالم</string>
+
 
 </resources>
