@@ -62,7 +62,7 @@ class BookActivity : AppCompatActivity() {
                             bookType.books?.addAll(dataBook)
                             data.add(bookType)
                             Log.e("hinbbb", "${bookType.books!!.size}sss")
-                            adapter = BookTypeAdpter(data)
+                            adapter = BookTypeAdpter(data, applicationContext)
                             binding.bookRec.adapter = (adapter)
 //                            binding.progressbarBook.visibility=View.GONE
 //                            binding.bookRec.visibility=View.VISIBLE

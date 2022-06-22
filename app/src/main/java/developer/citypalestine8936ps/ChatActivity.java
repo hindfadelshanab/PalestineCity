@@ -1,19 +1,37 @@
 package developer.citypalestine8936ps;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuBuilder;
+import androidx.appcompat.view.menu.MenuPopupHelper;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -33,8 +51,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -68,8 +89,10 @@ public class ChatActivity extends BaseActivity {
     private FirebaseFirestore database;
     private String conversationId = null;
     private Boolean isReceiverAvailable = false;
-    private Uri encodedImage= null ;
-    private int RESULT_LOAD_IMG =100;
+    private Uri encodedImage = null;
+    private int RESULT_LOAD_IMG = 1100;
+    private static final int CAMERA_REQUEST = 1888;
+    private static final int MY_CAMERA_PERMISSION_CODE = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,11 +112,11 @@ public class ChatActivity extends BaseActivity {
     }
 
     private Bitmap getBitmapFromEncodedString(String encodedImage) {
-        if (encodedImage !=null) {
+        if (encodedImage != null) {
             byte[] bytes = Base64.decode(encodedImage, Base64.DEFAULT);
             return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
 
-        }else {
+        } else {
             return null;
         }
     }
@@ -105,43 +128,151 @@ public class ChatActivity extends BaseActivity {
         binding.chatRecyclerView.setAdapter(chatAdapter);
         database = FirebaseFirestore.getInstance();
         binding.layoutPhoto.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("RestrictedApi")
             @Override
             public void onClick(View view) {
-                Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
-                photoPickerIntent.setType("image/*");
-                startActivityForResult(photoPickerIntent, RESULT_LOAD_IMG);
 
-                Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                showPopupDialog(binding.layoutPhoto);
 
 
             }
         });
 
     }
-    @Override
-    protected void onActivityResult(int reqCode, int resultCode, Intent data) {
-        super.onActivityResult(reqCode, resultCode, data);
 
-        if (resultCode == RESULT_OK) {
-            try {
-                final Uri imageUri = data.getData();
-                final InputStream imageStream = getContentResolver().openInputStream(imageUri);
-                final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
-              binding.imageInChat.setImageBitmap(selectedImage);
-                encodedImage = imageUri;
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-                Toast.makeText(ChatActivity.this, "Something went wrong", Toast.LENGTH_LONG).show();
+    private void showPopupDialog(FrameLayout imageView) {
+
+        PopupMenu popupMenu = new PopupMenu(this, imageView);
+        try {
+            Field[] fields = popupMenu.getClass().getDeclaredFields();
+            for (Field field : fields) {
+                if ("mPopup".equals(field.getName())) {
+                    field.setAccessible(true);
+                    Object menuPopupHelper = field.get(popupMenu);
+                    Class<?> classPopupHelper = Class.forName(menuPopupHelper.getClass().getName());
+                    Method setForceIcons = classPopupHelper.getMethod("setForceShowIcon", boolean.class);
+                    setForceIcons.invoke(menuPopupHelper, true);
+                    break;
+                }
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-        }else {
-            Toast.makeText(ChatActivity.this, "You haven't picked Image",Toast.LENGTH_LONG).show();
+        //inflate menu
+        popupMenu.getMenuInflater().inflate(R.menu.photo_menu, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                if (menuItem.getItemId() == R.id.action_gallery) {
+                    Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
+                    photoPickerIntent.setType("image/*");
+                    startActivityForResult(photoPickerIntent, RESULT_LOAD_IMG);
+
+                    Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                    launchSomeActivity.launch(intent);
+                } else if (menuItem.getItemId() == R.id.action_camer) {
+                    dispatchTakePictureIntent();
+
+                }
+
+                return true;
+            }
+        });
+
+        popupMenu.show();
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    private void dispatchTakePictureIntent() {
+
+        if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.CAMERA}, MY_CAMERA_PERMISSION_CODE);
+        } else {
+            Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(cameraIntent, CAMERA_REQUEST);
+        }
+
+
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == MY_CAMERA_PERMISSION_CODE) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(this, "camera permission granted", Toast.LENGTH_LONG).show();
+                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(cameraIntent, CAMERA_REQUEST);
+            } else {
+                Toast.makeText(this, "camera permission denied", Toast.LENGTH_LONG).show();
+            }
         }
     }
 
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            if (requestCode == CAMERA_REQUEST) {
+                Bitmap photo = null;
+                if (data != null) {
+                    photo = (Bitmap) data.getExtras().get("data");
+                    encodedImage = getImageUri(ChatActivity.this, photo);
+                    Log.e("imagee", encodedImage + "lll66l");
+                    Log.e("imagee", data.getExtras().get("data") + "lll6l");
+                }
+                binding.imageInChat.setImageBitmap(photo);
+            }
+
+        }
+
+    }
+
+
+
+    public Uri getImageUri(Context inContext, Bitmap inImage) {
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
+        return Uri.parse(path);
+    }
+
+
+
+    ActivityResultLauncher<Intent> launchSomeActivity = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Intent data = result.getData();
+                        if (data.getData() != null) {
+                            Uri imageUri = data.getData();
+                            Bitmap photo = null;
+
+                            InputStream inputStream = null;
+                            try {
+                                inputStream = getContentResolver().openInputStream(imageUri);
+                                Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+
+                                binding.imageInChat.setImageBitmap(bitmap);
+                            } catch (FileNotFoundException e) {
+                                e.printStackTrace();
+                            }
+                            encodedImage = imageUri;
+
+                        }
+                    }
+                }
+            });
+
+
     private void sendMessage(Uri fileUri , String txt) {
-      //  Toast.makeText(ChatActivity.this, "uir file :" + fileUri,Toast.LENGTH_LONG).show();
 
 
         if (fileUri != null) {
@@ -158,11 +289,9 @@ public class ChatActivity extends BaseActivity {
                                 @Override
                                 public void onSuccess(Uri uri) {
                                     String imageUrl = uri.toString();
-                                    //createNewPost(imageUrl);
-                             //       Toast.makeText(ChatActivity.this, "Image Uploaded Successfully", Toast.LENGTH_SHORT).show();
+
                                     Task<Uri> downloadUri = taskSnapshot.getStorage().getDownloadUrl();
-                              //      Toast.makeText(ChatActivity.this, "downloadUri :" + downloadUri.toString(),Toast.LENGTH_LONG).show();
-                                  //  Toast.makeText(ChatActivity.this, "input :" +binding.inputMessage.getText().toString(),Toast.LENGTH_LONG).show();
+
                                     HashMap<String, Object> message = new HashMap<>();
                                     message.put(Constants.KEY_SENDER_ID, preferenceManager.getString(Constants.KEY_USER_ID));
                                     message.put(Constants.KEY_RECEIVER_ID, receiverUser.id);
@@ -188,15 +317,7 @@ public class ChatActivity extends BaseActivity {
                                 }
                             });
 
-                          //  taskSnapshot.getStorage().getDownloadUrl()
 
-//                            if (downloadUri.isSuccessful()) {
-//                                String generatedFilePath = downloadUri.getResult().toString();
-//                              //  uriimage = downloadUri.getResult().toString();
-//
-//
-//                                System.out.println("## Stored path is " + generatedFilePath);
-//                            }
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
@@ -449,7 +570,7 @@ public class ChatActivity extends BaseActivity {
             conversationId = documentSnapshot.getId();
         }
     };
-//
+
 //    private   pickImage = registerForActivityResult(
 //            ActivityResultContracts.StartActivityForResult()
 //    ) { result: ActivityResult ->

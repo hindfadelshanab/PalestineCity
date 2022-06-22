@@ -1,6 +1,7 @@
 package developer.citypalestine8936ps.adapters
 
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +12,7 @@ import developer.citypalestine8936ps.R
 import developer.citypalestine8936ps.models.BookType
 
 
-class BookTypeAdpter(private val mList: List<BookType>) :
+class BookTypeAdpter(private val mList: List<BookType> ,private val context: Context) :
     RecyclerView.Adapter<BookTypeAdpter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -40,7 +41,7 @@ class BookTypeAdpter(private val mList: List<BookType>) :
                 itemsViewModel.books!!.size
             );
 
-        val bookAdpter = BookAdpter(itemsViewModel.books!!)
+        val bookAdpter = BookAdpter(itemsViewModel.books!!, context)
         holder.recycleview
             .setLayoutManager(layoutManager)
         holder.recycleview

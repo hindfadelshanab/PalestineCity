@@ -1,20 +1,21 @@
 package developer.citypalestine8936ps.adapters
 
 
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import developer.citypalestine8936ps.R
 import developer.citypalestine8936ps.models.Book
-import developer.citypalestine8936ps.models.BookType
 
 
-class BookAdpter(private val mList: List<Book>) :
+class BookAdpter(private val mList: List<Book> , private val  context:Context) :
     RecyclerView.Adapter<BookAdpter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -31,6 +32,13 @@ class BookAdpter(private val mList: List<Book>) :
         val itemsViewModel = mList[position]
         holder.textViewName.setText(itemsViewModel.bookName)
         Picasso.get().load(itemsViewModel.bookPhoto).into(holder.imageview)
+        holder.itemView.setOnClickListener(View.OnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.setDataAndType(Uri.parse(itemsViewModel.bookUrl), "application/pdf")
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            context.startActivity(intent)
+
+        })
 
 
     }
