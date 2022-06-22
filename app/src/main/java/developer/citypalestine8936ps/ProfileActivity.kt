@@ -10,6 +10,7 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
+import com.squareup.picasso.Picasso
 import developer.citypalestine8936ps.databinding.ActivityProfileBinding
 import developer.citypalestine8936ps.models.User
 import developer.citypalestine8936ps.utilites.Constants
@@ -39,11 +40,12 @@ class ProfileActivity : AppCompatActivity() {
 
 
         getUserInfo(preferenceManager.getString(Constants.KEY_USER_ID))
-
-        val bytes: ByteArray =
-            Base64.decode(preferenceManager.getString(Constants.KEY_IMAGE), Base64.DEFAULT)
-        val bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
-        binding.profileImage.setImageBitmap(bitmap)
+        Picasso.get().load(preferenceManager.getString(Constants.KEY_IMAGE))
+            .into(binding.profileImage)
+//        val bytes: ByteArray =
+//            Base64.decode(preferenceManager.getString(Constants.KEY_IMAGE), Base64.DEFAULT)
+//        val bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
+//        binding.profileImage.setImageBitmap(bitmap)
         binding.txtSignOut.setOnClickListener {
             Toast.makeText(this, "signing out ....", Toast.LENGTH_LONG).show();
             val database = FirebaseFirestore.getInstance()

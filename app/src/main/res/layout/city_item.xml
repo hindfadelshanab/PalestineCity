@@ -15,10 +15,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_25sdp"
         android:src="@drawable/location_2"
-        android:paddingStart="32sp"
         android:layout_gravity="center"
         android:layout_marginStart="@dimen/_12sdp"
         app:tint="@color/white" />

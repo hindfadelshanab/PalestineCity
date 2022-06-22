@@ -17,13 +17,14 @@
         android:gravity="center_horizontal"
 
         >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
             android:layout_marginTop="@dimen/_40sdp"
             android:textStyle="bold"
             android:textSize="@dimen/_18sdp"
             android:text="@string/welcome_backe"
+            android:src="@drawable/logo_cityyt"
             android:textColor="@color/primary_text"
             />
 
@@ -33,6 +34,7 @@
             android:layout_marginTop="@dimen/_4sdp"
             android:textStyle="bold"
             android:textSize="@dimen/_12sdp"
+
             android:text="@string/login_to_continue"
             android:textColor="@color/secondary_text"
             />

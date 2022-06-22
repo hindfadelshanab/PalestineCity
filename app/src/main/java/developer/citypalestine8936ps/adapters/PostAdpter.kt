@@ -99,6 +99,7 @@ class PostAdpter(private val mList: List<Post>, var context: FragmentActivity?
             post.cityId = itemsViewModel.cityId
             post.numberOfComment = itemsViewModel.numberOfComment
             post.numberOfNum = itemsViewModel.likeBy!!.size
+            post.userImage = itemsViewModel.userImage
 
 
             db.collection(Constants.KEY_COLLECTION_CITY)
@@ -181,14 +182,14 @@ class PostAdpter(private val mList: List<Post>, var context: FragmentActivity?
 
 
 
-//        Picasso.get()
-//            .load(itemsViewModel.userImage)
-//            .into(holder.imageViewUser)
-
-        val bytes: ByteArray =
-            Base64.decode(userImage, Base64.DEFAULT)
-        val bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
-        holder.imageViewUser.setImageBitmap(bitmap)
+        Picasso.get()
+            .load(itemsViewModel.userImage)
+            .into(holder.imageViewUser)
+//
+//        val bytes: ByteArray =
+//            Base64.decode(userImage, Base64.DEFAULT)
+//        val bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
+//        holder.imageViewUser.setImageBitmap(bitmap)
     }
 
     override fun getItemCount(): Int {

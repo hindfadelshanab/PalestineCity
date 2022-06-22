@@ -4,6 +4,7 @@ import android.R
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Base64
@@ -25,18 +26,22 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.UploadTask
 import developer.citypalestine8936ps.databinding.ActivitySignUpBinding
 import developer.citypalestine8936ps.models.City
 import developer.citypalestine8936ps.utilites.Constants
 import developer.citypalestine8936ps.utilites.PreferenceManager
 import java.io.ByteArrayOutputStream
 import java.io.FileNotFoundException
+import java.util.*
 
 
 class SignUpActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignUpBinding
-    private var encodedImage: String? = null
+  //  private var encodedImage: String? = null
+    private var encodedImage: Uri? = null
     private var preferenceManager: PreferenceManager? = null
     val TAG = "SignUp"
     var data: ArrayList<City> = ArrayList<City>()
@@ -67,28 +72,29 @@ class SignUpActivity : AppCompatActivity() {
 
 
                 }
-
-                val adapter: ArrayAdapter<City> = ArrayAdapter<City>(
+                val adapter: ArrayAdapter<String> = ArrayAdapter<String>(
                     this,
-                    R.layout.simple_spinner_item, data
+                    R.layout.simple_spinner_item,
+                    cityNames
                 )
+
                 adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item)
                 binding.inputCity.setAdapter(adapter)
 
 
-                binding.inputCity.setOnItemSelectedListener(object : AdapterView.OnItemSelectedListener {
-                    override fun onItemSelected(
-                        parent: AdapterView<*>,
-                        view: View,
-                        position: Int,
-                        id: Long
-                    ) {
-                        val city: City = parent.selectedItem as City
-                        displayUserData(city)
-                    }
-
-                    override fun onNothingSelected(parent: AdapterView<*>?) {}
-                })
+//                binding.inputCity.setOnItemSelectedListener(object : AdapterView.OnItemSelectedListener {
+//                    override fun onItemSelected(
+//                        parent: AdapterView<*>,
+//                        view: View,
+//                        position: Int,
+//                        id: Long
+//                    ) {
+//                    val city: String = parent.selectedItem.toString()
+//                        displayUserData(cityNames[position])
+//                    }
+//
+//                    override fun onNothingSelected(parent: AdapterView<*>?) {}
+//                })
 
 //                //val areaSpinner = findViewById<View>(R.id.inputCity) as Spinner
 //                val areas = ArrayList<String>(cityNames)
@@ -110,7 +116,6 @@ class SignUpActivity : AppCompatActivity() {
     private fun displayUserData(city: City) {
         val name: String = city.cityName
         val age: Double = city.lng
-//        val mail: String = user.getMail()
         val userData = "Name: $name\nAge: $age"
         Toast.makeText(this, userData, Toast.LENGTH_LONG).show()
     }
@@ -120,9 +125,10 @@ class SignUpActivity : AppCompatActivity() {
         binding.textSignIn.setOnClickListener { view -> onBackPressed() }
         binding.buttonSignUp.setOnClickListener { view ->
             if (isValidSignUpDetails() == true) {
-                signUp()
+                signUp(encodedImage!!)
             }
         }
+
         binding.layoutImage.setOnClickListener { view ->
             val intent =
                 Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
@@ -135,66 +141,134 @@ class SignUpActivity : AppCompatActivity() {
         Toast.makeText(applicationContext, message, Toast.LENGTH_LONG).show()
     }
 
-    private fun signUp() {
-        loading(true)
+    private fun signUp(fileUri: Uri) {
         val database = FirebaseFirestore.getInstance()
         val mAuth = FirebaseAuth.getInstance()
+        loading(true)
 
+        if (fileUri !=null) {
+            val fileName = UUID.randomUUID().toString() + ".jpg"
+            val refStorage = FirebaseStorage.getInstance().reference.child("images/$fileName")
+            refStorage.putFile(fileUri)
+                .addOnSuccessListener(OnSuccessListener<UploadTask.TaskSnapshot> { taskSnapshot ->
+                    taskSnapshot.storage.downloadUrl.addOnSuccessListener {
+                        var imageUrl = it.toString()
+                        mAuth.createUserWithEmailAndPassword(
+                            binding.inputEmail.text.toString(),
+                            binding.inputPassword.text.toString()
+                        )
+                            .addOnCompleteListener(this,
+                                OnCompleteListener<AuthResult?> { task ->
+                                    if (task.isSuccessful) {
+                                        // Sign in success, update UI with the signed-in user's information
+                                        Log.d(TAG, "createUserWithEmail:success")
+                                        val currentUser: FirebaseUser? = mAuth.getCurrentUser()
+                                        val user = HashMap<String, Any>()
+                                        user[Constants.KEY_NAME] = binding.inputName.text.toString()
+                                        user[Constants.KEY_EMAIL] = binding.inputEmail.text.toString()
+                                        user[Constants.KEY_PASSWORD] = binding.inputPassword.text.toString()
+                                        user[Constants.KEY_CITY] = binding.inputCity.selectedItem.toString()
+                                        user[Constants.KEY_IMAGE] = imageUrl!!
+                                        database.collection(Constants.KEY_COLLECTION_USERS)
+                                            .add(user)
+                                            .addOnSuccessListener { documentReference: DocumentReference ->
+                                                loading(false)
+                                                preferenceManager!!.putBoolean(Constants.KEY_IS_SIGNED_IN, true)
+                                                preferenceManager!!.putString(
+                                                    Constants.KEY_USER_ID,
+                                                    documentReference.id
+                                                )
+                                                preferenceManager!!.putString(
+                                                    Constants.KEY_NAME,
+                                                    binding.inputName.text.toString()
+                                                )
+                                                preferenceManager!!.putString(Constants.KEY_IMAGE, imageUrl.toString())
 
-        mAuth.createUserWithEmailAndPassword(
-            binding.inputEmail.text.toString(),
-            binding.inputPassword.text.toString()
-        )
-            .addOnCompleteListener(this,
-                OnCompleteListener<AuthResult?> { task ->
-                    if (task.isSuccessful) {
-                        // Sign in success, update UI with the signed-in user's information
-                        Log.d(TAG, "createUserWithEmail:success")
-                        val currentUser: FirebaseUser? = mAuth.getCurrentUser()
-                        val user = HashMap<String, Any>()
-                        user[Constants.KEY_NAME] = binding.inputName.text.toString()
-                        user[Constants.KEY_EMAIL] = binding.inputEmail.text.toString()
-                        user[Constants.KEY_PASSWORD] = binding.inputPassword.text.toString()
-                        user[Constants.KEY_CITY] = binding.inputCity.selectedItem.toString()
-                        user[Constants.KEY_IMAGE] = encodedImage!!
-                        database.collection(Constants.KEY_COLLECTION_USERS)
-                            .add(user)
-                            .addOnSuccessListener { documentReference: DocumentReference ->
-                                loading(false)
-                                preferenceManager!!.putBoolean(Constants.KEY_IS_SIGNED_IN, true)
-                                preferenceManager!!.putString(
-                                    Constants.KEY_USER_ID,
-                                    documentReference.id
-                                )
-                                preferenceManager!!.putString(
-                                    Constants.KEY_NAME,
-                                    binding.inputName.text.toString()
-                                )
-                                preferenceManager!!.putString(Constants.KEY_IMAGE, encodedImage)
+                                                Log.e("hind", "Sucees");
+                                                Log.e("hind", documentReference.id);
+                                                val intent = Intent(applicationContext, MainActivity::class.java)
+                                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                                                startActivity(intent)
+                                            }
+                                            .addOnFailureListener { e: Exception ->
+                                                loading(false)
+                                                showToast(e.message)
 
-                                Log.e("hind", "Sucees");
-                                Log.e("hind", documentReference.id);
-                                val intent = Intent(applicationContext, MainActivity::class.java)
-                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-                                startActivity(intent)
-                            }
-                            .addOnFailureListener { e: Exception ->
-                                loading(false)
-                                showToast(e.message)
+                                            }
+                                        //  updateUI(user)
+                                    } else {
+                                        // If sign in fails, display a message to the user.
 
-                            }
-                        //  updateUI(user)
-                    } else {
-                        // If sign in fails, display a message to the user.
-
-                        Log.w(TAG, "createUserWithEmail:failure", task.exception)
-                        Toast.makeText(
-                            this, "Authentication failed.",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                        //   updateUI(null)
+                                        Log.w(TAG, "createUserWithEmail:failure", task.exception)
+                                        Toast.makeText(
+                                            this, "Authentication failed.",
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                        //   updateUI(null)
+                                    }
+                                })
                     }
-                })
+                });
+
+        }else{
+
+        }
+
+
+//        mAuth.createUserWithEmailAndPassword(
+//            binding.inputEmail.text.toString(),
+//            binding.inputPassword.text.toString()
+//        )
+//            .addOnCompleteListener(this,
+//                OnCompleteListener<AuthResult?> { task ->
+//                    if (task.isSuccessful) {
+//                        // Sign in success, update UI with the signed-in user's information
+//                        Log.d(TAG, "createUserWithEmail:success")
+//                        val currentUser: FirebaseUser? = mAuth.getCurrentUser()
+//                        val user = HashMap<String, Any>()
+//                        user[Constants.KEY_NAME] = binding.inputName.text.toString()
+//                        user[Constants.KEY_EMAIL] = binding.inputEmail.text.toString()
+//                        user[Constants.KEY_PASSWORD] = binding.inputPassword.text.toString()
+//                        user[Constants.KEY_CITY] = binding.inputCity.selectedItem.toString()
+//                        user[Constants.KEY_IMAGE] = encodedImage!!
+//                        database.collection(Constants.KEY_COLLECTION_USERS)
+//                            .add(user)
+//                            .addOnSuccessListener { documentReference: DocumentReference ->
+//                                loading(false)
+//                                preferenceManager!!.putBoolean(Constants.KEY_IS_SIGNED_IN, true)
+//                                preferenceManager!!.putString(
+//                                    Constants.KEY_USER_ID,
+//                                    documentReference.id
+//                                )
+//                                preferenceManager!!.putString(
+//                                    Constants.KEY_NAME,
+//                                    binding.inputName.text.toString()
+//                                )
+//                                preferenceManager!!.putString(Constants.KEY_IMAGE, encodedImage)
+//
+//                                Log.e("hind", "Sucees");
+//                                Log.e("hind", documentReference.id);
+//                                val intent = Intent(applicationContext, MainActivity::class.java)
+//                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+//                                startActivity(intent)
+//                            }
+//                            .addOnFailureListener { e: Exception ->
+//                                loading(false)
+//                                showToast(e.message)
+//
+//                            }
+//                        //  updateUI(user)
+//                    } else {
+//                        // If sign in fails, display a message to the user.
+//
+//                        Log.w(TAG, "createUserWithEmail:failure", task.exception)
+//                        Toast.makeText(
+//                            this, "Authentication failed.",
+//                            Toast.LENGTH_SHORT
+//                        ).show()
+//                        //   updateUI(null)
+//                    }
+//                })
 
     }
 
@@ -220,7 +294,7 @@ class SignUpActivity : AppCompatActivity() {
                     val bitmap = BitmapFactory.decodeStream(inputStream)
                     binding.imageProfile.setImageBitmap(bitmap)
                     binding.textAddImage.visibility = View.GONE
-                    encodedImage = encodImage(bitmap)
+                    encodedImage = imageUri
                 } catch (e: FileNotFoundException) {
                     e.printStackTrace()
                 }

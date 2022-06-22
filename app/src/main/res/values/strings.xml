@@ -1,18 +1,18 @@
 <resources>
-    <string name="app_name">CityPalestine</string>
+    <string name="app_name">بلدنا</string>
     <string name="welcome_backe">Welcome Back !</string>
-    <string name="login_to_continue">Login to continue</string>
-    <string name="email">Email</string>
-    <string name="password">Password</string>
-    <string name="sign_in">Sign In</string>
-    <string name="create_new_account">Create New Account</string>
+    <string name="login_to_continue">تسجيل الدخول</string>
+    <string name="email">الايميل</string>
+    <string name="password">كلمة المرور</string>
+    <string name="sign_in">تسجيل الدخول</string>
+    <string name="create_new_account">إنشاء حساب جديد</string>
     <string name="add_image">Add image</string>
-    <string name="name">Name</string>
-    <string name="confirm_password">Confirm Password</string>
-    <string name="sign_up">Sign Up</string>
-    <string name="type_a_message">Type a message</string>
+    <string name="name">الاسم</string>
+    <string name="confirm_password">تاكيد كلمة المرور</string>
+    <string name="sign_up">تسجيل</string>
+    <string name="type_a_message">اكتب رسالة</string>
     <string name="select_user">Select user</string>
-    <string name="forget_password">Forget Password</string>
+    <string name="forget_password">نسيت كلمة المرور</string>
     <string name="city">City</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

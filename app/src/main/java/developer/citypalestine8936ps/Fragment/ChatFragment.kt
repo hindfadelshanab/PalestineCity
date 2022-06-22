@@ -26,6 +26,7 @@ import developer.citypalestine8936ps.utilites.PreferenceManager
 import java.util.*
 import kotlin.Comparator
 import com.google.firebase.firestore.EventListener
+import com.squareup.picasso.Picasso
 import developer.citypalestine8936ps.databinding.FragmentChatBinding
 
 
@@ -188,10 +189,12 @@ class ChatFragment : Fragment(), ConversationListener {
 
     private fun loadUserDetails() {
         binding.textName.setText(preferenceManager.getString(Constants.KEY_NAME))
-        val bytes: ByteArray =
-            Base64.decode(preferenceManager.getString(Constants.KEY_IMAGE), Base64.DEFAULT)
-        val bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
-        binding.imageProfile.setImageBitmap(bitmap)
+//        val bytes: ByteArray =
+//            Base64.decode(preferenceManager.getString(Constants.KEY_IMAGE), Base64.DEFAULT)
+//        val bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
+//        binding.imageProfile.setImageBitmap(bitmap)
+        Picasso.get().load(preferenceManager.getString(Constants.KEY_IMAGE))
+            .into(binding.imageProfile)
     }
 
     private fun updateToken(token: String) {
