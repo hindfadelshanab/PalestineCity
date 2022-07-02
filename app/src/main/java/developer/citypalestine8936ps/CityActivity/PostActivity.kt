@@ -287,5 +287,7 @@ class PostActivity : AppCompatActivity()  ,PostListener{
         startActivity(intent)
     }
 
-
+    override fun onClickLike(post: Post) {
+        TODO("Not yet implemented")
+    }
 }

@@ -8,36 +8,29 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
-import com.google.android.gms.tasks.OnFailureListener
-import com.google.android.gms.tasks.OnSuccessListener
-import com.google.firebase.firestore.DocumentId
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.QuerySnapshot
 import developer.citypalestine8936ps.PostDetailsActivity
-import developer.citypalestine8936ps.R
 import developer.citypalestine8936ps.adapters.CityAdapter
 import developer.citypalestine8936ps.adapters.PostAdpter
 import developer.citypalestine8936ps.databinding.FragmentHomeBinding
 import developer.citypalestine8936ps.listeners.PostListener
-import developer.citypalestine8936ps.models.City
+import developer.citypalestine8936ps.models.NewPost
 import developer.citypalestine8936ps.models.Post
+import developer.citypalestine8936ps.models.PostModelForAdapter
+import developer.citypalestine8936ps.models.User
 import developer.citypalestine8936ps.utilites.Constants
 import developer.citypalestine8936ps.utilites.PreferenceManager
 
 
-class HomeFragment : Fragment() , PostListener{
+class HomeFragment : Fragment(), PostListener {
     private lateinit var postAdpter: PostAdpter
     private lateinit var binding: FragmentHomeBinding
     private lateinit var mMap: GoogleMap
     private lateinit var database: FirebaseFirestore
     var dataPost: ArrayList<Post> = ArrayList<Post>()
-    lateinit var cityAdapter :CityAdapter
+    lateinit var cityAdapter: CityAdapter
     lateinit var cityLocation: LatLng
     private var preferenceManager: PreferenceManager? = null
 
@@ -53,8 +46,10 @@ class HomeFragment : Fragment() , PostListener{
         preferenceManager = PreferenceManager(activity)
 
 
-        getAllPost(preferenceManager!!.getString(Constants.KEY_IMAGE) ,
-            preferenceManager!!.getString(Constants.KEY_USER_ID))
+        getAllPost(
+            preferenceManager!!.getString(Constants.KEY_IMAGE),
+            preferenceManager!!.getString(Constants.KEY_USER_ID)
+        )
 
 //        for (city in data){
 //            city.lat
@@ -116,46 +111,78 @@ class HomeFragment : Fragment() , PostListener{
 //
 //    }
 
-    private  fun getAllPost( userImage:String ,userId: String){
-        var data = ArrayList<Post>()
+    private fun getAllPost(userImage: String, userId: String) {
+        val data = ArrayList<Post>()
         binding.progressbar.visibility = View.VISIBLE
+ /*       database.collection(Constants.KEY_COLLECTION_POSTS)
+            .whereNotEqualTo("authorDocId", userId)
+            .get()
+            .addOnCompleteListener {
+                val posts = it.result.toObjects(NewPost::class.java)
+                val finalPosts = mutableListOf<PostModelForAdapter>()
+                posts.forEach { post ->
+                    database.collection(Constants.KEY_COLLECTION_USERS)
+                        .document(post.authorDocId)
+                        .get()
+                        .addOnCompleteListener { authorResult ->
+                            val author = authorResult.result.toObject(User::class.java)
+                                ?: return@addOnCompleteListener
+                            finalPosts.add(
+                                PostModelForAdapter(
+                                    author = author,
+                                    post = post
+                                )
+                            )
+                        }
+                }
 
-        database.collection(Constants.KEY_COLLECTION_CITY).get().addOnSuccessListener{queryDocumentSnapshots ->
-            for (documentSnapshot in queryDocumentSnapshots){
-                documentSnapshot.id
-                database.collection(Constants.KEY_COLLECTION_CITY).document(documentSnapshot.id).collection("Post")
-                    .get().addOnSuccessListener { queryDocumentSnapshots1 ->
-                    Log.e("hin5", "${queryDocumentSnapshots1.documents.size}  kdkkdkd")
+                Log.d("TAG", "getAllPost: Posts $posts")
+                // TODO: Update Adapter
+                binding.progressbar.visibility = View.GONE
+            }*/
 
-                    for (documentSnapshot1 in queryDocumentSnapshots1) {
-                        val post: Post = documentSnapshot1.toObject(Post::class.java)
-                        Log.e("hin555", post.postDec.toString() + "")
-                        Log.e("hin55", documentSnapshot1.id + "")
+        database.collection(Constants.KEY_COLLECTION_CITY).get()
+            .addOnSuccessListener { queryDocumentSnapshots ->
+                for (documentSnapshot in queryDocumentSnapshots) {
+                    documentSnapshot.id
+                    database.collection(Constants.KEY_COLLECTION_CITY).document(documentSnapshot.id)
+                        .collection("Post")
+                        .get().addOnSuccessListener { queryDocumentSnapshots1 ->
+                            Log.e("hin5", "${queryDocumentSnapshots1.documents.size}  kdkkdkd")
 
-                        data.add(post)
-                    }
-                    postAdpter = PostAdpter(data, activity  , userImage ,userId ,this)
-                    binding.cityRec.setAdapter(postAdpter)
+                            for (documentSnapshot1 in queryDocumentSnapshots1) {
+                                val post: Post = documentSnapshot1.toObject(Post::class.java)
+                                Log.e("hin555", post.postDec.toString() + "")
+                                Log.e("hin55", documentSnapshot1.id + "")
 
-                    //    binding.p.visibility = View.GONE
-                    binding.cityRec.visibility = View.VISIBLE
-                    binding.progressbar.visibility = View.GONE
-                    binding.cityRec.visibility = View.VISIBLE
+                                data.add(post)
+                            }
+                            postAdpter = PostAdpter(data, activity, userImage, userId, this)
+                            binding.cityRec.setAdapter(postAdpter)
+
+                            //    binding.p.visibility = View.GONE
+                            binding.cityRec.visibility = View.VISIBLE
+                            binding.progressbar.visibility = View.GONE
+                            binding.cityRec.visibility = View.VISIBLE
 
 
-                    Log.e("hin", data.size.toString() + "")
-                    binding.cityRec.setLayoutManager(LinearLayoutManager(activity))
+                            Log.e("hin", data.size.toString() + "")
+                            binding.cityRec.layoutManager = LinearLayoutManager(activity)
+
+                        }
+
 
                 }
 
-
             }
+    }
 
-        }
+    override fun onClickLike(post: Post) {
+        TODO("Not yet implemented")
     }
 
     override fun onPostClicked(post: Post) {
-        val intent = Intent(activity  , PostDetailsActivity::class.java)
+        val intent = Intent(activity, PostDetailsActivity::class.java)
         intent.putExtra("Post", post)
         intent.putExtra("comment", post.numberOfComment)
         //   preferenceManager!!.putString(Constants.KEY_USER , post!!.id)
@@ -184,8 +211,6 @@ class HomeFragment : Fragment() , PostListener{
 //
 //
 //    }
-
-
 
 
 }

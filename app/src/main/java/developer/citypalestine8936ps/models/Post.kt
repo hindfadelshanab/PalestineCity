@@ -27,7 +27,6 @@ class Post (
     var numberOfComment:Int?= null ,
     var cityId :String ?=null,
     var likeBy:ArrayList<String> ? =null
-
 ):Parcelable{
     constructor(parcel: Parcel) : this(
         parcel.readString(),

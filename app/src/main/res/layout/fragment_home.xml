@@ -7,17 +7,12 @@
     tools:context=".Fragment.HomeFragment">
 
 
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cityRec"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/post_item"
-        android:visibility="gone"
-
-
-/>
+        />
 
 
     <ProgressBar
