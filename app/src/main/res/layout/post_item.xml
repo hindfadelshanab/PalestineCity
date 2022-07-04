@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    app:cardCornerRadius="@dimen/_4sdp"
-    android:elevation="@dimen/_4sdp"
     android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:elevation="@dimen/_4sdp"
 
 
-    android:layout_margin="8dp">
+    app:cardCornerRadius="@dimen/_4sdp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -47,11 +47,12 @@
 
             <TextView
                 android:id="@+id/txt_post_user_name"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_8sdp"
                 android:layout_marginEnd="@dimen/_8sdp"
-                android:layout_weight="1"
+                android:layout_weight="7"
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:textAlignment="viewStart"
@@ -59,6 +60,13 @@
                 android:textSize="@dimen/_14ssp"
                 android:textStyle="bold"
                 tools:text="Name" />
+
+            <TextView
+                android:id="@+id/tvPostTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:visibility="gone" />
 
 
         </LinearLayout>
@@ -150,8 +158,8 @@
             android:id="@+id/tvPostLikeCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
             android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="7dp"
             android:text="@string/fake_like_count"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/img_postImage" />
@@ -186,9 +194,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:paddingVertical="@dimen/_8sdp"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/_8sdp">
 
                 <ImageView
                     android:id="@+id/img_like"
@@ -212,11 +220,11 @@
             <LinearLayout
                 android:id="@+id/linearComment"
                 android:layout_width="0dp"
-                android:paddingVertical="@dimen/_8sdp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/_8sdp">
 
                 <ImageView
                     android:id="@+id/img_comment"
@@ -241,11 +249,11 @@
             <LinearLayout
                 android:id="@+id/layoyt_share"
                 android:layout_width="0dp"
-                android:paddingVertical="@dimen/_8sdp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/_8sdp">
 
                 <ImageView
                     android:id="@+id/img_share"

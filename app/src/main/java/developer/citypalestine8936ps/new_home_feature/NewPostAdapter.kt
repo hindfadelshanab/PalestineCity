@@ -10,6 +10,8 @@ import com.squareup.picasso.Picasso
 import developer.citypalestine8936ps.R
 import developer.citypalestine8936ps.databinding.PostItemBinding
 import developer.citypalestine8936ps.models.PostModelForAdapter
+import developer.citypalestine8936ps.utilites.toConversationDateFormat
+import developer.citypalestine8936ps.utilites.toConversationTimeFormat
 
 class NewPostAdapter(
     private val context: Context,
@@ -47,8 +49,15 @@ class NewPostAdapter(
 
         fun bindItem(modelForAdapter: PostModelForAdapter) {
             val post = modelForAdapter.post
-            binding.txtPostUserName.text = modelForAdapter.author.name
-            Picasso.get().load(modelForAdapter.author.image).into(binding.imagePostUserPhoto)
+            val author = modelForAdapter.author
+
+            binding.txtPostUserName.text = author.name
+            if (author.image.isNotEmpty()) {
+                Picasso.get().load(author.image).into(binding.imagePostUserPhoto)
+            }
+            binding.tvPostTime.text =
+                "${post.time.toConversationDateFormat()}\n${post.time.toConversationTimeFormat()}"
+
 
             /*Optional Post Data*/
             if (post.content.isNotEmpty()) {
