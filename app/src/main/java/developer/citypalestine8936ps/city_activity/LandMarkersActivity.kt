@@ -1,15 +1,12 @@
-package developer.citypalestine8936ps.CityActivity
+package developer.citypalestine8936ps.city_activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
 import developer.citypalestine8936ps.R
 import developer.citypalestine8936ps.adapters.FamilyAdapter
-import developer.citypalestine8936ps.databinding.ActivityFamousFamiliesBinding
 import developer.citypalestine8936ps.databinding.ActivityLandMarkersBinding
 import developer.citypalestine8936ps.models.City
-import developer.citypalestine8936ps.utilites.Constants
 
 class LandMarkersActivity : AppCompatActivity() {
     private var adapter: FamilyAdapter? = null

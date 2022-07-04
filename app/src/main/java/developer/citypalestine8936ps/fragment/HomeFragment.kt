@@ -1,4 +1,4 @@
-package developer.citypalestine8936ps.Fragment
+package developer.citypalestine8936ps.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -16,10 +16,7 @@ import developer.citypalestine8936ps.adapters.CityAdapter
 import developer.citypalestine8936ps.adapters.PostAdpter
 import developer.citypalestine8936ps.databinding.FragmentHomeBinding
 import developer.citypalestine8936ps.listeners.PostListener
-import developer.citypalestine8936ps.models.NewPost
 import developer.citypalestine8936ps.models.Post
-import developer.citypalestine8936ps.models.PostModelForAdapter
-import developer.citypalestine8936ps.models.User
 import developer.citypalestine8936ps.utilites.Constants
 import developer.citypalestine8936ps.utilites.PreferenceManager
 
@@ -181,7 +178,7 @@ class HomeFragment : Fragment(), PostListener {
         TODO("Not yet implemented")
     }
 
-    override fun onPostClicked(post: Post) {
+    override fun onClickComment(post: Post) {
         val intent = Intent(activity, PostDetailsActivity::class.java)
         intent.putExtra("Post", post)
         intent.putExtra("comment", post.numberOfComment)

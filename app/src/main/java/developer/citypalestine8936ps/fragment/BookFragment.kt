@@ -1,4 +1,4 @@
-package developer.citypalestine8936ps.Fragment
+package developer.citypalestine8936ps.fragment
 
 import android.os.Bundle
 import android.util.Log
@@ -20,12 +20,8 @@ import com.google.firebase.firestore.QuerySnapshot
 import developer.citypalestine8936ps.R
 import developer.citypalestine8936ps.adapters.BookTypeAdpter
 import developer.citypalestine8936ps.adapters.CityAdapter
-import developer.citypalestine8936ps.adapters.PostAdpter
 import developer.citypalestine8936ps.databinding.FragmentBookBinding
-import developer.citypalestine8936ps.models.Book
-import developer.citypalestine8936ps.models.BookType
 import developer.citypalestine8936ps.models.City
-import developer.citypalestine8936ps.models.Post
 import developer.citypalestine8936ps.utilites.Constants
 
 

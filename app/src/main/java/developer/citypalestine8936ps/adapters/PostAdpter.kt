@@ -94,10 +94,10 @@ class PostAdpter(
         }
 
         holder.itemView.setOnClickListener { view ->
-            postListener.onPostClicked(currentPost)
+            postListener.onClickComment(currentPost)
         }
         holder.linearComment.setOnClickListener { view ->
-            postListener.onPostClicked(currentPost)
+            postListener.onClickComment(currentPost)
         }
 
         holder.linearLike.setOnClickListener {
@@ -262,10 +262,10 @@ class PostAdpter(
 
             /*Listeners*/
             binding.root.setOnClickListener {
-                postListener.onPostClicked(post)
+                postListener.onClickComment(post)
             }
             binding.linearLike.setOnClickListener {
-                postListener.onPostClicked(post)
+                postListener.onClickComment(post)
             }
 
             binding.imgShare.setOnClickListener {

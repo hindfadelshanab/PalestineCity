@@ -11,9 +11,9 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import developer.citypalestine8936ps.CityActivity.FamousFamiliesActivity
-import developer.citypalestine8936ps.CityActivity.PopularProverbsActivity
-import developer.citypalestine8936ps.CityActivity.PostActivity
+import developer.citypalestine8936ps.city_activity.FamousFamiliesActivity
+import developer.citypalestine8936ps.city_activity.PopularProverbsActivity
+import developer.citypalestine8936ps.city_activity.PostActivity
 import developer.citypalestine8936ps.databinding.ActivityMapsBinding
 import developer.citypalestine8936ps.models.City
 

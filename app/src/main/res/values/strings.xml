@@ -43,4 +43,6 @@
     <string name="comment_count">%d Comment</string>
     <string name="comments_count">%d Comments</string>
 
+    <string name="profile">Profile</string>
+
 </resources>

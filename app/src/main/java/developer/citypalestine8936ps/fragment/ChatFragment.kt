@@ -1,10 +1,7 @@
-package developer.citypalestine8936ps.Fragment
+package developer.citypalestine8936ps.fragment
 
 import android.content.Intent
-import android.content.res.Configuration
-import android.graphics.BitmapFactory
 import android.os.Bundle
-import android.util.Base64
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -15,9 +12,7 @@ import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.firestore.*
 import com.google.firebase.messaging.FirebaseMessaging
 import developer.citypalestine8936ps.*
-import developer.citypalestine8936ps.R
 import developer.citypalestine8936ps.adapters.RecentConversationAdapter
-import developer.citypalestine8936ps.databinding.ActivityMainBinding
 import developer.citypalestine8936ps.listeners.ConversationListener
 import developer.citypalestine8936ps.models.ChatMessage
 import developer.citypalestine8936ps.models.User

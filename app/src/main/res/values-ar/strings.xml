@@ -33,6 +33,7 @@
     <string name="no_likes_yet">كن أول معجب</string>
     <string name="comment_count">%d تعليق</string>
     <string name="comments_count">%d تعليقات</string>
+    <string name="profile">الملف الشخصي</string>
 
 
 </resources>

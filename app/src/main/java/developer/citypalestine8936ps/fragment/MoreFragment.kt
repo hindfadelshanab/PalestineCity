@@ -1,4 +1,4 @@
-package developer.citypalestine8936ps.Fragment
+package developer.citypalestine8936ps.fragment
 
 import android.content.Intent
 import android.os.Bundle

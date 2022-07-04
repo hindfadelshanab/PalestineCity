@@ -1,4 +1,4 @@
-package developer.citypalestine8936ps.Fragment
+package developer.citypalestine8936ps.fragment
 
 import android.os.Bundle
 import android.util.Log

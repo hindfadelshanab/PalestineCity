@@ -3,23 +3,12 @@ package developer.citypalestine8936ps
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation.findNavController
-import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
-import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.firebase.firestore.*
-import androidx.navigation.NavController
 
 
-import java.util.*
-
-import androidx.navigation.Navigation
-
-import androidx.navigation.ui.AppBarConfiguration
-
-import androidx.navigation.ui.NavigationUI
-import developer.citypalestine8936ps.Fragment.*
+import developer.citypalestine8936ps.fragment.*
 import developer.citypalestine8936ps.databinding.ActivityMainBinding
+import developer.citypalestine8936ps.new_home_feature.NewHomeFragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -36,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(getLayoutInflater())
         setContentView(binding.getRoot())
 
-        loadFragment(HomeFragment())
+        loadFragment(NewHomeFragment())
         //   bottomNav = nav_view
         getSupportActionBar()?.setTitle("بلدنا");
 
@@ -44,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
             when(it.itemId) {
                 R.id.homeAction -> {
-                    loadFragment(HomeFragment())
+                    loadFragment(NewHomeFragment())
                     true
                 }
                 R.id.messageAction -> {

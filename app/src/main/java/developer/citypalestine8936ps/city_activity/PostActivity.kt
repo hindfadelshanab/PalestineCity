@@ -1,4 +1,4 @@
-package developer.citypalestine8936ps.CityActivity
+package developer.citypalestine8936ps.city_activity
 
 import android.content.Context
 import android.content.Intent
@@ -7,7 +7,6 @@ import android.graphics.BitmapFactory
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Parcelable
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
@@ -22,7 +21,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.UploadTask
 import developer.citypalestine8936ps.PostDetailsActivity
-import developer.citypalestine8936ps.R
 import developer.citypalestine8936ps.adapters.PostAdpter
 import developer.citypalestine8936ps.databinding.ActivityPostBinding
 import developer.citypalestine8936ps.listeners.PostListener
@@ -35,8 +33,8 @@ import java.io.ByteArrayOutputStream
 import java.io.FileNotFoundException
 import java.util.*
 
-class PostActivity : AppCompatActivity()  ,PostListener{
-
+class PostActivity : AppCompatActivity(){
+/*
     lateinit var binding: ActivityPostBinding
     private lateinit var database: FirebaseFirestore
     private var preferenceManager: PreferenceManager? = null
@@ -238,6 +236,7 @@ class PostActivity : AppCompatActivity()  ,PostListener{
 
         }
     }
+
     fun getImageUri(inContext: Context, inImage: Bitmap): Uri? {
         val bytes = ByteArrayOutputStream()
         inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes)
@@ -272,7 +271,7 @@ class PostActivity : AppCompatActivity()  ,PostListener{
         }
     }
 
-    override fun onPostClicked(post: Post) {
+    override fun onClickComment(post: Post) {
         val intent = Intent(this  , PostDetailsActivity::class.java)
         intent.putExtra("Post", post)
         intent.putExtra("comment", post.numberOfComment)
@@ -283,5 +282,5 @@ class PostActivity : AppCompatActivity()  ,PostListener{
 
     override fun onClickLike(post: Post) {
         TODO("Not yet implemented")
-    }
+    }*/
 }

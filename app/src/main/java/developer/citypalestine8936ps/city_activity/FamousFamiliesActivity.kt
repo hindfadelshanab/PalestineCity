@@ -1,4 +1,4 @@
-package developer.citypalestine8936ps.CityActivity
+package developer.citypalestine8936ps.city_activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,13 +8,9 @@ import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
-import developer.citypalestine8936ps.R
-import developer.citypalestine8936ps.adapters.CityAdapter
 import developer.citypalestine8936ps.adapters.FamilyAdapter
 import developer.citypalestine8936ps.adapters.LandMarkAdapter
-import developer.citypalestine8936ps.adapters.PhotoAdapter
 import developer.citypalestine8936ps.databinding.ActivityFamousFamiliesBinding
-import developer.citypalestine8936ps.databinding.ActivityPhotoCityBinding
 import developer.citypalestine8936ps.models.City
 import developer.citypalestine8936ps.models.LandMark
 import developer.citypalestine8936ps.utilites.Constants

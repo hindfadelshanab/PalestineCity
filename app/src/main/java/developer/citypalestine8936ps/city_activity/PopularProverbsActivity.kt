@@ -1,4 +1,4 @@
-package developer.citypalestine8936ps.CityActivity
+package developer.citypalestine8936ps.city_activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

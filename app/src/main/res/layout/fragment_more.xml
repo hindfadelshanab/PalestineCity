@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingTop="@dimen/_46sdp"
-    tools:context=".Fragment.MoreFragment">
+    tools:context=".fragment.MoreFragment">
 
 
     <androidx.cardview.widget.CardView
