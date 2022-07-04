@@ -18,10 +18,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.ui.AppBarConfiguration
 
 import androidx.navigation.ui.NavigationUI
-import developer.citypalestine8936ps.Fragment.BookFragment
-import developer.citypalestine8936ps.Fragment.ChatFragment
-import developer.citypalestine8936ps.Fragment.HomeFragment
-import developer.citypalestine8936ps.Fragment.MoreFragment
+import developer.citypalestine8936ps.Fragment.*
 import developer.citypalestine8936ps.databinding.ActivityMainBinding
 
 
@@ -54,7 +51,7 @@ class MainActivity : AppCompatActivity() {
                     loadFragment(ChatFragment())
                     true                }
                 R.id.bookAction -> {
-                    loadFragment(BookFragment())
+                    loadFragment(CitiesFragment())
                     true                }
                 R.id.moreAction -> {
                     loadFragment(MoreFragment())

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">بلدنا</string>
+    <string name="welcome_backe">مرحبا بعودتك</string>
+    <string name="login_to_continue">تسجيل الدخول</string>
+    <string name="email">الايميل</string>
+    <string name="password">كلمة المرور</string>
+    <string name="sign_in">تسجيل الدخول</string>
+    <string name="create_new_account">إنشاء حساب جديد</string>
+    <string name="name">الاسم</string>
+    <string name="confirm_password">تاكيد كلمة المرور</string>
+    <string name="sign_up">تسجيل</string>
+    <string name="type_a_message">اكتب رسالة</string>
+    <string name="forget_password">نسيت كلمة المرور؟</string>
+    <string name="post">المنشورات</string>
+    <string name="select_user">إختيار المستخدم</string>
+    <string name="city">مدينة</string>
+    <string name="add_image">إضافة صورة</string>
+    <string name="dont_have_account">لا تمتلك حساب؟</string>
+    <string name="you_have_account">لديك حساب؟</string>
+    <string name="reset_password">إستعادة كلمة المرور</string>
+    <string name="to_reset_password_enter_your_email_press_the_button_and_check_mail_to_follow_instruction">لإستعادة كلمة المرور، قم بإدخال البريد الإلكتروني و بعدها قم بتتبع الخطوات المرسلة في البريد المرسل</string>
+    <string name="home">الرئيسية</string>
+    <string name="message">المحادثات</string>
+    <string name="more">المزيد</string>
+    <string name="like">أعجبني</string>
+    <string name="comment">تعليق</string>
+    <string name="share">مشاركة</string>
+    <string name="fake_like_count">13 إعجاب</string>
+    <string name="fake_comment_count">3 تعليقات</string>
+    <string name="like_count">%d إعجاب</string>
+    <string name="likes_count">%d إعجابات</string>
+    <string name="no_likes_yet">كن أول معجب</string>
+    <string name="comment_count">%d تعليق</string>
+    <string name="comments_count">%d تعليقات</string>
+
+
+</resources>

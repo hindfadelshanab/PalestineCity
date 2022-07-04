@@ -1,30 +1,46 @@
 <resources>
     <string name="app_name">بلدنا</string>
     <string name="welcome_backe">Welcome Back !</string>
-    <string name="login_to_continue">تسجيل الدخول</string>
-    <string name="email">الايميل</string>
-    <string name="password">كلمة المرور</string>
-    <string name="sign_in">تسجيل الدخول</string>
-    <string name="create_new_account">أليس لديك حساب ؟</string>
     <string name="add_image">Add image</string>
-    <string name="name">الاسم</string>
-    <string name="confirm_password">تاكيد كلمة المرور</string>
-    <string name="sign_up">تسجيل</string>
-    <string name="type_a_message">اكتب رسالة</string>
     <string name="select_user">Select user</string>
-    <string name="forget_password">نسيت كلمة المرور</string>
     <string name="city">City</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_maps">MapsActivity</string>
-    <string name="link1">"https://www.alhadath.ps/"</string>
-    <string name="link2">"https://www.noor-book.com/"</string>
-    <string name="link3">"https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B5%D9%81%D8%AD%D8%A9_%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9"</string>
-    <string name="post">المنشورات</string>
-    <string name="sity">شو قالت ستي</string>
-    <string name="shuhadaa">الشهداء</string>
-    <string name="landmark">المعالم</string>
-    <string name="profile">الملف الشخصي</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="title_activity_maps" translatable="false">MapsActivity</string>
+    <string name="link1" translatable="false">"https://www.alhadath.ps/"</string>
+    <string name="link2" translatable="false">"https://www.noor-book.com/"</string>
+    <string name="link3" translatable="false">"https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B5%D9%81%D8%AD%D8%A9_%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9"</string>
+    <string name="sity" translatable="false">شو قالت ستي</string>
+    <string name="shuhadaa" translatable="false">الشهداء</string>
+    <string name="landmark" translatable="false">المعالم</string>
+    <string name="post">Posts</string>
+    <string name="forget_password">Forgot Password?</string>
+    <string name="type_a_message">Write a message</string>
+    <string name="sign_up">Sign up</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="name">Name</string>
+    <string name="login_to_continue">Login</string>
+    <string name="email">Email Address</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="you_have_account">You have account?</string>
+    <string name="dont_have_account">Don\'t have account?</string>
+    <string name="create_new_account">Create new account</string>
+    <string name="to_reset_password_enter_your_email_press_the_button_and_check_mail_to_follow_instruction">To reset password, enter your email, press the button and check mail to follow instruction.</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="home">Home</string>
+    <string name="message">Message</string>
+    <string name="more">More</string>
+    <string name="like">Like</string>
+    <string name="comment">Comment</string>
+    <string name="share">Share</string>
+    <string name="fake_like_count">13 Likes</string>
+    <string name="fake_comment_count">3 Comments</string>
+    <string name="like_count">%d Like</string>
+    <string name="likes_count">%d Likes</string>
+    <string name="no_likes_yet">Be first like</string>
 
+    <string name="comment_count">%d Comment</string>
+    <string name="comments_count">%d Comments</string>
 
 </resources>

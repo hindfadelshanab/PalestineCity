@@ -1,501 +1,408 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingTop="@dimen/_46sdp"
     tools:context=".Fragment.MoreFragment">
 
 
-
     <androidx.cardview.widget.CardView
-        android:id="@+id/txt_profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        app:cardElevation="@dimen/_8sdp"
-        android:layout_marginTop="@dimen/_12sdp"
         android:layout_gravity="end"
         android:layout_marginStart="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_4sdp"
         android:layout_marginEnd="@dimen/_24sdp"
-        app:cardCornerRadius="@dimen/_8sdp"
-        xmlns:tools="http://schemas.android.com/tools">
+        app:cardCornerRadius="@dimen/_4sdp"
+        app:cardElevation="@dimen/_8sdp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="end"
             android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:layout_width="@dimen/_42sdp"
+                android:layout_height="match_parent"
+                android:background="@color/primary"
+                android:src="@drawable/ic_baseline_person_24"
+                android:tint="@color/white" />
+
             <TextView
+                android:id="@+id/txt_profile"
                 android:layout_width="@dimen/_200sdp"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/_18ssp"
-                android:fontFamily="@font/tajawal_regular"
+                android:layout_marginHorizontal="@dimen/_8sdp"
                 android:padding="@dimen/_8sdp"
-                android:layout_marginEnd="@dimen/_32sdp"
+                android:text="الملف الشخصي"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:text="@string/profile"
-                />
-            <androidx.appcompat.widget.AppCompatButton
-                android:background="@color/primary"
-                android:layout_width="@dimen/_12sdp"
-                android:layout_height="match_parent"
-                />
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold" />
+
+
         </LinearLayout>
-
-
 
 
     </androidx.cardview.widget.CardView>
 
 
-
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/txt_palestinTrsadotional"
+    <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/cardCity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        app:cardElevation="@dimen/_8sdp"
-        android:layout_marginTop="@dimen/_12sdp"
         android:layout_gravity="end"
         android:layout_marginStart="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_4sdp"
         android:layout_marginEnd="@dimen/_24sdp"
-        app:cardCornerRadius="@dimen/_8sdp"
-        xmlns:tools="http://schemas.android.com/tools">
+        app:cardCornerRadius="@dimen/_4sdp"
+        app:cardElevation="@dimen/_8sdp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="end"
             android:orientation="horizontal">
-            <TextView
 
-                android:layout_width="@dimen/_200sdp"
-                android:layout_height="wrap_content"
-                android:textSize="@dimen/_18ssp"
-
-                android:fontFamily="@font/tajawal_regular"
-                android:layout_marginEnd="@dimen/_32sdp"
-                android:padding="@dimen/_8sdp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:text="تراث فلسطين"
-                />
-            <androidx.appcompat.widget.AppCompatButton
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/viewSaved"
-                android:background="@color/primary"
-                android:layout_width="@dimen/_12sdp"
+                android:layout_width="@dimen/_42sdp"
                 android:layout_height="match_parent"
-                />
+                android:background="@color/primary" />
+
+            <TextView
+                android:id="@+id/txt_palestinTrsadotional"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:padding="@dimen/_8sdp"
+                android:text="تراث فلسطين"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold" />
+
+
         </LinearLayout>
-
-
 
 
     </androidx.cardview.widget.CardView>
 
 
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/txt_palestinVillages"
-
+    <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        app:cardElevation="@dimen/_8sdp"
-        android:layout_marginTop="@dimen/_12sdp"
         android:layout_gravity="end"
         android:layout_marginStart="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_4sdp"
         android:layout_marginEnd="@dimen/_24sdp"
-        app:cardCornerRadius="@dimen/_8sdp">
+        app:cardCornerRadius="@dimen/_4sdp"
+        app:cardElevation="@dimen/_8sdp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="end"
             android:orientation="horizontal">
 
-
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:layout_width="@dimen/_42sdp"
+                android:layout_height="match_parent"
+                android:background="@color/primary" />
 
             <TextView
+                android:id="@+id/txt_palestinVillages"
                 android:layout_width="@dimen/_200sdp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_32sdp"
+                android:layout_marginHorizontal="@dimen/_8sdp"
                 android:padding="@dimen/_8sdp"
-                android:textSize="@dimen/_18ssp"
-
-                android:fontFamily="@font/tajawal_regular"
-                android:textColor="@color/black"
-                android:textStyle="bold"
                 android:text="اشهر القرى الفلسطينية"
-                />
-            <androidx.appcompat.widget.AppCompatButton
-                android:background="@color/primary"
-                android:layout_width="@dimen/_12sdp"
-                android:layout_height="match_parent"
-                />
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold" />
+
         </LinearLayout>
-
-
 
 
     </androidx.cardview.widget.CardView>
 
 
-
-
-
-
-
-
-
-
-
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/txt_aboutPalestine"
-
+    <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        app:cardElevation="@dimen/_8sdp"
-        android:layout_marginTop="@dimen/_12sdp"
         android:layout_gravity="end"
         android:layout_marginStart="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_4sdp"
         android:layout_marginEnd="@dimen/_24sdp"
-        app:cardCornerRadius="@dimen/_8sdp">
+        app:cardCornerRadius="@dimen/_4sdp"
+        app:cardElevation="@dimen/_8sdp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="end"
+            android:gravity="start"
             android:orientation="horizontal">
 
-
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:layout_width="@dimen/_42sdp"
+                android:layout_height="match_parent"
+                android:background="@color/primary" />
 
             <TextView
+                android:id="@+id/txt_aboutPalestine"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:padding="@dimen/_8sdp"
                 android:text="فلسطين"
-                android:layout_width="@dimen/_200sdp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_32sdp"
-                android:padding="@dimen/_8sdp"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="@dimen/_18ssp"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold" />
 
-                android:fontFamily="@font/tajawal_regular"
-                />
-            <androidx.appcompat.widget.AppCompatButton
-                android:background="@color/primary"
-                android:layout_width="@dimen/_12sdp"
-                android:layout_height="match_parent"
-                />
+
         </LinearLayout>
-
-
 
 
     </androidx.cardview.widget.CardView>
 
 
+    <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
 
-
-
-
-
-
-
-
-
-
-
-
-
-    <androidx.cardview.widget.CardView
         android:id="@+id/txt_book"
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        app:cardElevation="@dimen/_8sdp"
-        android:layout_marginTop="@dimen/_12sdp"
         android:layout_gravity="end"
         android:layout_marginStart="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_4sdp"
         android:layout_marginEnd="@dimen/_24sdp"
-        app:cardCornerRadius="@dimen/_8sdp">
+        app:cardCornerRadius="@dimen/_4sdp"
+        app:cardElevation="@dimen/_8sdp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="end"
             android:orientation="horizontal">
 
 
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:layout_width="@dimen/_42sdp"
+                android:layout_height="match_parent"
+                android:background="@color/primary"
+                android:src="@drawable/ic_baseline_library_books_24"
+                android:tint="@color/white" />
 
             <TextView
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:maxLines="1"
+                android:padding="@dimen/_8sdp"
                 android:text="كتب عن فلسطين "
-                android:layout_width="@dimen/_200sdp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_32sdp"
-                android:padding="@dimen/_8sdp"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="@dimen/_18ssp"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold" />
 
-                android:fontFamily="@font/tajawal_regular"
-                />
-            <androidx.appcompat.widget.AppCompatButton
-                android:background="@color/primary"
-                android:layout_width="@dimen/_12sdp"
-                android:layout_height="match_parent"
-                />
         </LinearLayout>
-
-
 
 
     </androidx.cardview.widget.CardView>
 
 
-
-
-
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/txet_res"
-
+    <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        app:cardElevation="@dimen/_8sdp"
-        android:layout_marginTop="@dimen/_12sdp"
         android:layout_gravity="end"
         android:layout_marginStart="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_4sdp"
         android:layout_marginEnd="@dimen/_24sdp"
-        app:cardCornerRadius="@dimen/_8sdp">
+        app:cardCornerRadius="@dimen/_4sdp"
+        app:cardElevation="@dimen/_8sdp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="end"
             android:orientation="horizontal">
 
 
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:layout_width="@dimen/_42sdp"
+                android:layout_height="match_parent"
+                android:background="@color/primary" />
 
             <TextView
+                android:id="@+id/txet_res"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:padding="@dimen/_8sdp"
                 android:text="المصادر"
-                android:layout_width="@dimen/_200sdp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_32sdp"
-                android:padding="@dimen/_8sdp"
                 android:textColor="@color/black"
-                android:textStyle="bold"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold" />
 
-                android:textSize="@dimen/_18ssp"
-
-                android:fontFamily="@font/tajawal_regular"
-                />
-            <androidx.appcompat.widget.AppCompatButton
-                android:background="@color/primary"
-                android:layout_width="@dimen/_12sdp"
-                android:layout_height="match_parent"
-                />
         </LinearLayout>
-
-
 
 
     </androidx.cardview.widget.CardView>
 
 
-
-
-
-
-
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/txet_aboutapp"
+    <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        app:cardElevation="@dimen/_8sdp"
-        android:layout_marginTop="@dimen/_12sdp"
         android:layout_gravity="end"
         android:layout_marginStart="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_4sdp"
         android:layout_marginEnd="@dimen/_24sdp"
-        app:cardCornerRadius="@dimen/_8sdp">
+        app:cardCornerRadius="@dimen/_4sdp"
+        app:cardElevation="@dimen/_8sdp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="end"
             android:orientation="horizontal">
 
 
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:layout_width="@dimen/_42sdp"
+                android:src="@drawable/ic_baseline_info_24"
+                android:tint="@color/white"
+                android:layout_height="match_parent"
+                android:background="@color/primary" />
 
             <TextView
-                android:text="عن التطبيق"
+                android:id="@+id/txet_aboutapp"
                 android:layout_width="@dimen/_200sdp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_32sdp"
+                android:layout_marginHorizontal="@dimen/_8sdp"
                 android:padding="@dimen/_8sdp"
+                android:text="عن التطبيق"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="@dimen/_18ssp"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold" />
 
-                android:fontFamily="@font/tajawal_regular"
-                />
-            <androidx.appcompat.widget.AppCompatButton
-                android:background="@color/primary"
-                android:layout_width="@dimen/_12sdp"
-                android:layout_height="match_parent"
-                />
         </LinearLayout>
 
 
-
-
     </androidx.cardview.widget.CardView>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     <!--    <androidx.cardview.widget.CardView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--        app:cardElevation="@dimen/_8sdp"-->
-<!--        app:cardBackgroundColor="@color/primary"-->
-<!--        android:layout_marginStart="@dimen/_24sdp"-->
-<!--        android:layout_marginEnd="@dimen/_24sdp"-->
-<!--        app:cardCornerRadius="@dimen/_8sdp"-->
-<!--        android:layout_marginTop="@dimen/_24sdp"-->
-<!--        xmlns:tools="http://schemas.android.com/tools">-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--        app:cardElevation="@dimen/_8sdp"-->
+    <!--        app:cardBackgroundColor="@color/primary"-->
+    <!--        android:layout_marginStart="@dimen/_24sdp"-->
+    <!--        android:layout_marginEnd="@dimen/_24sdp"-->
+    <!--        app:cardCornerRadius="@dimen/_4sdp"-->
+    <!--        android:layout_marginTop="@dimen/_24sdp"-->
+    <!--        xmlns:tools="http://schemas.android.com/tools">-->
 
-<!--        <TextView-->
-<!--            android:id="@+id/txt_palestinVillages"-->
+    <!--        <TextView-->
+    <!--            android:id="@+id/txt_palestinVillages"-->
 
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:gravity="center"-->
-<!--            android:textSize="@dimen/_20ssp"-->
-<!--            android:padding="@dimen/_8sdp"-->
-<!--            android:textColor="@color/white"-->
-<!--            android:textStyle="bold"-->
-<!--            android:text="اشهر القرى الفلسطينية"-->
-<!--            />-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:gravity="center"-->
+    <!--            android:textSize="@dimen/_16ssp"-->
+    <!--            android:padding="@dimen/_8sdp"-->
+    <!--            android:textColor="@color/white"-->
+    <!--            android:textStyle="bold"-->
+    <!--            android:text="اشهر القرى الفلسطينية"-->
+    <!--            />-->
 
-<!--    </androidx.cardview.widget.CardView>-->
-
-
-<!--    -->
-<!--    -->
+    <!--    </androidx.cardview.widget.CardView>-->
 
 
+    <!--    -->
+    <!--    -->
 
 
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--        app:cardElevation="@dimen/_8sdp"-->
+    <!--        app:cardBackgroundColor="@color/primary"-->
+    <!--        android:layout_marginStart="@dimen/_24sdp"-->
+    <!--        android:layout_marginEnd="@dimen/_24sdp"-->
+    <!--        android:layout_marginTop="@dimen/_24sdp"-->
 
-<!--    <androidx.cardview.widget.CardView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--        app:cardElevation="@dimen/_8sdp"-->
-<!--        app:cardBackgroundColor="@color/primary"-->
-<!--        android:layout_marginStart="@dimen/_24sdp"-->
-<!--        android:layout_marginEnd="@dimen/_24sdp"-->
-<!--        android:layout_marginTop="@dimen/_24sdp"-->
+    <!--        app:cardCornerRadius="@dimen/_4sdp"-->
+    <!--        xmlns:tools="http://schemas.android.com/tools">-->
 
-<!--        app:cardCornerRadius="@dimen/_8sdp"-->
-<!--        xmlns:tools="http://schemas.android.com/tools">-->
+    <!--        <TextView-->
+    <!--            android:id="@+id/txt_aboutPalestine"-->
+    <!--            android:text="فلسطين"-->
 
-<!--        <TextView-->
-<!--            android:id="@+id/txt_aboutPalestine"-->
-<!--            android:text="فلسطين"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:gravity="center"-->
+    <!--            android:textSize="@dimen/_16ssp"-->
+    <!--            android:padding="@dimen/_8sdp"-->
+    <!--            android:textColor="@color/white"-->
+    <!--            android:textStyle="bold"-->
+    <!--            />-->
 
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:gravity="center"-->
-<!--            android:textSize="@dimen/_20ssp"-->
-<!--            android:padding="@dimen/_8sdp"-->
-<!--            android:textColor="@color/white"-->
-<!--            android:textStyle="bold"-->
-<!--            />-->
-
-<!--    </androidx.cardview.widget.CardView>-->
-
-
-<!--    <androidx.cardview.widget.CardView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--        app:cardElevation="@dimen/_8sdp"-->
-<!--        app:cardBackgroundColor="@color/primary"-->
-<!--        android:layout_marginStart="@dimen/_24sdp"-->
-<!--        android:layout_marginEnd="@dimen/_24sdp"-->
-<!--        android:layout_marginTop="@dimen/_24sdp"-->
-
-<!--        app:cardCornerRadius="@dimen/_8sdp"-->
-<!--        xmlns:tools="http://schemas.android.com/tools">-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/txet_res"-->
-<!--            android:text="المصادر"-->
+    <!--    </androidx.cardview.widget.CardView>-->
 
 
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:gravity="center"-->
-<!--            android:textSize="@dimen/_20ssp"-->
-<!--            android:padding="@dimen/_8sdp"-->
-<!--            android:textColor="@color/white"-->
-<!--            android:textStyle="bold"-->
-<!--            />-->
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--        app:cardElevation="@dimen/_8sdp"-->
+    <!--        app:cardBackgroundColor="@color/primary"-->
+    <!--        android:layout_marginStart="@dimen/_24sdp"-->
+    <!--        android:layout_marginEnd="@dimen/_24sdp"-->
+    <!--        android:layout_marginTop="@dimen/_24sdp"-->
 
-<!--    </androidx.cardview.widget.CardView>-->
+    <!--        app:cardCornerRadius="@dimen/_4sdp"-->
+    <!--        xmlns:tools="http://schemas.android.com/tools">-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/txet_res"-->
+    <!--            android:text="المصادر"-->
 
 
-<!--    <androidx.cardview.widget.CardView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--        app:cardElevation="@dimen/_8sdp"-->
-<!--        app:cardBackgroundColor="@color/primary"-->
-<!--        android:layout_marginStart="@dimen/_24sdp"-->
-<!--        android:layout_marginTop="@dimen/_24sdp"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:gravity="center"-->
+    <!--            android:textSize="@dimen/_16ssp"-->
+    <!--            android:padding="@dimen/_8sdp"-->
+    <!--            android:textColor="@color/white"-->
+    <!--            android:textStyle="bold"-->
+    <!--            />-->
 
-<!--        android:layout_marginEnd="@dimen/_24sdp"-->
-<!--        app:cardCornerRadius="@dimen/_8sdp"-->
-<!--        xmlns:tools="http://schemas.android.com/tools">-->
+    <!--    </androidx.cardview.widget.CardView>-->
 
-<!--        <TextView-->
-<!--            android:id="@+id/txet_aboutapp"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:gravity="center"-->
-<!--            android:textSize="@dimen/_20ssp"-->
-<!--            android:padding="@dimen/_8sdp"-->
-<!--            android:textColor="@color/white"-->
-<!--            android:textStyle="bold"-->
-<!--            android:text="عن التطبيق"-->
-<!--            />-->
 
-<!--    </androidx.cardview.widget.CardView>-->
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--        app:cardElevation="@dimen/_8sdp"-->
+    <!--        app:cardBackgroundColor="@color/primary"-->
+    <!--        android:layout_marginStart="@dimen/_24sdp"-->
+    <!--        android:layout_marginTop="@dimen/_24sdp"-->
 
+    <!--        android:layout_marginEnd="@dimen/_24sdp"-->
+    <!--        app:cardCornerRadius="@dimen/_4sdp"-->
+    <!--        xmlns:tools="http://schemas.android.com/tools">-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/txet_aboutapp"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:gravity="center"-->
+    <!--            android:textSize="@dimen/_16ssp"-->
+    <!--            android:padding="@dimen/_8sdp"-->
+    <!--            android:textColor="@color/white"-->
+    <!--            android:textStyle="bold"-->
+    <!--            android:text="عن التطبيق"-->
+    <!--            />-->
+
+    <!--    </androidx.cardview.widget.CardView>-->
 
 
 </LinearLayout>

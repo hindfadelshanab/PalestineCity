@@ -6,6 +6,7 @@ public class Constants {
 
     public static final String KEY_COLLECTION_USERS = "users";
     public static final String KEY_COLLECTION_CITY = "City";
+    public static final String KEY_COLLECTION_POSTS = "posts";
     public static final String KEY_NAME = "name";
     public static final String KEY_CITY_NAME = "cityName";
     public static final String KEY_CITY_LAT = "lat";

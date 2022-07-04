@@ -32,7 +32,6 @@ class SignInActivity : AppCompatActivity() {
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.getRoot())
         setListener()
-
     }
 
     private fun setListener() {

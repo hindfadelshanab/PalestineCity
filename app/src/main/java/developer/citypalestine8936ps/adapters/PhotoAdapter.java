@@ -55,7 +55,7 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.photoViewHol
         public void onBind(String item) {
             Picasso.get()
                     .load(item)
-                    .resize(300, 300)
+                    .resize(200, 200)
                     .centerCrop().error(R.drawable.ic_launcher_background)
                     .into(imageView);
 
