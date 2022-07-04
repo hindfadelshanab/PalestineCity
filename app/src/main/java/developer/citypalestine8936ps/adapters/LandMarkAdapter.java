@@ -67,7 +67,7 @@ public class LandMarkAdapter extends RecyclerView.Adapter<LandMarkAdapter.Landma
         public void onBind(LandMark item) {
 
             textView.setText(item.itemName);
-            PhotoAdpter photoAdpter = new PhotoAdpter(item.photos);
+            PhotoAdpter photoAdpter = new PhotoAdpter(context,item.photos);
             recyclerView.setAdapter(photoAdpter);
             LinearLayoutManager layoutManager
                     = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);

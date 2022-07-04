@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:clipToPadding="false"
     android:overScrollMode="never"
-    android:padding="@dimen/_24sdp"
+    android:padding="@dimen/_16sdp"
     android:scrollbars="none"
     >
 
@@ -171,20 +171,49 @@
 
 
 
+    <LinearLayout
+        android:id="@+id/textSignIn"
 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_8sdp"
 
-
+        >
         <TextView
-            android:id="@+id/textSignIn"
+            android:id="@+id/textCreateNewAccount2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp"
             android:text="@string/sign_in"
             android:textStyle="bold"
             android:textSize="@dimen/_13sdp"
             android:textColor="@color/primary"
 
             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="لدي حساب"
+            android:textStyle="bold"
+            android:textSize="@dimen/_13sdp"
+            android:textColor="#9A9A9A"
+
+            />
+    </LinearLayout>
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/textSignIn"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="@dimen/_10sdp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textSize="@dimen/_13sdp"-->
+<!--            android:textColor="@color/primary"-->
+
+<!--            />-->
 
 
     </LinearLayout>

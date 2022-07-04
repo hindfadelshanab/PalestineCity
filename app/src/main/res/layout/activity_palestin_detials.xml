@@ -12,150 +12,141 @@
         android:id="@+id/txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="أشهر العائلات"
-
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:textAlignment="center"
-        android:textSize="@dimen/_24ssp"
         android:layout_marginTop="@dimen/_32sdp"
-        />
+
+        android:text="أشهر العائلات"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_24ssp"
+        android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/traditionRc"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         app:layout_constraintTop_toBottomOf="@id/txt"
 
         />
-<ImageView
-    android:id="@+id/image_logo"
-    android:layout_width="@dimen/_150sdp"
-    android:layout_height="@dimen/_150sdp"
-    android:src="@drawable/logo_cityyt"
-    android:layout_marginTop="@dimen/_12sdp"
-    android:layout_gravity="center"
-    android:visibility="gone"
 
-    />
+    <ImageView
+        android:id="@+id/image_logo"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_150sdp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:src="@drawable/logo_cityyt"
+
+        android:visibility="gone"
+        />
+
     <TextView
         android:id="@+id/txt_aboutapp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textSize="@dimen/_20ssp"
-        android:textAlignment="textStart"
-        android:visibility="gone"
         android:layout_marginTop="@dimen/_16sdp"
+        android:fontFamily="@font/tajawal_regular"
         android:padding="@dimen/_12sdp"
+        android:visibility="gone"
+
+        android:text="تطبيق بلدنا هو تطبيق مجاني لعرض معلومات عن فلسطين  يعرض التطبيق مدن فلسطينية مع موقعها على الخريطة ومعلومات تخص هذه المدينة مثل اشهر عائلاتها ومعالمها وصور عن المدينة, كما ويوجد شات لتواصل  مع الاصدقاء داخل التطبيق"
+        android:textAlignment="center"
         android:textColor="#504E4E"
-        android:text="تطبيق بلدنا هو تطبيق مجاني لعرض معلومات عن فلسطين  \n يعرض التطبيق مدن فلسطينية مع موقعها على الخريطة ومعلومات تخص هذه المدينة مثل اشهر عائلاتها ومعالمها وصور عن المدينة , كما ويوجد شات لتواصل مع الاصدقاء داخل التطبيق "
-        />
+        android:textSize="@dimen/_20ssp" />
 
 
     <TextView
         android:id="@+id/txt_resoursec"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/_20ssp"
-        android:textAlignment="textStart"
-        android:visibility="gone"
-
         android:layout_marginTop="@dimen/_16sdp"
         android:padding="@dimen/_12sdp"
-
-        android:textColor="#0C6BB6"
         android:text="مكتبة النور \n https://www.noor-book.com/"
-        />
+
+        android:textAlignment="textStart"
+        android:textColor="#0C6BB6"
+
+        android:textSize="@dimen/_20ssp"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/txt_resoursec2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/_20ssp"
-        android:textAlignment="textStart"
         android:layout_marginTop="@dimen/_8sdp"
         android:padding="@dimen/_12sdp"
         android:text="موقع الحدث  \n https://www.alhadath.ps/"
-        android:visibility="gone"
+        android:textAlignment="textStart"
         android:textColor="#0C6BB6"
+        android:textSize="@dimen/_20ssp"
+        android:visibility="gone"
 
         />
-
 
 
     <TextView
         android:id="@+id/txt_resoursec3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/_20ssp"
-        android:textAlignment="textStart"
-        android:visibility="gone"
-
         android:layout_marginTop="@dimen/_8sdp"
         android:padding="@dimen/_12sdp"
-        android:textColor="#0C6BB6"
-
-
         android:text="ويكبيديا \n https://ar.wikipedia.org/"
+
+        android:textAlignment="textStart"
+        android:textColor="#0C6BB6"
+        android:textSize="@dimen/_20ssp"
+
+
+        android:visibility="gone"
 
         />
 
 
-
-
-
-
-
-
-
-
-
-
     <ScrollView
-        android:visibility="gone"
-
         android:id="@+id/layout"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"
-        >
+        android:visibility="gone">
 
 
-<LinearLayout
+        <LinearLayout
 
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent"
-
-    android:orientation="vertical"
-
-    >
-        <TextView
-            android:id="@+id/txttt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@id/layout"
-            app:layout_constraintEnd_toEndOf="@id/layout"
-            android:text="معلومات تاريخية:  "
-            android:textSize="@dimen/_20ssp"
-            android:gravity="start"
-            android:textStyle="bold"
-            android:textColor="@color/primary_text"
-            android:textAlignment="textStart"
 
-            android:layout_marginTop="@dimen/_12sdp"
-            android:layout_marginStart="@dimen/_16sdp"
-            android:layout_marginEnd="@dimen/_16sdp"
+            android:orientation="vertical"
 
-            />
+            >
+
+            <TextView
+                android:id="@+id/txttt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:gravity="start"
+                android:text="معلومات تاريخية:  "
+                android:textAlignment="textStart"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_20ssp"
+
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/layout"
+                app:layout_constraintTop_toTopOf="@id/layout"
+
+                />
 
 
             <TextView
                 android:id="@+id/scroll1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxLines="4"
                 android:layout_marginStart="@dimen/_16sdp"
                 android:layout_marginEnd="@dimen/_16sdp"
+                android:maxLines="4"
                 android:text="تقع فلسطين في موقع استراتيجي بين مصر ولبنان وسوريا والأردن، وهي أرض الرسالات ومهد الحضارات الإنسانية، حيث مرت على أقدم مدينة فيها وهي أريحا، إحدى وعشرون حضارة منذ الألف الثامن قبل الميلاد. وهي مهد الديانتين اليهودية والمسيحية، ولهذه الأرض تاريخ طويل وجذور بالثقافة والدين والتجارة والسياسة."
                 android:textColor="#656363"
                 android:textSize="@dimen/_16ssp"
@@ -163,79 +154,71 @@
                 />
 
 
+            <TextView
+                android:id="@+id/txtsong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16ssp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:gravity="start"
+                android:text="معلومات جغرافية :"
+                android:textAlignment="textStart"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_20ssp"
+                android:textStyle="bold"
 
-
-        <TextView
-            android:id="@+id/txtsong"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="معلومات جغرافية :"
-            android:textSize="@dimen/_20ssp"
-            android:gravity="start"
-            android:textAlignment="textStart"
-            android:textStyle="bold"
-            android:textColor="@color/primary_text"
-            android:layout_marginTop="@dimen/_16ssp"
-            android:layout_marginStart="@dimen/_16sdp"
-            android:layout_marginEnd="@dimen/_16sdp"
-
-            />
+                />
 
             <TextView
                 android:id="@+id/scroll2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxLines="6"
-                android:textAlignment="textStart"
-                android:padding="@dimen/_8sdp"
                 android:layout_gravity="start"
-
-                android:text="الموقع الجغرافي: تقع فلسطين جنوب غرب قارة آسيا، على جنوبي الساحل الشرقي للبحر الأبيض المتوسط وهي بذلك تقع في قلب العالم القديم (آسيا وإفريقيا وأوروبا)، مما يجعلها جسراً برياً يربط أسيا بأفريقيا والبحر المتوسط بالبحر الأحمر ومن ثم المحيطين الأطلسي والهندي."
-                android:textColor="#656363"
-                android:textSize="@dimen/_16ssp"
                 android:layout_marginStart="@dimen/_16sdp"
                 android:layout_marginEnd="@dimen/_16sdp"
+                android:maxLines="6"
+
+                android:padding="@dimen/_8sdp"
+                android:text="الموقع الجغرافي: تقع فلسطين جنوب غرب قارة آسيا، على جنوبي الساحل الشرقي للبحر الأبيض المتوسط وهي بذلك تقع في قلب العالم القديم (آسيا وإفريقيا وأوروبا)، مما يجعلها جسراً برياً يربط أسيا بأفريقيا والبحر المتوسط بالبحر الأحمر ومن ثم المحيطين الأطلسي والهندي."
+                android:textAlignment="textStart"
+                android:textColor="#656363"
+                android:textSize="@dimen/_16ssp" />
+
+
+            <TextView
+                android:id="@+id/txtstory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:gravity="start"
+                android:text="معلومات اقتصادية :"
+                android:textAlignment="textStart"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_20ssp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/scroll2"
+
                 />
-
-
-
-
-
-        <TextView
-            android:id="@+id/txtstory"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/scroll2"
-
-            android:text="معلومات اقتصادية :"
-            android:textSize="@dimen/_20ssp"
-            android:gravity="start"
-            android:textAlignment="textStart"
-            android:textStyle="bold"
-            android:textColor="@color/primary_text"
-            android:layout_marginTop="@dimen/_12sdp"
-            android:layout_marginStart="@dimen/_16sdp"
-            android:layout_marginEnd="@dimen/_16sdp"
-
-            />
 
 
             <TextView
                 android:id="@+id/scrollstory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="الاقتصاد في الأراضي الفلسطينية يشير إلى اقتصاد في الأقاليم الخاضعة لإدارة السلطة الفلسطينية في الضفة الغربية وقطاع غزة، وهو اقتصاد محكوم إلى حد كبير بالاقتصاد الإسرائيلي والسياسات الإسرائيلية، ومن ميزات اقتصاد السلطة الفلسطينية اعتماده العالي على المساعدات الخارجية، وهو أحد مصادر الدخل الأساسية للسلطة الحاكمة، وتأتي المساعدات المالية من الدول العربية، الاتحاد الأوروبي والولايات الأمريكية المتحدة. كما يتميز هذا الاقتصاد بنسبة عالية من العمال في إسرائيل والخارج."
-                android:textColor="#656363"
-                android:textSize="@dimen/_16ssp"
-                android:paddingEnd="@dimen/_8sdp"
                 android:layout_marginStart="@dimen/_16sdp"
                 android:layout_marginEnd="@dimen/_16sdp"
-                />
+                android:paddingEnd="@dimen/_8sdp"
+                android:text="الاقتصاد في الأراضي الفلسطينية يشير إلى اقتصاد في الأقاليم الخاضعة لإدارة السلطة الفلسطينية في الضفة الغربية وقطاع غزة، وهو اقتصاد محكوم إلى حد كبير بالاقتصاد الإسرائيلي والسياسات الإسرائيلية، ومن ميزات اقتصاد السلطة الفلسطينية اعتماده العالي على المساعدات الخارجية، وهو أحد مصادر الدخل الأساسية للسلطة الحاكمة، وتأتي المساعدات المالية من الدول العربية، الاتحاد الأوروبي والولايات الأمريكية المتحدة. كما يتميز هذا الاقتصاد بنسبة عالية من العمال في إسرائيل والخارج."
+                android:textColor="#656363"
+                android:textSize="@dimen/_16ssp" />
 
 
-</LinearLayout>
+        </LinearLayout>
     </ScrollView>
-
 
 
 </LinearLayout>

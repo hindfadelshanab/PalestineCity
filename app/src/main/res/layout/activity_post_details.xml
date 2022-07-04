@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
 
-    android:layout_width="match_parent"
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+
+
+<!--    >-->
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
-
-    >
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:cardElevation="12dp">
+    android:orientation="vertical"
+    app:cardElevation="12dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
         <ImageView
             android:layout_width="@dimen/_30sdp"
@@ -29,7 +31,6 @@
         android:id="@+id/img_postImage"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_280sdp"
-        android:scaleType="fitXY"
         tools:src="@drawable/ic_launcher_background"
         app:riv_corner_radius_bottom_right="24dp"
             app:layout_constraintBottom_toTopOf="@id/layout"
@@ -92,7 +93,9 @@
                                         android:id="@+id/img_like"
                                         android:layout_width="@dimen/_25sdp"
                                         android:layout_height="@dimen/_20sdp"
-                                        android:src="@drawable/ic_heart" />
+                                        android:src="@drawable/ic__fill_heart"
+                                        android:tint="@color/black"
+                                        />
 
                                     <TextView
                                         android:layout_width="wrap_content"
@@ -129,6 +132,7 @@
             android:id="@+id/commentRc"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            app:layout_goneMarginTop="@dimen/_8sdp"
             android:layout_margin="@dimen/_4sdp"
             android:layout_marginTop="@dimen/_8sdp"
             app:layout_constraintBottom_toTopOf="@id/layout2"
@@ -143,8 +147,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
+            android:layout_marginBottom="@dimen/_12sdp"
             android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/commentRc"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
 
@@ -184,7 +188,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</ScrollView>
+<!--</ScrollView>-->
 
 
 

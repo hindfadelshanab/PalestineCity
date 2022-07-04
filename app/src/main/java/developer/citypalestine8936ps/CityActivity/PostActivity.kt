@@ -80,16 +80,7 @@ class PostActivity : AppCompatActivity()  ,PostListener{
             }
 
         }
-      //  binding.txtWritePost.addTextChangedListener {  }
 
-//        binding.imageSendPost.setOnClickListener(View.OnClickListener {
-//            if (binding.txtWritePost.text.isEmpty()) {
-//                binding.txtWritePost.setError("Enter your Post")
-//            } else {
-//                sendPost(city.id, userId , userImage , encodedImage!!)
-//                getAllPost(city.id ,userImage )
-//            }
-//        })
 
         binding.imageFromGallery.setOnClickListener { view ->
             val intent =
@@ -125,6 +116,7 @@ class PostActivity : AppCompatActivity()  ,PostListener{
                                 post.userName = user!!.name
                                 post.postImage = imageUrl
                                 post.numberOfComment = 0
+                                post.userId = userId
                                 post.numberOfNum = 0
                                 post.isLike = false
                                 post.likeBy = ArrayList()
@@ -163,6 +155,8 @@ class PostActivity : AppCompatActivity()  ,PostListener{
                     post.postImage = ""
                     post.numberOfComment = 0
                     post.numberOfNum = 0
+                    post.userId = userId
+
                     post.isLike = false
                     post.likeBy = ArrayList()
                     post.cityId = cityId

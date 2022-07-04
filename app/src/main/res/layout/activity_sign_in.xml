@@ -31,9 +31,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_8sdp"
             android:textStyle="bold"
-            android:textSize="@dimen/_12sdp"
+            android:textSize="@dimen/_16sdp"
+
+
 
             android:text="@string/login_to_continue"
             android:textColor="@color/secondary_text"
@@ -75,7 +77,18 @@
             android:textSize="@dimen/_13sdp"
 
             />
+        <TextView
+            android:id="@+id/textForgetPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="@string/forget_password"
+            android:textStyle="bold"
+            android:textSize="@dimen/_13sdp"
+            android:layout_gravity="end"
+            android:textColor="@color/primary"
 
+            />
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -103,28 +116,40 @@
         </FrameLayout>
 
 
-        <TextView
+        <LinearLayout
             android:id="@+id/textCreateNewAccount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_30sdp"
-            android:text="@string/create_new_account"
-            android:textStyle="bold"
-            android:textSize="@dimen/_13sdp"
-            android:textColor="@color/primary"
 
-            />
-        <TextView
-            android:id="@+id/textForgetPassword"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:layout_marginTop="@dimen/_30sdp"
-            android:text="@string/forget_password"
-            android:textStyle="bold"
-            android:textSize="@dimen/_13sdp"
-            android:textColor="@color/primary"
 
-            />
+            >
+            <TextView
+                android:id="@+id/textCreateNewAccount2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="انشئ حسابا "
+                android:textStyle="bold"
+                android:textSize="@dimen/_13sdp"
+                android:textColor="@color/primary"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/create_new_account"
+                android:textStyle="bold"
+                android:textSize="@dimen/_13sdp"
+                android:textColor="#9A9A9A"
+
+                />
+
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </ScrollView>

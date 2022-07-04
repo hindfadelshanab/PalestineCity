@@ -29,6 +29,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar!!.setTitle(city.cityName)
         binding.btnCityPhoto.setOnClickListener(View.OnClickListener {
 
 

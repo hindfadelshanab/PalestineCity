@@ -19,6 +19,7 @@ import com.google.common.base.Objects
 import com.google.firebase.firestore.FirebaseFirestore
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
+import developer.citypalestine8936ps.ProfileActivity
 import developer.citypalestine8936ps.R
 import developer.citypalestine8936ps.listeners.PostListener
 import developer.citypalestine8936ps.models.Post
@@ -55,6 +56,12 @@ class PostAdpter(private val mList: List<Post>, var context: FragmentActivity?
             holder.likeImage.setImageResource(R.drawable.ic_heart)
         }
 
+        holder.imageViewUser.setOnClickListener{
+            var intent = Intent(context , ProfileActivity::class.java)
+            intent.putExtra("userId"  , itemsViewModel.userId)
+            intent.putExtra("fromPost" , true)
+            context!!.startActivity(intent)
+        }
 
 
         holder.imageShare.setOnClickListener {
@@ -152,6 +159,7 @@ class PostAdpter(private val mList: List<Post>, var context: FragmentActivity?
         }else if (itemsViewModel.postImage !=null) {
             Picasso.get()
                 .load(itemsViewModel.postImage)
+                .centerCrop().resize(200 ,200)
                 .into(holder.imageView , object :Callback{
                     override fun onSuccess() {
                         holder.imageView.visibility =View.VISIBLE

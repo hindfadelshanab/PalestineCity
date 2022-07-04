@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 import developer.citypalestine8936ps.databinding.ItemContainerRecentConversionBinding;
@@ -58,7 +60,11 @@ public class RecentConversationAdapter extends  RecyclerView.Adapter<RecentConve
 
         void setData(ChatMessage chatMessage){
             binding.textName.setText(chatMessage.converstionName);
-            binding.imageProfile.setImageBitmap(getConversationImage(chatMessage.converstionImage));
+
+            Picasso.get().load(chatMessage.converstionImage)
+                    .into(binding.imageProfile);
+//            binding.imageProfile
+//            binding.imageProfile.setImageBitmap(getConversationImage(chatMessage.converstionImage));
             binding.textRecentMessage.setText(chatMessage.message);
             binding.getRoot().setOnClickListener(view -> {
 

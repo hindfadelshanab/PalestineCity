@@ -48,7 +48,7 @@ class FamousFamiliesActivity : AppCompatActivity() {
 
             getAllFamily()
         }else if (landmark !=null && landmark){
-            getAllLandMark()
+         getAllLandMark()
             binding.txt.setText( "${city.cityName}معالم مدينة ")
 
         }

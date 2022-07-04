@@ -23,12 +23,13 @@ class Post (
     var postImage: String? = null,
     var numberOfNum: Int? = null,
     var userName: String? = null,
+    var userId: String? = null,
     var userImage: String? = null,
     var numberOfComment:Int?= null ,
     var cityId :String ?=null,
     var likeBy:ArrayList<String> ? =null
 
-):Parcelable{
+) :Parcelable{
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readString(),
@@ -37,8 +38,10 @@ class Post (
         parcel.readValue(Int::class.java.classLoader) as? Int,
         parcel.readString(),
         parcel.readString(),
+        parcel.readString(),
         parcel.readValue(Int::class.java.classLoader) as? Int,
         parcel.readString(),
+
     ) {
     }
 
@@ -49,6 +52,7 @@ class Post (
         parcel.writeString(postImage)
         parcel.writeValue(numberOfNum)
         parcel.writeString(userName)
+        parcel.writeString(userId)
         parcel.writeString(userImage)
         parcel.writeValue(numberOfComment)
         parcel.writeString(cityId)

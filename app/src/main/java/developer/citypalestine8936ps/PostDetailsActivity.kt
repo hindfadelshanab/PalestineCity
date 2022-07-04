@@ -43,6 +43,7 @@ class PostDetailsActivity : AppCompatActivity() {
 
         } else {
             Picasso.get().load(post!!.postImage)
+
                 .into(binding.imgPostImage)
         }
         if (post!!.userImage !== null && post!!.userImage !== "") {

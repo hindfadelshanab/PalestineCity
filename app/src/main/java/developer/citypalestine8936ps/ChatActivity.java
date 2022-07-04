@@ -111,20 +111,20 @@ public class ChatActivity extends BaseActivity {
         listenMessage();
     }
 
-    private Bitmap getBitmapFromEncodedString(String encodedImage) {
-        if (encodedImage != null) {
-            byte[] bytes = Base64.decode(encodedImage, Base64.DEFAULT);
-            return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-
-        } else {
-            return null;
-        }
-    }
+//    private Bitmap getBitmapFromEncodedString(String encodedImage) {
+//        if (encodedImage != null) {
+//            byte[] bytes = Base64.decode(encodedImage, Base64.DEFAULT);
+//            return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+//
+//        } else {
+//            return null;
+//        }
+//    }
 
     private void init() {
         preferenceManager = new PreferenceManager(getApplicationContext());
         chatMessageList = new ArrayList<>();
-        chatAdapter = new ChatAdapter(chatMessageList, getBitmapFromEncodedString(receiverUser.image), preferenceManager.getString(Constants.KEY_USER_ID));
+        chatAdapter = new ChatAdapter(chatMessageList, receiverUser.image, preferenceManager.getString(Constants.KEY_USER_ID));
         binding.chatRecyclerView.setAdapter(chatAdapter);
         database = FirebaseFirestore.getInstance();
         binding.layoutPhoto.setOnClickListener(new View.OnClickListener() {
@@ -159,7 +159,6 @@ public class ChatActivity extends BaseActivity {
             e.printStackTrace();
         }
 
-        //inflate menu
         popupMenu.getMenuInflater().inflate(R.menu.photo_menu, popupMenu.getMenu());
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
@@ -353,12 +352,7 @@ public class ChatActivity extends BaseActivity {
         }
 
 
-//                    .addOnSuccessListener(OnSuccessListener< UploadTask.TaskSnapshot> {taskSnapshot ->
-//                                    taskSnapshot.storage.downloadUrl.addOnSuccessListener{
-//                                    var imageUrl = it.toString()
-//
-//                            }
-//                            }
+
 
         Log.e("hinnn", "mslldk");
         if (!isReceiverAvailable) {
@@ -411,7 +405,7 @@ public class ChatActivity extends BaseActivity {
                             }
                         }
 
-                    } catch (JSONException e) {
+                    } catch (JSONException ignored) {
 
                     }
                     showToast("Notification Send Successfully");
@@ -443,7 +437,7 @@ public class ChatActivity extends BaseActivity {
                         receiverUser.token = value.getString(Constants.KEY_FCM_TOKEN);
                         if (receiverUser.image == null){
                             receiverUser.image = value.getString(Constants.KEY_IMAGE);
-                            chatAdapter.setReceiverProfileImage(getBitmapFromEncodedString(receiverUser.image));
+                            chatAdapter.setReceiverProfileImage(receiverUser.image);
                             chatAdapter.notifyItemRangeInserted(0,chatMessageList.size());
                         }
 

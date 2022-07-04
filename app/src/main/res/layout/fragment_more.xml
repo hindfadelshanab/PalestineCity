@@ -10,11 +10,12 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/txt_profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         app:cardElevation="@dimen/_8sdp"
-        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_12sdp"
         android:layout_gravity="end"
         android:layout_marginStart="@dimen/_24sdp"
         android:layout_marginEnd="@dimen/_24sdp"
@@ -26,16 +27,15 @@
             android:gravity="end"
             android:orientation="horizontal">
             <TextView
-                android:id="@+id/txt_profile"
                 android:layout_width="@dimen/_200sdp"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/_20ssp"
-                android:layout_marginEnd="@dimen/_32sdp"
-                android:fontFamily="@font/breeserif_regular"
+                android:textSize="@dimen/_18ssp"
+                android:fontFamily="@font/tajawal_regular"
                 android:padding="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_32sdp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:text="الملف الشخصي"
+                android:text="@string/profile"
                 />
             <androidx.appcompat.widget.AppCompatButton
                 android:background="@color/primary"
@@ -54,12 +54,12 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/txt_palestinTrsadotional"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/cardCity"
         app:cardElevation="@dimen/_8sdp"
-        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_12sdp"
         android:layout_gravity="end"
         android:layout_marginStart="@dimen/_24sdp"
         android:layout_marginEnd="@dimen/_24sdp"
@@ -71,12 +71,13 @@
             android:gravity="end"
             android:orientation="horizontal">
             <TextView
-                android:id="@+id/txt_palestinTrsadotional"
+
                 android:layout_width="@dimen/_200sdp"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/_20ssp"
+                android:textSize="@dimen/_18ssp"
+
+                android:fontFamily="@font/tajawal_regular"
                 android:layout_marginEnd="@dimen/_32sdp"
-                android:fontFamily="@font/breeserif_regular"
                 android:padding="@dimen/_8sdp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
@@ -99,11 +100,13 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/txt_palestinVillages"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         app:cardElevation="@dimen/_8sdp"
-        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_12sdp"
         android:layout_gravity="end"
         android:layout_marginStart="@dimen/_24sdp"
         android:layout_marginEnd="@dimen/_24sdp"
@@ -117,13 +120,13 @@
 
 
             <TextView
-                android:id="@+id/txt_palestinVillages"
                 android:layout_width="@dimen/_200sdp"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/_20ssp"
                 android:layout_marginEnd="@dimen/_32sdp"
                 android:padding="@dimen/_8sdp"
-                android:fontFamily="@font/breeserif_regular"
+                android:textSize="@dimen/_18ssp"
+
+                android:fontFamily="@font/tajawal_regular"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:text="اشهر القرى الفلسطينية"
@@ -153,11 +156,13 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/txt_aboutPalestine"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         app:cardElevation="@dimen/_8sdp"
-        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_12sdp"
         android:layout_gravity="end"
         android:layout_marginStart="@dimen/_24sdp"
         android:layout_marginEnd="@dimen/_24sdp"
@@ -171,15 +176,16 @@
 
 
             <TextView
-                android:id="@+id/txt_aboutPalestine"
                 android:text="فلسطين"
                 android:layout_width="@dimen/_200sdp"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/_20ssp"
                 android:layout_marginEnd="@dimen/_32sdp"
                 android:padding="@dimen/_8sdp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
+                android:textSize="@dimen/_18ssp"
+
+                android:fontFamily="@font/tajawal_regular"
                 />
             <androidx.appcompat.widget.AppCompatButton
                 android:background="@color/primary"
@@ -214,7 +220,7 @@
         android:layout_height="wrap_content"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         app:cardElevation="@dimen/_8sdp"
-        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_12sdp"
         android:layout_gravity="end"
         android:layout_marginStart="@dimen/_24sdp"
         android:layout_marginEnd="@dimen/_24sdp"
@@ -231,11 +237,13 @@
                 android:text="كتب عن فلسطين "
                 android:layout_width="@dimen/_200sdp"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/_20ssp"
                 android:layout_marginEnd="@dimen/_32sdp"
                 android:padding="@dimen/_8sdp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
+                android:textSize="@dimen/_18ssp"
+
+                android:fontFamily="@font/tajawal_regular"
                 />
             <androidx.appcompat.widget.AppCompatButton
                 android:background="@color/primary"
@@ -256,11 +264,13 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/txet_res"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         app:cardElevation="@dimen/_8sdp"
-        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_12sdp"
         android:layout_gravity="end"
         android:layout_marginStart="@dimen/_24sdp"
         android:layout_marginEnd="@dimen/_24sdp"
@@ -274,16 +284,17 @@
 
 
             <TextView
-                android:id="@+id/txet_res"
                 android:text="المصادر"
                 android:layout_width="@dimen/_200sdp"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/_20ssp"
-                android:fontFamily="@font/breeserif_regular"
                 android:layout_marginEnd="@dimen/_32sdp"
                 android:padding="@dimen/_8sdp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
+
+                android:textSize="@dimen/_18ssp"
+
+                android:fontFamily="@font/tajawal_regular"
                 />
             <androidx.appcompat.widget.AppCompatButton
                 android:background="@color/primary"
@@ -306,11 +317,12 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/txet_aboutapp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         app:cardElevation="@dimen/_8sdp"
-        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_12sdp"
         android:layout_gravity="end"
         android:layout_marginStart="@dimen/_24sdp"
         android:layout_marginEnd="@dimen/_24sdp"
@@ -324,16 +336,16 @@
 
 
             <TextView
-                android:id="@+id/txet_aboutapp"
                 android:text="عن التطبيق"
                 android:layout_width="@dimen/_200sdp"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/_20ssp"
                 android:layout_marginEnd="@dimen/_32sdp"
                 android:padding="@dimen/_8sdp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/breeserif_regular"
                 android:textStyle="bold"
+                android:textSize="@dimen/_18ssp"
+
+                android:fontFamily="@font/tajawal_regular"
                 />
             <androidx.appcompat.widget.AppCompatButton
                 android:background="@color/primary"

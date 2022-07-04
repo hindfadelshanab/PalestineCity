@@ -5,7 +5,7 @@
     <string name="email">الايميل</string>
     <string name="password">كلمة المرور</string>
     <string name="sign_in">تسجيل الدخول</string>
-    <string name="create_new_account">إنشاء حساب جديد</string>
+    <string name="create_new_account">أليس لديك حساب ؟</string>
     <string name="add_image">Add image</string>
     <string name="name">الاسم</string>
     <string name="confirm_password">تاكيد كلمة المرور</string>
@@ -24,6 +24,7 @@
     <string name="sity">شو قالت ستي</string>
     <string name="shuhadaa">الشهداء</string>
     <string name="landmark">المعالم</string>
+    <string name="profile">الملف الشخصي</string>
 
 
 </resources>

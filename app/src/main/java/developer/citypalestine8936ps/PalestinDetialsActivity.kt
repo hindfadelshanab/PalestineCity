@@ -1,5 +1,6 @@
 package developer.citypalestine8936ps
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -56,7 +57,7 @@ class PalestinDetialsActivity : AppCompatActivity() {
             binding.layout.visibility = View.VISIBLE
         }else if(aboutApp !=null && aboutApp) {
 
-            binding.txt.setText("عن التطبيق")
+            binding.txt.visibility =View.GONE
             binding.traditionRc.visibility = View.GONE
             binding.txtAboutapp.visibility = View.VISIBLE
             binding.imageLogo.visibility = View.VISIBLE
@@ -82,6 +83,7 @@ class PalestinDetialsActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun getAllVillages() {
         database.collection("Villages").get()
             .addOnSuccessListener() { queryDocumentSnapshots ->
@@ -101,9 +103,6 @@ class PalestinDetialsActivity : AppCompatActivity() {
                 adapter!!.notifyDataSetChanged()
 
 
-
-
-              //  var data = queryDocumentSnapshots.result.get("shuhadaa") as ArrayList<String>
 
 
             }

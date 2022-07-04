@@ -22,16 +22,16 @@ import developer.citypalestine8936ps.models.ChatMessage;
 
 public class ChatAdapter  extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     final List<ChatMessage> chatMessageList;
-    private  Bitmap receiverProfileImage;
+    private  String receiverProfileImage;
     private final String senderId ;
     public static final int VIEW_TYPE_SENT = 1;
     public static final int VIEW_TYPE_RECEIVED = 2;
 
-    public void setReceiverProfileImage(Bitmap bitmap){
+    public void setReceiverProfileImage(String bitmap){
         receiverProfileImage =bitmap;
     }
 
-    public ChatAdapter(List<ChatMessage> chatMessageList, Bitmap receiverProfileImage, String senderId) {
+    public ChatAdapter(List<ChatMessage> chatMessageList, String receiverProfileImage, String senderId) {
         this.chatMessageList = chatMessageList;
         this.receiverProfileImage = receiverProfileImage;
         this.senderId = senderId;
@@ -114,7 +114,7 @@ public class ChatAdapter  extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
             super(itemContienerReceivedMessageBinding.getRoot());
             binding = itemContienerReceivedMessageBinding;
         }
-        void setData(ChatMessage chatMessage,Bitmap receiverProfileImage){
+        void setData(ChatMessage chatMessage,String  receiverProfileImage){
 
             if (chatMessage.message !=null) {
                 binding.textMessage.setText(chatMessage.message);
@@ -123,7 +123,9 @@ public class ChatAdapter  extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
             }
             binding.textDateTime.setText(chatMessage.dateTime);
             if (receiverProfileImage !=null) {
-                binding.imageProfile.setImageBitmap(receiverProfileImage);
+                Picasso.get().load(receiverProfileImage)
+                        .into(binding.imageProfile);
+            //    binding.imageProfile.setImageBitmap(receiverProfileImage);
             }
 
             Log.e("adapterr" , chatMessage.messageImage +"immmmm");
