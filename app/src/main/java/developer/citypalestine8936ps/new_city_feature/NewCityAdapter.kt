@@ -1,13 +1,16 @@
-package developer.citypalestine8936ps.adapters
+package developer.citypalestine8936ps.new_city_feature
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import developer.citypalestine8936ps.databinding.ItemCityBinding
-import developer.citypalestine8936ps.models.NewCity
+import developer.citypalestine8936ps.utilites.load
 
 class NewCityAdapter(
-    private var cities: MutableList<NewCity>
+    private val context: Context,
+    private var cities: MutableList<NewCity>,
+    private var listener: CityListener
 ) : RecyclerView.Adapter<NewCityAdapter.NewCityViewHolder>() {
 
     fun insertCity(city: NewCity) {
@@ -24,7 +27,10 @@ class NewCityAdapter(
         RecyclerView.ViewHolder(binding.root) {
 
         fun bindItem(city: NewCity) {
+            binding.ivCityFeaturedImage.load(context, city.featuredImage)
             binding.tvCityName.text = city.cityName
+
+            binding.root.setOnClickListener { listener.onClickCity(city) }
         }
     }
 

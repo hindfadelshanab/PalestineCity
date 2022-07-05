@@ -8,6 +8,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 import developer.citypalestine8936ps.fragment.*
 import developer.citypalestine8936ps.databinding.ActivityMainBinding
+import developer.citypalestine8936ps.new_city_feature.CitiesFragment
 import developer.citypalestine8936ps.new_home_feature.NewHomeFragment
 
 
@@ -22,12 +23,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(getLayoutInflater())
-        setContentView(binding.getRoot())
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         loadFragment(NewHomeFragment())
         //   bottomNav = nav_view
-        getSupportActionBar()?.setTitle("بلدنا");
+        supportActionBar?.title = getString(R.string.app_name);
 
         binding.bottomNav.setOnNavigationItemSelectedListener setOnNavigationItemReselectedListener@{it
 

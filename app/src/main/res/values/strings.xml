@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">بلدنا</string>
+    <string name="app_name">Baladna</string>
     <string name="welcome_backe">Welcome Back !</string>
     <string name="add_image">Add image</string>
     <string name="select_user">Select user</string>
@@ -44,5 +44,13 @@
     <string name="comments_count">%d Comments</string>
 
     <string name="profile">Profile</string>
+    <string name="comments">Comments</string>
+    <string name="somthing_wrong">Something wont wrong, please try again later</string>
+    <string name="trad_pal">تراث فلسطين</string>
+    <string name="most_fam">اشهر القرى الفلسطينية</string>
+    <string name="palestine">فلسطين</string>
+    <string name="books_about_pal">كتب عن فلسطين</string>
+    <string name="resources">المصادر</string>
+    <string name="about">عن التطبيق</string>
 
 </resources>

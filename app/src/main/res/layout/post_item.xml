@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:layout_margin="2dp"
     android:elevation="@dimen/_4sdp"
 
 
@@ -125,22 +125,14 @@
         </LinearLayout>
 
 
-        <com.makeramen.roundedimageview.RoundedImageView
+        <ImageView
             android:id="@+id/img_postImage"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_200sdp"
-            android:layout_marginStart="@dimen/_8sdp"
-            android:layout_marginEnd="@dimen/_8sdp"
-            android:scaleType="fitXY"
+            android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
-
             app:layout_constraintStart_toStartOf="parent"
-
             app:layout_constraintTop_toBottomOf="@id/layout"
-            app:riv_corner_radius="16dp"
-            app:riv_mutate_background="true"
-            app:riv_oval="false"
-
             tools:src="@drawable/ic_launcher_background" />
 
         <ProgressBar

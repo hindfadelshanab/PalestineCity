@@ -1,4 +1,4 @@
-package developer.citypalestine8936ps.fragment
+package developer.citypalestine8936ps.new_city_feature
 
 import android.os.Bundle
 import android.util.Log
@@ -8,17 +8,16 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
-import developer.citypalestine8936ps.adapters.NewCityAdapter
+import developer.citypalestine8936ps.MapsActivity
 import developer.citypalestine8936ps.databinding.FragmentCitiesBinding
-import developer.citypalestine8936ps.models.NewCity
 import developer.citypalestine8936ps.utilites.Constants
 
-class CitiesFragment : Fragment() {
+class CitiesFragment : Fragment(), CityListener {
 
     private lateinit var database: FirebaseFirestore
     private lateinit var binding: FragmentCitiesBinding
     private val newCityAdapter by lazy {
-        NewCityAdapter(mutableListOf())
+        NewCityAdapter(requireContext(), mutableListOf(), this)
     }
 
     override fun onCreateView(
@@ -49,6 +48,10 @@ class CitiesFragment : Fragment() {
                 Log.d(TAG, "loadCities: cities $cities")
                 newCityAdapter.updateData(cities)
             }
+    }
+
+    override fun onClickCity(city: NewCity) {
+
     }
 
     companion object {

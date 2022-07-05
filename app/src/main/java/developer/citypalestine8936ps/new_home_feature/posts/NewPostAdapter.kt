@@ -1,4 +1,4 @@
-package developer.citypalestine8936ps.new_home_feature
+package developer.citypalestine8936ps.new_home_feature.posts
 
 import android.content.Context
 import android.content.Intent
@@ -6,10 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.squareup.picasso.Picasso
 import developer.citypalestine8936ps.R
 import developer.citypalestine8936ps.databinding.PostItemBinding
-import developer.citypalestine8936ps.models.PostModelForAdapter
+import developer.citypalestine8936ps.utilites.load
 import developer.citypalestine8936ps.utilites.toConversationDateFormat
 import developer.citypalestine8936ps.utilites.toConversationTimeFormat
 
@@ -21,27 +20,43 @@ class NewPostAdapter(
 ) : RecyclerView.Adapter<NewPostAdapter.NewPostViewHolder>() {
 
     fun updateData(data: MutableList<PostModelForAdapter>) {
-        posts = data
-        notifyDataSetChanged()
+        try {
+            posts = data
+            notifyDataSetChanged()
+        } catch (ex: Exception) {
+            ex.printStackTrace()
+        }
     }
 
     fun addPost(newPost: PostModelForAdapter) {
-        posts.add(newPost)
-        notifyItemInserted(posts.size - 1)
+        try {
+            posts.add(newPost)
+            notifyItemInserted(posts.size - 1)
+        } catch (ex: Exception) {
+            ex.printStackTrace()
+        }
     }
 
-    fun updatePost(newPost: NewPost) {
-        val postPosition = posts.indexOfFirst { it.post.docId == newPost.docId }
-        val oldPost = posts[postPosition]
-        posts[postPosition] = oldPost.copy(post = newPost)
-        notifyItemChanged(postPosition)
+    fun modifyPost(newPost: NewPost) {
+        try {
+            val postPosition = posts.indexOfFirst { it.post.docId == newPost.docId }
+            val oldPost = posts[postPosition]
+            posts[postPosition] = oldPost.copy(post = newPost)
+            notifyItemChanged(postPosition)
+        } catch (ex: Exception) {
+            ex.printStackTrace()
+        }
     }
 
     fun removePost(newPost: NewPost) {
-        val postPosition = posts.indexOfFirst { it.post.docId == newPost.docId }
-        val removeResult = posts.removeIf { it.post.docId == newPost.docId }
-        if (removeResult)
-            notifyItemRemoved(postPosition)
+        try {
+            val postPosition = posts.indexOfFirst { it.post.docId == newPost.docId }
+            val removeResult = posts.removeIf { it.post.docId == newPost.docId }
+            if (removeResult)
+                notifyItemRemoved(postPosition)
+        } catch (ex: Exception) {
+            ex.printStackTrace()
+        }
     }
 
     inner class NewPostViewHolder(private val binding: PostItemBinding) :
@@ -52,9 +67,8 @@ class NewPostAdapter(
             val author = modelForAdapter.author
 
             binding.txtPostUserName.text = author.name
-            if (author.image.isNotEmpty()) {
-                Picasso.get().load(author.image).into(binding.imagePostUserPhoto)
-            }
+            binding.imagePostUserPhoto.load(context, author.image)
+
             binding.tvPostTime.text =
                 "${post.time.toConversationDateFormat()}\n${post.time.toConversationTimeFormat()}"
 
@@ -69,7 +83,7 @@ class NewPostAdapter(
 
             if (post.imageUrl.isNotEmpty()) {
                 binding.imgPostImage.visibility = View.VISIBLE
-                Picasso.get().load(post.imageUrl).into(binding.imgPostImage)
+                binding.imgPostImage.load(context, post.imageUrl)
             } else {
                 binding.imgPostImage.visibility = View.GONE
             }
@@ -97,9 +111,14 @@ class NewPostAdapter(
             )
 
             /*Listeners*/
-            binding.root.setOnClickListener {
+            binding.imgPostImage.setOnClickListener {
+                postListener.onClickImage(post)
+            }
+
+            binding.linearComment.setOnClickListener {
                 postListener.onClickComment(post)
             }
+
             binding.linearLike.setOnClickListener {
                 postListener.onClickLike(post)
             }

@@ -34,6 +34,12 @@
     <string name="comment_count">%d تعليق</string>
     <string name="comments_count">%d تعليقات</string>
     <string name="profile">الملف الشخصي</string>
+    <string name="comments">التعليقات</string>
+    <string name="trad_pal">تراث فلسطين</string>
+    <string name="palestine">فلسطين</string>
+    <string name="books_about_pal">كتب عن فلسطين</string>
+    <string name="resources">المصادر</string>
+    <string name="about">عن التطبيق</string>
 
 
 </resources>

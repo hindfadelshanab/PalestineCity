@@ -1,4 +1,4 @@
-package developer.citypalestine8936ps.models
+package developer.citypalestine8936ps.new_city_feature
 
 import com.google.firebase.firestore.DocumentId
 

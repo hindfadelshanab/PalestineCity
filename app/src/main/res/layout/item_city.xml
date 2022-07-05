@@ -20,8 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/_200sdp"
             android:alpha="0.7"
-            android:scaleType="fitXY"
-            android:src="@drawable/mousq" />
+            android:scaleType="fitXY"/>
 
         <TextView
             android:id="@+id/tvCityName"
@@ -30,7 +29,6 @@
             android:layout_gravity="bottom"
             android:background="#99000000"
             android:gravity="center"
-            android:text="Gaza"
             android:textColor="@color/white"
             android:textSize="@dimen/_24ssp" />
     </androidx.cardview.widget.CardView>

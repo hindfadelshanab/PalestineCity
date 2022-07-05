@@ -1,4 +1,4 @@
-package developer.citypalestine8936ps.new_home_feature
+package developer.citypalestine8936ps.new_home_feature.posts
 
 import com.google.firebase.firestore.DocumentId
 

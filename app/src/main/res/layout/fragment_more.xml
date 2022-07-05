@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_8sdp"
                 android:padding="@dimen/_8sdp"
-                android:text="الملف الشخصي"
+                android:text="@string/profile"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_16ssp"
                 android:textStyle="bold" />
@@ -78,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_8sdp"
                 android:padding="@dimen/_8sdp"
-                android:text="تراث فلسطين"
+                android:text="@string/trad_pal"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_16ssp"
                 android:textStyle="bold" />
@@ -116,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_8sdp"
                 android:padding="@dimen/_8sdp"
-                android:text="اشهر القرى الفلسطينية"
+                android:text="@string/most_fam"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_16ssp"
                 android:textStyle="bold" />
@@ -154,7 +154,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_8sdp"
                 android:padding="@dimen/_8sdp"
-                android:text="فلسطين"
+                android:text="@string/palestine"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_16ssp"
                 android:textStyle="bold" />
@@ -197,7 +197,7 @@
                 android:layout_marginHorizontal="@dimen/_8sdp"
                 android:maxLines="1"
                 android:padding="@dimen/_8sdp"
-                android:text="كتب عن فلسطين "
+                android:text="@string/books_about_pal"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_16ssp"
                 android:textStyle="bold" />
@@ -235,7 +235,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_8sdp"
                 android:padding="@dimen/_8sdp"
-                android:text="المصادر"
+                android:text="@string/resources"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_16ssp"
                 android:textStyle="bold" />
@@ -246,7 +246,7 @@
     </androidx.cardview.widget.CardView>
 
 
-    <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
@@ -275,7 +275,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_8sdp"
                 android:padding="@dimen/_8sdp"
-                android:text="عن التطبيق"
+                android:text="@string/about"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_16ssp"
                 android:textStyle="bold" />

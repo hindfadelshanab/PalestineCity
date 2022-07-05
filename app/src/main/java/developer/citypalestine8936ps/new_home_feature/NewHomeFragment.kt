@@ -2,6 +2,7 @@ package developer.citypalestine8936ps.new_home_feature
 
 import android.Manifest
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -19,11 +20,18 @@ import com.google.firebase.storage.StorageReference
 import com.squareup.picasso.Picasso
 import developer.citypalestine8936ps.BuildConfig
 import developer.citypalestine8936ps.databinding.FragmentNewHomeBinding
-import developer.citypalestine8936ps.models.PostModelForAdapter
+import developer.citypalestine8936ps.new_image_preview.ImagePreviewDialog
 import developer.citypalestine8936ps.models.User
+import developer.citypalestine8936ps.new_home_feature.comments.CommentsDialog
+import developer.citypalestine8936ps.new_home_feature.posts.NewPost
+import developer.citypalestine8936ps.new_home_feature.posts.NewPostAdapter
+import developer.citypalestine8936ps.new_home_feature.posts.NewPostListener
+import developer.citypalestine8936ps.new_home_feature.posts.PostModelForAdapter
 import developer.citypalestine8936ps.utilites.Constants
 import developer.citypalestine8936ps.utilites.PreferenceManager
+import taimoor.sultani.sweetalert2.Sweetalert
 import java.io.File
+
 
 class NewHomeFragment : Fragment(), View.OnClickListener, NewPostListener {
     private lateinit var binding: FragmentNewHomeBinding
@@ -34,8 +42,8 @@ class NewHomeFragment : Fragment(), View.OnClickListener, NewPostListener {
         NewPostAdapter(requireContext(), mutableListOf(), loggedUserId, this)
     }
 
-    private lateinit var postsCollectionRef: CollectionReference
     private lateinit var usersCollectionRef: CollectionReference
+    private lateinit var postsCollectionRef: CollectionReference
 
     private lateinit var postStorageRef: StorageReference
 
@@ -64,7 +72,6 @@ class NewHomeFragment : Fragment(), View.OnClickListener, NewPostListener {
 
 
     private fun initData() {
-        database = FirebaseFirestore.getInstance()
         database = FirebaseFirestore.getInstance()
         storage = FirebaseStorage.getInstance()
 
@@ -119,7 +126,7 @@ class NewHomeFragment : Fragment(), View.OnClickListener, NewPostListener {
     }
 
     private fun onPostModified(newPost: NewPost) {
-        postAdapter.updatePost(newPost)
+        postAdapter.modifyPost(newPost)
     }
 
     private fun onPostRemoved(newPost: NewPost) {
@@ -134,21 +141,13 @@ class NewHomeFragment : Fragment(), View.OnClickListener, NewPostListener {
         }
     }
 
-    override fun onClick(p0: View?) {
-        when (p0) {
-            binding.ibPost -> onClickPost()
-            binding.ibPickCamera -> onClickPickCamera()
-            binding.ibPickGallery -> onClickPickGallery()
-            binding.ibRemoveImage -> onClickRemoveImage()
-        }
-    }
-
     private fun onClickPost() {
         val postText = binding.etPostContent.text.toString()
         if (postText.isEmpty() && postImageUri == null) {
             Toast.makeText(requireContext(), "Can't post empty", Toast.LENGTH_SHORT).show()
             return
         }
+        showLoadingDialog(true, "Posting")
         val doc = postsCollectionRef.document()
 
         if (postImageUri != null) {
@@ -168,6 +167,25 @@ class NewHomeFragment : Fragment(), View.OnClickListener, NewPostListener {
             }
         } else {
             sendMessage(doc, postText, "")
+        }
+
+    }
+
+    private val loadingDialog by lazy {
+        Sweetalert(requireContext(), Sweetalert.PROGRESS_TYPE)
+    }
+
+    private fun showLoadingDialog(status: Boolean, title: String = "Loading") {
+        if (status) {
+            if (loadingDialog.isShowing)
+                loadingDialog.dismiss()
+            loadingDialog.progressHelper.barColor = Color.parseColor("#A5DC86")
+            loadingDialog.titleText = title
+            loadingDialog.setCancelable(false)
+            loadingDialog.show()
+        } else {
+            if (loadingDialog.isShowing)
+                loadingDialog.dismiss()
         }
 
     }
@@ -200,6 +218,8 @@ class NewHomeFragment : Fragment(), View.OnClickListener, NewPostListener {
 
         binding.etPostContent.text.clear()
         binding.cvImagePreview.visibility = View.GONE
+
+        showLoadingDialog(false)
     }
 
     private fun onClickPickCamera() {
@@ -228,7 +248,6 @@ class NewHomeFragment : Fragment(), View.OnClickListener, NewPostListener {
         changeImagePreviewVisibility(false)
         postImageUri = null
     }
-
 
     private val activityResultLauncher =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
@@ -267,6 +286,7 @@ class NewHomeFragment : Fragment(), View.OnClickListener, NewPostListener {
             }
         }
 
+
     private fun getTmpFileUri(): Uri {
         val tmpFile =
             File.createTempFile("tmp_image_file", ".png", requireContext().cacheDir).apply {
@@ -285,6 +305,19 @@ class NewHomeFragment : Fragment(), View.OnClickListener, NewPostListener {
         binding.cvImagePreview.visibility = if (status) View.VISIBLE else View.GONE
     }
 
+    override fun onClick(p0: View?) {
+        when (p0) {
+            binding.ibPost -> onClickPost()
+            binding.ibPickCamera -> onClickPickCamera()
+            binding.ibPickGallery -> onClickPickGallery()
+            binding.ibRemoveImage -> onClickRemoveImage()
+        }
+    }
+
+    override fun onClickAuthorImage(post: NewPost) {
+        TODO("Not yet implemented")
+    }
+
     override fun onClickLike(post: NewPost) {
         val isLike = post.likes.contains(loggedUserId)
         if (isLike) {
@@ -297,7 +330,17 @@ class NewHomeFragment : Fragment(), View.OnClickListener, NewPostListener {
         postsCollectionRef.document(post.docId).set(post)
     }
 
+    override fun onClickImage(post: NewPost) {
+        ImagePreviewDialog.display(
+            fragmentManager = childFragmentManager,
+            imageUrl = post.imageUrl
+        )
+    }
+
     override fun onClickComment(post: NewPost) {
-        TODO("Not yet implemented")
+        CommentsDialog.display(
+            fragmentManager = childFragmentManager,
+            postId = post.docId
+        )
     }
 }
