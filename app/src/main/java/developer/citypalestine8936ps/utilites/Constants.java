@@ -5,9 +5,14 @@ import java.util.HashMap;
 public class Constants {
 
     public static final String KEY_COLLECTION_USERS = "users";
-    public static final String KEY_COLLECTION_CITY = "City";
+    public static final String KEY_COLLECTION_CITY = "cities";
+    public static final String KEY_COLLECTION_VILLAGE = /*"villages"*/"Villages";
+    public static final String KEY_COLLECTION_TRADITION = "Tradition";
+    public static final String KEY_COLLECTION_BOOK = "Book";
+    public static final String KEY_COLLECTION_CITY_LANDMARK = "landmarks";
     public static final String KEY_COLLECTION_NEW_POSTS = "new_posts";
     public static final String KEY_COLLECTION_COMMENTS = "comments";
+
     public static final String KEY_POSTS_STORAGE_REF = "posts";
 
 
@@ -40,8 +45,12 @@ public class Constants {
     public static final String REMOTE_MSG_CONTENT_TYPE = "Content-Type";
     public static final String REMOTE_MSG_DATA = "data";
     public static final String REMOTE_MSG_REGISTRATION_IDS = "registration_ids";
+
     public static final String KEY_POST_DOC_ID = "post_doc_id";
+    public static final String KEY_CITY_DOC_ID = "city_doc_id";
     public static final String KEY_IMAGE_PREVIEW_URL = "image_preview_url";
+    public static final String KEY_CURRENT_NAME = "current_name";
+    public static final String KEY_ON_SUCCESS = "on_success";
 
 
     public static HashMap<String, String> remoteMsgHeaders = null;

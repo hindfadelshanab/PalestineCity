@@ -17,4 +17,8 @@
     <color name="error">#B00020</color>
     <color name="received_message_background">#090D16</color>
 
+    <color name="facebook_color">#2196F3</color>
+    <color name="whatsapp_color">#4CAF50</color>
+    <color name="phone_color">#009688</color>
+
 </resources>

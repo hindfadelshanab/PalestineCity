@@ -2,18 +2,30 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/homeAction"
-        android:title="@string/home"
-        android:icon="@drawable/home"/>
+        android:icon="@drawable/home"
+        android:title="@string/home" />
     <item
         android:id="@+id/messageAction"
-        android:title="@string/message"
-        android:icon="@drawable/ic_baseline_chat_24"/>
+        android:icon="@drawable/ic_baseline_chat_24"
+        android:title="@string/message" />
     <item
         android:id="@+id/bookAction"
-        android:title="@string/city"
-        android:icon="@drawable/skyline"/>
+        android:icon="@drawable/skyline"
+        android:title="@string/city" />
     <item
         android:id="@+id/moreAction"
-        android:title="@string/more"
-        android:icon="@drawable/ic_baseline_settings_24"/>
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="@string/more" />
+  <!--  <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_home" />
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_dashboard" />
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/title_notifications" />-->
 </menu>

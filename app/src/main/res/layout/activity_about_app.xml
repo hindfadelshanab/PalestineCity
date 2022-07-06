@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".new_more_feature.about_app.AboutAppActivity">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="@dimen/_130sdp"
+                android:layout_height="@dimen/_130sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                app:srcCompat="@drawable/logo_cityyt"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="0dp" />
+
+            <TextView
+                android:id="@+id/txt_aboutapp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:fontFamily="@font/tajawal_regular"
+                android:padding="@dimen/_8sdp"
+                android:text="تطبيق بلدنا هو تطبيق مجاني لعرض معلومات عن فلسطين  يعرض التطبيق مدن فلسطينية مع موقعها على الخريطة ومعلومات تخص هذه المدينة مثل اشهر عائلاتها ومعالمها وصور عن المدينة, كما ويوجد شات لتواصل  مع الاصدقاء داخل التطبيق"
+                android:textAlignment="center"
+                android:textSize="@dimen/_18ssp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginStart="@dimen/_24sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginEnd="@dimen/_24sdp"
+                app:cardCornerRadius="@dimen/_4sdp"
+                app:cardElevation="@dimen/_4sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:layout_width="@dimen/_42sdp"
+                        android:layout_height="match_parent"
+                        android:background="@color/facebook_color"
+                        android:padding="@dimen/_10sdp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/facebook"
+                        android:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tvFacebook"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:padding="@dimen/_8sdp"
+                        android:text="@string/app_name"
+                        android:textSize="@dimen/_16ssp" />
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginStart="@dimen/_24sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginEnd="@dimen/_24sdp"
+                app:cardCornerRadius="@dimen/_4sdp"
+                app:cardElevation="@dimen/_4sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:layout_width="@dimen/_42sdp"
+                        android:layout_height="match_parent"
+                        android:background="@color/whatsapp_color"
+                        android:padding="@dimen/_10sdp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/whatsapp"
+                        android:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tvWhatsapp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:maxLines="1"
+                        android:padding="@dimen/_8sdp"
+                        android:text="+970592182025"
+                        android:textSize="@dimen/_16ssp" />
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginStart="@dimen/_24sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginEnd="@dimen/_24sdp"
+                android:layout_marginBottom="@dimen/_24sdp"
+                app:cardCornerRadius="@dimen/_4sdp"
+                app:cardElevation="@dimen/_4sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:layout_width="@dimen/_42sdp"
+                        android:layout_height="match_parent"
+                        android:background="@color/phone_color"
+                        android:padding="@dimen/_10sdp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/phone_call"
+                        android:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tvPhone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:padding="@dimen/_8sdp"
+                        android:text="+970592182025"
+                        android:textSize="@dimen/_16ssp" />
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

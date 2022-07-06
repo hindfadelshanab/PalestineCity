@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingTop="@dimen/_46sdp"
-    tools:context=".fragment.MoreFragment">
+    tools:context=".new_more_feature.MoreFragment">
 
 
     <androidx.cardview.widget.CardView
@@ -28,7 +28,9 @@
                 android:layout_width="@dimen/_42sdp"
                 android:layout_height="match_parent"
                 android:background="@color/primary"
-                android:src="@drawable/ic_baseline_person_24"
+                android:src="@drawable/user"
+                android:scaleType="centerCrop"
+                android:padding="@dimen/_10sdp"
                 android:tint="@color/white" />
 
             <TextView
@@ -49,8 +51,7 @@
     </androidx.cardview.widget.CardView>
 
 
-    <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.cardview.widget.CardView
         android:id="@+id/cardCity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -70,7 +71,11 @@
                 android:id="@+id/viewSaved"
                 android:layout_width="@dimen/_42sdp"
                 android:layout_height="match_parent"
-                android:background="@color/primary" />
+                android:background="@color/primary"
+                android:padding="@dimen/_6sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pottery"
+                android:tint="@color/white" />
 
             <TextView
                 android:id="@+id/txt_palestinTrsadotional"
@@ -108,7 +113,11 @@
             <androidx.appcompat.widget.AppCompatImageButton
                 android:layout_width="@dimen/_42sdp"
                 android:layout_height="match_parent"
-                android:background="@color/primary" />
+                android:background="@color/primary"
+                android:padding="@dimen/_6sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/buildings"
+                android:tint="@color/white" />
 
             <TextView
                 android:id="@+id/txt_palestinVillages"
@@ -146,7 +155,11 @@
             <androidx.appcompat.widget.AppCompatImageButton
                 android:layout_width="@dimen/_42sdp"
                 android:layout_height="match_parent"
-                android:background="@color/primary" />
+                android:background="@color/primary"
+                android:padding="@dimen/_6sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/palestine_outline"
+                android:tint="@color/white" />
 
             <TextView
                 android:id="@+id/txt_aboutPalestine"
@@ -188,8 +201,10 @@
                 android:layout_width="@dimen/_42sdp"
                 android:layout_height="match_parent"
                 android:background="@color/primary"
-                android:src="@drawable/ic_baseline_library_books_24"
-                android:tint="@color/white" />
+                android:padding="@dimen/_6sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/book"
+                android:tint="@color/white"/>
 
             <TextView
                 android:layout_width="@dimen/_200sdp"
@@ -226,6 +241,10 @@
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:layout_width="@dimen/_42sdp"
+                android:padding="@dimen/_6sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/recruitment"
+                android:tint="@color/white"
                 android:layout_height="match_parent"
                 android:background="@color/primary" />
 
@@ -264,10 +283,10 @@
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:layout_width="@dimen/_42sdp"
-                android:src="@drawable/ic_baseline_info_24"
-                android:tint="@color/white"
                 android:layout_height="match_parent"
-                android:background="@color/primary" />
+                android:background="@color/primary"
+                android:src="@drawable/ic_outline_info_24"
+                android:tint="@color/white" />
 
             <TextView
                 android:id="@+id/txet_aboutapp"

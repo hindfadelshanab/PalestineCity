@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_4sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/historical_data"
+                android:textSize="@dimen/_20ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="تقع فلسطين في موقع استراتيجي بين مصر ولبنان وسوريا والأردن، وهي أرض الرسالات ومهد الحضارات الإنسانية، حيث مرت على أقدم مدينة فيها وهي أريحا، إحدى وعشرون حضارة منذ الألف الثامن قبل الميلاد. وهي مهد الديانتين اليهودية والمسيحية، ولهذه الأرض تاريخ طويل وجذور بالثقافة والدين والتجارة والسياسة." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="@string/economic_data"
+                android:textSize="@dimen/_20ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="الاقتصاد في الأراضي الفلسطينية يشير إلى اقتصاد في الأقاليم الخاضعة لإدارة السلطة الفلسطينية في الضفة الغربية وقطاع غزة، وهو اقتصاد محكوم إلى حد كبير بالاقتصاد الإسرائيلي والسياسات الإسرائيلية، ومن ميزات اقتصاد السلطة الفلسطينية اعتماده العالي على المساعدات الخارجية، وهو أحد مصادر الدخل الأساسية للسلطة الحاكمة، وتأتي المساعدات المالية من الدول العربية، الاتحاد الأوروبي والولايات الأمريكية المتحدة. كما يتميز هذا الاقتصاد بنسبة عالية من العمال في إسرائيل والخارج." />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="@string/geo_data"
+                android:textSize="@dimen/_20ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="الموقع الجغرافي: تقع فلسطين جنوب غرب قارة آسيا، على جنوبي الساحل الشرقي للبحر الأبيض المتوسط وهي بذلك تقع في قلب العالم القديم (آسيا وإفريقيا وأوروبا)، مما يجعلها جسراً برياً يربط أسيا بأفريقيا والبحر المتوسط بالبحر الأحمر ومن ثم المحيطين الأطلسي والهندي." />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="@string/other"
+                android:textSize="@dimen/_20ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lorem" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

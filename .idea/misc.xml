@@ -4,22 +4,52 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/drawable/comment_background.xml" value="0.191" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/drawable/ic__202260_bubble_chat_chatting_comment_message_icon.xml" value="0.191" />
         <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/drawable/ic_baseline_send_24.xml" value="0.3635" />
         <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/drawable/ic_close_24px.xml" value="0.191" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/drawable/ic_home_indicator.xml" value="0.1765" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/drawable/ic_login.xml" value="0.1515" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/drawable/ic_outline_arrow_back_ios_new_24.xml" value="0.1765" />
         <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/drawable/ic_white_close_24px.xml" value="0.191" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/activity_about_app.xml" value="0.3625" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/activity_about_palestine.xml" value="0.33" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/activity_app_resources.xml" value="0.3484375" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/activity_books.xml" value="0.3625" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/activity_city_martyrs.xml" value="0.3625" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/activity_famous_families.xml" value="0.3625" />
         <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/activity_forget_password.xml" value="0.3625" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/activity_landmark.xml" value="0.3625" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/activity_maps.xml" value="0.3625" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/activity_new_city_landmark.xml" value="0.25" />
         <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/activity_new_post.xml" value="0.33" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/activity_palestin_detials.xml" value="0.3625" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/activity_photo_city.xml" value="0.3625" />
         <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/activity_post.xml" value="0.5" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/activity_profile.xml" value="0.22" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/activity_sign_in.xml" value="0.2975630611372381" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/activity_traditions.xml" value="0.3625" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/activity_villages.xml" value="0.3625" />
         <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/comment_item.xml" value="0.75" />
         <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/dialog_comments.xml" value="0.25" />
         <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/dialog_image_preview.xml" value="0.25" />
         <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/example_dialog.xml" value="0.3625" />
         <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/fragment_home.xml" value="0.3625" />
-        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/fragment_more.xml" value="0.3625" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/fragment_more.xml" value="0.33" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/fragment_name_bottom_sheet.xml" value="0.2975630611372381" />
         <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/fragment_new_home.xml" value="0.3484375" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/item_book.xml" value="0.2975630611372381" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/item_book_photo.xml" value="0.2975630611372381" />
         <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/item_city.xml" value="0.3625" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/item_city_family.xml" value="0.3614583333333333" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/item_city_martyrs.xml" value="0.3625" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/item_city_photo.xml" value="0.3625" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/item_new_landmark.xml" value="0.3614583333333333" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/item_resource.xml" value="0.3614583333333333" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/item_tradition.xml" value="0.3625" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/item_village.xml" value="0.3614583333333333" />
         <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/layout/post_item.xml" value="0.3625" />
+        <entry key="..\:/NewStudioProjects/PalestineCity/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3625" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/CityPalestine/app/src/main/res/drawable/background_chat_input.xml" value="0.1915" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/CityPalestine/app/src/main/res/drawable/background_city.xml" value="0.1455" />
         <entry key="..\:/Users/pc/AndroidStudioProjects/CityPalestine/app/src/main/res/drawable/background_content_bottom.xml" value="0.1455" />

@@ -48,12 +48,24 @@
         android:fontFamily="@font/tajawal_regular"
         android:padding="@dimen/_12sdp"
         android:visibility="gone"
-
         android:text="تطبيق بلدنا هو تطبيق مجاني لعرض معلومات عن فلسطين  يعرض التطبيق مدن فلسطينية مع موقعها على الخريطة ومعلومات تخص هذه المدينة مثل اشهر عائلاتها ومعالمها وصور عن المدينة, كما ويوجد شات لتواصل  مع الاصدقاء داخل التطبيق"
         android:textAlignment="center"
         android:textColor="#504E4E"
         android:textSize="@dimen/_20ssp" />
 
+
+    <TextView
+        android:id="@+id/txt_aboutapp2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:fontFamily="@font/tajawal_regular"
+        android:padding="@dimen/_12sdp"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="#504E4E"
+        android:textSize="@dimen/_20ssp"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/txt_resoursec"

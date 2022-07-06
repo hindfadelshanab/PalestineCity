@@ -2,7 +2,6 @@ package developer.citypalestine8936ps.new_home_feature
 
 import android.Manifest
 import android.content.pm.PackageManager
-import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -19,17 +18,18 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.squareup.picasso.Picasso
 import developer.citypalestine8936ps.BuildConfig
+import developer.citypalestine8936ps.R
 import developer.citypalestine8936ps.databinding.FragmentNewHomeBinding
-import developer.citypalestine8936ps.new_image_preview.ImagePreviewDialog
 import developer.citypalestine8936ps.models.User
 import developer.citypalestine8936ps.new_home_feature.comments.CommentsDialog
 import developer.citypalestine8936ps.new_home_feature.posts.NewPost
 import developer.citypalestine8936ps.new_home_feature.posts.NewPostAdapter
 import developer.citypalestine8936ps.new_home_feature.posts.NewPostListener
 import developer.citypalestine8936ps.new_home_feature.posts.PostModelForAdapter
+import developer.citypalestine8936ps.new_image_preview.ImagePreviewDialog
 import developer.citypalestine8936ps.utilites.Constants
+import developer.citypalestine8936ps.utilites.DialogUtil
 import developer.citypalestine8936ps.utilites.PreferenceManager
-import taimoor.sultani.sweetalert2.Sweetalert
 import java.io.File
 
 
@@ -147,7 +147,7 @@ class NewHomeFragment : Fragment(), View.OnClickListener, NewPostListener {
             Toast.makeText(requireContext(), "Can't post empty", Toast.LENGTH_SHORT).show()
             return
         }
-        showLoadingDialog(true, "Posting")
+        DialogUtil(requireContext()).showLoadingDialog(true, getString(R.string.posting))
         val doc = postsCollectionRef.document()
 
         if (postImageUri != null) {
@@ -171,24 +171,6 @@ class NewHomeFragment : Fragment(), View.OnClickListener, NewPostListener {
 
     }
 
-    private val loadingDialog by lazy {
-        Sweetalert(requireContext(), Sweetalert.PROGRESS_TYPE)
-    }
-
-    private fun showLoadingDialog(status: Boolean, title: String = "Loading") {
-        if (status) {
-            if (loadingDialog.isShowing)
-                loadingDialog.dismiss()
-            loadingDialog.progressHelper.barColor = Color.parseColor("#A5DC86")
-            loadingDialog.titleText = title
-            loadingDialog.setCancelable(false)
-            loadingDialog.show()
-        } else {
-            if (loadingDialog.isShowing)
-                loadingDialog.dismiss()
-        }
-
-    }
 
     private fun sendMessage(doc: DocumentReference, postText: String, imageUrl: String) {
 
@@ -219,7 +201,8 @@ class NewHomeFragment : Fragment(), View.OnClickListener, NewPostListener {
         binding.etPostContent.text.clear()
         binding.cvImagePreview.visibility = View.GONE
 
-        showLoadingDialog(false)
+        DialogUtil(requireContext()).showLoadingDialog(false)
+
     }
 
     private fun onClickPickCamera() {

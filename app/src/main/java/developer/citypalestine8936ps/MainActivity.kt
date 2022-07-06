@@ -4,12 +4,13 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import developer.citypalestine8936ps.databinding.ActivityMainBinding
 
 
 import developer.citypalestine8936ps.fragment.*
-import developer.citypalestine8936ps.databinding.ActivityMainBinding
 import developer.citypalestine8936ps.new_city_feature.CitiesFragment
 import developer.citypalestine8936ps.new_home_feature.NewHomeFragment
+import developer.citypalestine8936ps.new_more_feature.MoreFragment
 
 
 class MainActivity : AppCompatActivity() {

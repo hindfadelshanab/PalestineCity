@@ -13,7 +13,6 @@ import developer.citypalestine8936ps.R
 import developer.citypalestine8936ps.databinding.DialogImagePreviewBinding
 import developer.citypalestine8936ps.utilites.Constants
 import developer.citypalestine8936ps.utilites.load
-import developer.citypalestine8936ps.utilites.loadImageUrl
 
 class ImagePreviewDialog : DialogFragment() {
     private lateinit var binding: DialogImagePreviewBinding
@@ -63,12 +62,12 @@ class ImagePreviewDialog : DialogFragment() {
             fragmentManager: FragmentManager,
             imageUrl: String = ""
         ): ImagePreviewDialog {
-            val commentsDialog = ImagePreviewDialog()
+            val imagePreviewDialog = ImagePreviewDialog()
             imageUrl.let {
-                commentsDialog.arguments = bundleOf(Constants.KEY_IMAGE_PREVIEW_URL to imageUrl)
+                imagePreviewDialog.arguments = bundleOf(Constants.KEY_IMAGE_PREVIEW_URL to imageUrl)
             }
-            commentsDialog.show(fragmentManager, TAG)
-            return commentsDialog
+            imagePreviewDialog.show(fragmentManager, TAG)
+            return imagePreviewDialog
         }
     }
 

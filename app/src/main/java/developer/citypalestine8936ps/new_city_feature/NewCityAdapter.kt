@@ -5,20 +5,21 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import developer.citypalestine8936ps.databinding.ItemCityBinding
+import developer.citypalestine8936ps.new_city_feature.model.NewCityData
 import developer.citypalestine8936ps.utilites.load
 
 class NewCityAdapter(
     private val context: Context,
-    private var cities: MutableList<NewCity>,
+    private var cities: MutableList<NewCityData>,
     private var listener: CityListener
 ) : RecyclerView.Adapter<NewCityAdapter.NewCityViewHolder>() {
 
-    fun insertCity(city: NewCity) {
+    fun insertCity(city: NewCityData) {
         cities.add(city)
         notifyItemInserted(cities.size - 1)
     }
 
-    fun updateData(data: MutableList<NewCity>) {
+    fun updateData(data: MutableList<NewCityData>) {
         cities = data
         notifyDataSetChanged()
     }
@@ -26,9 +27,9 @@ class NewCityAdapter(
     inner class NewCityViewHolder(private val binding: ItemCityBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bindItem(city: NewCity) {
+        fun bindItem(city: NewCityData) {
             binding.ivCityFeaturedImage.load(context, city.featuredImage)
-            binding.tvCityName.text = city.cityName
+            binding.tvCityName.text = city.name
 
             binding.root.setOnClickListener { listener.onClickCity(city) }
         }

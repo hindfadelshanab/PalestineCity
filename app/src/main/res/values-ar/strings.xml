@@ -35,11 +35,37 @@
     <string name="comments_count">%d تعليقات</string>
     <string name="profile">الملف الشخصي</string>
     <string name="comments">التعليقات</string>
-    <string name="trad_pal">تراث فلسطين</string>
     <string name="palestine">فلسطين</string>
     <string name="books_about_pal">كتب عن فلسطين</string>
     <string name="resources">المصادر</string>
-    <string name="about">عن التطبيق</string>
+    <string name="about">حول التطبيق</string>
+    <string name="martyrs">الشهداء</string>
+    <string name="photos">الصور</string>
+    <string name="somthing_wrong">حدث خطأ ما، يرجى المحاولة مرة أخرى</string>
+    <string name="trad_pal">تراث فلسطين</string>
+    <string name="most_fam">اشهر القرى الفلسطينية</string>
+    <string name="landmarks">المعالم</string>
+    <string name="famous_families">أشهر العائلات</string>
+    <string name="martyrs_name">أسماء الشهداء</string>
+    <string name="posting">جار النشر</string>
+    <string name="gallery">الصور</string>
+    <string name="show_more">عرض المزيد</string>
+    <string name="logout">تسجيل الخروج</string>
+    <string name="change_password">تغيير كلمة المرور</string>
+    <string name="change_name">تغيير الإسم</string>
+    <string name="fake_user_location">العنوان: غزة</string>
+    <string name="lorem">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق. إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد، النص لن يبدو مقسما ولا يحوي أخطاء لغوية، مولد النص العربى مفيد لمصممي المواقع على وجه الخصوص، حيث يحتاج العميل فى كثير من الأحيان أن يطلع على صورة حقيقية لتصميم الموقع. ومن هنا وجب على المصمم أن يضع نصوصا مؤقتة على التصميم ليظهر للعميل الشكل كاملاً،دور مولد النص العربى أن يوفر على المصمم عناء البحث عن نص بديل لا علاقة له بالموضوع الذى يتحدث عنه التصميم فيظهر بشكل لا يليق. هذا النص يمكن أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غير منظم، غير منسق، أو حتى غير مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً.</string>
+    <string name="historical_data">معلومات تاريخية</string>
+    <string name="economic_data">معلومات إقتصادية</string>
+    <string name="geo_data">معلومات جغرافية</string>
+    <string name="villages">القرى</string>
+    <string name="traditions">التراث</string>
+    <string name="about_palestine">حول فلسطين</string>
+    <string name="other">معلومات أخرى</string>
+    <string name="change">تغيير</string>
+    <string name="change_your_name">تغيير الإسم</string>
+    <string name="not_ready">غير جاهزة بعد</string>
+    <string name="logging_out">جارِ تسجيل الخروج ...</string>
 
 
 </resources>

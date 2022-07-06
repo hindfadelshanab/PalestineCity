@@ -97,7 +97,6 @@
                 android:layout_height="@dimen/_50sdp"
                 android:text="@string/sign_in"
                 android:textColor="@color/white"
-
                 android:textSize="@dimen/_13sdp"
                 android:textStyle="bold"
                 app:cornerRadius="@dimen/_8sdp" />

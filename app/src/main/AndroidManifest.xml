@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="developer.citypalestine8936ps" >
+    package="developer.citypalestine8936ps">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -20,11 +20,37 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CityPalestine"
-        tools:targetApi="31" >
+        tools:targetApi="31">
         <activity
-            android:name=".ProfileActivity"
+            android:name=".new_more_feature.villages.VillagesActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:label="@string/villages" />
+        <activity
+            android:name=".new_more_feature.traditions.TraditionsActivity"
+            android:exported="false"
+            android:label="@string/traditions" />
+        <activity
+            android:name=".new_more_feature.app_resource.AppResourcesActivity"
+            android:exported="false"
+            android:label="@string/resources" />
+        <activity
+            android:name=".new_more_feature.about_palestine.AboutPalestineActivity"
+            android:exported="false"
+            android:label="@string/about_palestine" />
+        <activity
+            android:name=".new_more_feature.books.BooksActivity"
+            android:label="@string/books_about_pal"
+            android:exported="false" />
+        <activity
+            android:name=".new_more_feature.about_app.AboutAppActivity"
+            android:label="@string/about"
+            android:exported="false" />
+        <activity
+            android:name=".new_city_feature.landmarks.NewCityLandmarkActivity"
+            android:exported="false" />
+        <activity
+            android:name=".new_more_feature.profile.ProfileActivity"
+            android:exported="false" />
         <activity
             android:name=".BookActivity"
             android:exported="false" />
@@ -44,10 +70,13 @@
             android:name=".city_activity.LandMarkersActivity"
             android:exported="false" />
         <activity
-            android:name=".city_activity.FamousFamiliesActivity"
+            android:name=".new_city_feature.martyrs.CityMartyrsActivity"
             android:exported="false" />
         <activity
-            android:name=".PhotoCityActivity"
+            android:name=".new_city_feature.families.CityFamiliesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".new_city_feature.photos.CityPhotoActivity"
             android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
@@ -65,13 +94,13 @@
             android:value="AIzaSyCG7Vmi7-reyUYCPfFPaFoSBPGFP-p4SLk" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name=".new_city_feature.CityProfileActivity"
             android:exported="true"
             android:label="@string/title_activity_maps" />
         <activity
             android:name=".SplashActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" >
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
