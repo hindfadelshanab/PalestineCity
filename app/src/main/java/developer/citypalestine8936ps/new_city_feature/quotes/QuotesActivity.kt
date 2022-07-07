@@ -1,9 +1,9 @@
 package developer.citypalestine8936ps.new_city_feature.quotes
 
-import android.content.ActivityNotFoundException
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +17,7 @@ import developer.citypalestine8936ps.utilites.Constants
 
 
 class QuotesActivity : AppCompatActivity(R.layout.activity_quotes), QuoteListener {
+
 
     private val binding: ActivityQuotesBinding by viewBinding()
     private lateinit var database: FirebaseFirestore
@@ -94,22 +95,45 @@ class QuotesActivity : AppCompatActivity(R.layout.activity_quotes), QuoteListene
     }
 
     override fun onClickShare(quote: String) {
-        val intent = Intent()
-        intent.action = Intent.ACTION_SEND
-        intent.putExtra(Intent.EXTRA_TEXT, quote)
-        intent.type = "text/plain"
-        startActivity(Intent.createChooser(intent, "Share To:"))
+        val shareIntent = Intent()
+        shareIntent.action = Intent.ACTION_SEND
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name))
+        shareIntent.putExtra(Intent.EXTRA_TEXT, quote)
+        shareIntent.type = "text/plain"
+        startActivity(Intent.createChooser(shareIntent, "Share To:"))
     }
 
     override fun onClickShareWhatsapp(quote: String) {
-        val whatsappIntent = Intent(Intent.ACTION_SEND)
-        whatsappIntent.type = "text/plain"
-        whatsappIntent.setPackage("com.whatsapp")
-        whatsappIntent.putExtra(Intent.EXTRA_TEXT, quote)
-        try {
-            startActivity(whatsappIntent)
-        } catch (ex: ActivityNotFoundException) {
-            Toast.makeText(this, getString(R.string.no_whatsapp), Toast.LENGTH_SHORT).show()
+        onClickShareVia(WHATSAPP_PACKAGE_NAME, quote)
+    }
+
+    private fun onClickShareVia(packageName: String, text: String) {
+        val isAppInstalled = packageName.isNotEmpty() && appInstalledOrNot(packageName)
+        val shareIntent = Intent()
+        shareIntent.action = Intent.ACTION_SEND
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name))
+        shareIntent.putExtra(Intent.EXTRA_TEXT, text)
+        shareIntent.type = "image/png"
+        if (isAppInstalled) shareIntent.setPackage(packageName) else Toast.makeText(
+            this,
+            getString(R.string.no_whatsapp),
+            Toast.LENGTH_SHORT
+        ).show()
+        startActivity(shareIntent)
+    }
+
+    private fun appInstalledOrNot(packageName: String): Boolean {
+        val appInstalled: Boolean = try {
+            packageManager.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES)
+            true
+        } catch (e: PackageManager.NameNotFoundException) {
+            false
         }
+        return appInstalled
+    }
+
+    companion object {
+        const val WHATSAPP_PACKAGE_NAME = "com.whatsapp"
+        const val WHATSAPP_W4B_PACKAGE_NAME = "com.whatsapp.w4b"
     }
 }
