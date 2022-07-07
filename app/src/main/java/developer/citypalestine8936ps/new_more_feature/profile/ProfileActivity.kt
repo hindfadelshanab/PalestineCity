@@ -79,7 +79,7 @@ class ProfileActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun onClickChangePassword() {
-        Toast.makeText(this, getString(R.string.not_ready), Toast.LENGTH_SHORT).show()
+        PasswordBottomSheetFragment.display(supportFragmentManager, user.email)
     }
 
     private fun onClickLogout() {

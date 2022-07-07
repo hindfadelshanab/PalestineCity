@@ -15,17 +15,18 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 import developer.citypalestine8936ps.R
-import developer.citypalestine8936ps.databinding.ActivityMapsBinding
+import developer.citypalestine8936ps.databinding.ActivityCityProfileBinding
 import developer.citypalestine8936ps.new_city_feature.families.CityFamiliesActivity
 import developer.citypalestine8936ps.new_city_feature.landmarks.NewCityLandmarkActivity
 import developer.citypalestine8936ps.new_city_feature.martyrs.CityMartyrsActivity
 import developer.citypalestine8936ps.new_city_feature.model.NewCityData
 import developer.citypalestine8936ps.new_city_feature.photos.CityPhotoActivity
+import developer.citypalestine8936ps.new_city_feature.quotes.QuotesActivity
 import developer.citypalestine8936ps.utilites.Constants
 
 class CityProfileActivity : AppCompatActivity(), View.OnClickListener, OnMapReadyCallback {
 
-    private lateinit var binding: ActivityMapsBinding
+    private lateinit var binding: ActivityCityProfileBinding
     private lateinit var database: FirebaseFirestore
 
     private lateinit var citiesCollectionRef: CollectionReference
@@ -35,7 +36,7 @@ class CityProfileActivity : AppCompatActivity(), View.OnClickListener, OnMapRead
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMapsBinding.inflate(layoutInflater)
+        binding = ActivityCityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         database = FirebaseFirestore.getInstance()
@@ -139,7 +140,7 @@ class CityProfileActivity : AppCompatActivity(), View.OnClickListener, OnMapRead
     }
 
     private fun onClickQuotes() {
-        val intent = Intent(this, CityPhotoActivity::class.java)
+        val intent = Intent(this, QuotesActivity::class.java)
         intent.putExtras(bundleOf(Constants.KEY_CITY_DOC_ID to cityDocId))
         startActivity(intent)
     }

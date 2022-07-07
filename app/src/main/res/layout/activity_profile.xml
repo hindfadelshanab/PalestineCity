@@ -246,6 +246,8 @@
 
                 <TextView
                     android:id="@+id/tvUserLocation"
+                    android:maxLines="1"
+                    android:ellipsize="end"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/_8sdp"
@@ -291,6 +293,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+
                     android:layout_marginHorizontal="@dimen/_8sdp"
                     android:padding="@dimen/_8sdp"
                     android:text="@string/change_name"
@@ -311,7 +316,7 @@
             android:layout_marginHorizontal="@dimen/_16sdp"
             android:layout_marginTop="@dimen/_4sdp"
 
-            android:visibility="gone"
+            android:visibility="visible"
             app:cardCornerRadius="@dimen/_4sdp"
             app:cardElevation="@dimen/_8sdp">
 
@@ -335,6 +340,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/_8sdp"
                     android:padding="@dimen/_8sdp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
                     android:text="@string/change_password"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_16ssp" />
@@ -380,6 +387,8 @@
                     android:layout_marginHorizontal="@dimen/_8sdp"
                     android:padding="@dimen/_8sdp"
                     android:text="@string/logout"
+                    android:maxLines="1"
+                    android:ellipsize="end"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_16ssp" />
 

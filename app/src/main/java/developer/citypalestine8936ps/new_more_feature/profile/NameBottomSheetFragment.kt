@@ -35,6 +35,7 @@ class NameBottomSheetFragment : BottomSheetDialogFragment(), View.OnClickListene
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        database = FirebaseFirestore.getInstance()
         loggedUserId = PreferenceManager(requireContext()).getString(Constants.KEY_USER_ID)
         arguments?.let {
             currentValue = it.getString(Constants.KEY_CURRENT_NAME, "") ?: ""
@@ -43,7 +44,6 @@ class NameBottomSheetFragment : BottomSheetDialogFragment(), View.OnClickListene
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        database = FirebaseFirestore.getInstance()
         binding.etUserEditField.setText(currentValue)
 
     }

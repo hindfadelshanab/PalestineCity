@@ -54,7 +54,7 @@
     <string name="about">About app</string>
     <string name="martyrs">The names of the martyrs</string>
     <string name="photos">Photos</string>
-    <string name="most_fam">The most famous Palestinian villages</string>
+    <string name="most_fam">The Palestinian villages</string>
     <string name="landmarks">Landmarks</string>
     <string name="famous_families">The most famous families</string>
     <string name="martyrs_name">Martyrs name</string>
@@ -68,16 +68,29 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="lorem">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</string>
+    <string name="small1_lorem">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </string>
+    <string name="small2_lorem">The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\',  </string>
+    <string name="small3_lorem">making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). </string>
+
     <string name="historical_data">Historical Data</string>
     <string name="economic_data">Economic Data</string>
     <string name="geo_data">Geo Data</string>
-    <string name="villages">Villages</string>
+    <string name="villages">The Palestinian villages</string>
     <string name="traditions">Traditions</string>
     <string name="about_palestine">About Palestine</string>
     <string name="other">Other</string>
     <string name="change">Change</string>
     <string name="change_your_name">Change your name</string>
     <string name="not_ready">Not implemented yet!!</string>
-    <string name="logging_out">Logging out ...</string>
+    <string name="logging_out">Logging out …</string>
+
+    <string name="error_field_empty">This field can\'t be empty</string>
+    <string name="error_passwords_not_match">Passwords doesn\'t match</string>
+    <string name="current_password">Current Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+    <string name="quotation" translatable="false">شو قالت ستى</string>
+    <string name="no_whatsapp">Whatsapp have not been installed.</string>
+    <string name="copied_to_clip">Copied to Clipboard</string>
 
 </resources>

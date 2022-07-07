@@ -58,7 +58,7 @@
     <string name="historical_data">معلومات تاريخية</string>
     <string name="economic_data">معلومات إقتصادية</string>
     <string name="geo_data">معلومات جغرافية</string>
-    <string name="villages">القرى</string>
+    <string name="villages">القرى الفلسطينية</string>
     <string name="traditions">التراث</string>
     <string name="about_palestine">حول فلسطين</string>
     <string name="other">معلومات أخرى</string>
@@ -66,6 +66,13 @@
     <string name="change_your_name">تغيير الإسم</string>
     <string name="not_ready">غير جاهزة بعد</string>
     <string name="logging_out">جارِ تسجيل الخروج ...</string>
+    <string name="error_field_empty">يجب تعبئة الحقل</string>
+    <string name="current_password">كلمة المرور الحالية</string>
+    <string name="new_password">كلمة المرور الجديدة</string>
+    <string name="confirm_new_password">تأكيد كلمة المرور الجديدة</string>
+    <string name="error_passwords_not_match">كلمات المرور غير متطابقة</string>
+    <string name="no_whatsapp">لا يمكن العثور على تطبيق واتساب</string>
+    <string name="copied_to_clip">تم النسخ إلى الحافظة</string>
 
 
 </resources>

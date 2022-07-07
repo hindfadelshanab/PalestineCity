@@ -10,5 +10,6 @@ data class NewCityData(
 
     val photos: List<String> = listOf(),
     val families: List<String> = listOf(),
-    val martyrs: List<String> = listOf()
+    val martyrs: List<String> = listOf(),
+    val quotes: List<String> = listOf(),
 )

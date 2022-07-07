@@ -6,10 +6,7 @@ import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
-import developer.citypalestine8936ps.new_city_feature.model.NewCityData
 import developer.citypalestine8936ps.utilites.Constants
-import java.util.Collections.shuffle
-import kotlin.random.Random
 
 class SplashActivity : AppCompatActivity() {
     private val SPLASH_DISPLAY_LENGTH = 1000
@@ -94,7 +91,13 @@ class SplashActivity : AppCompatActivity() {
 
         database = FirebaseFirestore.getInstance()
         citiesCollectionRef = database.collection(Constants.KEY_COLLECTION_CITY)
-        (0..3).forEach { i ->
+        citiesCollectionRef
+            .document("RQJMzKxVMHGNsHT3bK2L")
+            .update("photos", allPhotos)
+            .addOnCompleteListener {  }
+
+
+        /*(0..3).forEach { i ->
             val cityDoc = citiesCollectionRef.document()
             shuffle(allPhotos)
             shuffle(martyrsNames)
@@ -110,6 +113,6 @@ class SplashActivity : AppCompatActivity() {
                 families = familiesNames
             )
             cityDoc.set(city)
-        }
+        }*/
     }
 }
