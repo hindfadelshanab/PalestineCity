@@ -76,12 +76,12 @@ class QuotesActivity : AppCompatActivity(R.layout.activity_quotes), QuoteListene
 
         val list = city.quotes.ifEmpty {
             listOf(
-                getString(R.string.somthing_wrong),
+/*                getString(R.string.somthing_wrong),
                 getString(R.string.to_reset_password_enter_your_email_press_the_button_and_check_mail_to_follow_instruction),
                 getString(R.string.small1_lorem),
                 getString(R.string.small2_lorem),
                 getString(R.string.small3_lorem),
-                getString(R.string.somthing_wrong),
+                getString(R.string.somthing_wrong),*/
             )
         }
         quotesAdapter.updateData(list)

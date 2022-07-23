@@ -1,6 +1,5 @@
 package developer.citypalestine8936ps
 
-import android.R
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -11,25 +10,23 @@ import android.util.Base64
 import android.util.Log
 import android.util.Patterns
 import android.view.View
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.tasks.OnCompleteListener
-import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.UploadTask
 import developer.citypalestine8936ps.databinding.ActivitySignUpBinding
 import developer.citypalestine8936ps.models.City
+import developer.citypalestine8936ps.new_city_feature.model.NewCityData
 import developer.citypalestine8936ps.utilites.Constants
 import developer.citypalestine8936ps.utilites.PreferenceManager
 import java.io.ByteArrayOutputStream
@@ -40,12 +37,14 @@ import java.util.*
 class SignUpActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignUpBinding
-  //  private var encodedImage: String? = null
+
+    //  private var encodedImage: String? = null
     private var encodedImage: Uri? = null
     private var preferenceManager: PreferenceManager? = null
     val TAG = "SignUp"
     var data: ArrayList<City> = ArrayList<City>()
     lateinit var database: FirebaseFirestore
+    private var cities: MutableList<NewCityData?> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,58 +57,26 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun getAllCity() {
-
-
-        var cityNames: ArrayList<String> = ArrayList()
         database.collection(Constants.KEY_COLLECTION_CITY).get()
-            .addOnSuccessListener(OnSuccessListener<QuerySnapshot> { queryDocumentSnapshots ->
-                for (documentSnapshot in queryDocumentSnapshots) {
-                    val city: City = documentSnapshot.toObject(City::class.java)
-                    city.id = documentSnapshot.id
+            .addOnSuccessListener { queryDocumentSnapshots ->
+                cities = queryDocumentSnapshots.documents.map {
+                    it.toObject(NewCityData::class.java)
+                }.toMutableList()
 
-                    data.add(city)
-                    cityNames.add(city.cityName)
-
-
-                }
                 val adapter: ArrayAdapter<String> = ArrayAdapter<String>(
                     this,
-                    R.layout.simple_spinner_item,
-                    cityNames
+                    android.R.layout.simple_spinner_dropdown_item,
+                    cities.map { it?.name }
                 )
-
-                adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item)
-                binding.inputCity.setAdapter(adapter)
-
-
-//                binding.inputCity.setOnItemSelectedListener(object : AdapterView.OnItemSelectedListener {
-//                    override fun onItemSelected(
-//                        parent: AdapterView<*>,
-//                        view: View,
-//                        position: Int,
-//                        id: Long
-//                    ) {
-//                    val city: String = parent.selectedItem.toString()
-//                        displayUserData(cityNames[position])
-//                    }
-//
-//                    override fun onNothingSelected(parent: AdapterView<*>?) {}
-//                })
-
-//                //val areaSpinner = findViewById<View>(R.id.inputCity) as Spinner
-//                val areas = ArrayList<String>(cityNames)
-//                val areasAdapter =
-//                    ArrayAdapter(this, R.layout.simple_spinner_item, areas)
-//                areasAdapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item)
-//                binding.inputCity.adapter = areasAdapter
-            }).addOnFailureListener(OnFailureListener { e ->
+                binding.inputCity.adapter = adapter
+            }.addOnFailureListener { e ->
                 Log.e("hind", e.message!!)
-            })
-
+            }
 
     }
+
     fun getSelectedUser(v: View?) {
-        val user: City = binding.inputCity.getSelectedItem() as City
+        val user: City = binding.inputCity.selectedItem as City
         displayUserData(user)
     }
 
@@ -146,7 +113,7 @@ class SignUpActivity : AppCompatActivity() {
         val mAuth = FirebaseAuth.getInstance()
         loading(true)
 
-        if (fileUri !=null) {
+        if (fileUri != null) {
             val fileName = UUID.randomUUID().toString() + ".jpg"
             val refStorage = FirebaseStorage.getInstance().reference.child("images/$fileName")
             refStorage.putFile(fileUri)
@@ -165,15 +132,19 @@ class SignUpActivity : AppCompatActivity() {
                                         val currentUser: FirebaseUser? = mAuth.getCurrentUser()
                                         val user = HashMap<String, Any>()
                                         user[Constants.KEY_NAME] = binding.inputName.text.toString()
-                                        user[Constants.KEY_EMAIL] = binding.inputEmail.text.toString()
-                                        user[Constants.KEY_PASSWORD] = binding.inputPassword.text.toString()
-                                        user[Constants.KEY_CITY] = binding.inputCity.selectedItem.toString()
+                                        user[Constants.KEY_EMAIL] =
+                                            binding.inputEmail.text.toString()
+                                        user[Constants.KEY_PASSWORD] =
+                                            binding.inputPassword.text.toString()
+                                        user[Constants.KEY_CITY] =
+                                            binding.inputCity.selectedItem.toString()
                                         user[Constants.KEY_IMAGE] = imageUrl!!
                                         database.collection(Constants.KEY_COLLECTION_USERS)
                                             .add(user)
                                             .addOnSuccessListener { documentReference: DocumentReference ->
                                                 loading(false)
-                                                preferenceManager!!.putBoolean(Constants.KEY_IS_SIGNED_IN, true)
+                                                preferenceManager!!.putBoolean(Constants.KEY_IS_SIGNED_IN,
+                                                    true)
                                                 preferenceManager!!.putString(
                                                     Constants.KEY_USER_ID,
                                                     documentReference.id
@@ -182,11 +153,13 @@ class SignUpActivity : AppCompatActivity() {
                                                     Constants.KEY_NAME,
                                                     binding.inputName.text.toString()
                                                 )
-                                                preferenceManager!!.putString(Constants.KEY_IMAGE, imageUrl.toString())
+                                                preferenceManager!!.putString(Constants.KEY_IMAGE,
+                                                    imageUrl.toString())
 
                                                 Log.e("hind", "Sucees");
                                                 Log.e("hind", documentReference.id);
-                                                val intent = Intent(applicationContext, MainActivity::class.java)
+                                                val intent = Intent(applicationContext,
+                                                    MainActivity::class.java)
                                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
                                                 startActivity(intent)
                                             }
@@ -210,7 +183,7 @@ class SignUpActivity : AppCompatActivity() {
                     }
                 });
 
-        }else{
+        } else {
 
         }
 
